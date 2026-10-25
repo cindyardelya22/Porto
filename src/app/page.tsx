@@ -24,7 +24,7 @@ export default function Home() {
   };
 
   return (
-    <main className="relative min-h-screen bg-[#FAF9FE] text-zinc-900">
+    <main className="relative min-h-screen bg-[#faf9fe] dark:bg-[#09090b] text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
       {/* Navigation */}
       <Navbar />
 

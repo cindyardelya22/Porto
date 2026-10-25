@@ -20,7 +20,10 @@ const geistMono = Geist_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: '#FAF9FE',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#FAF9FE' },
+    { media: '(prefers-color-scheme: dark)', color: '#09090B' },
+  ],
   width: 'device-width',
   initialScale: 1,
 };
@@ -77,14 +80,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${jakarta.variable} ${geistMono.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${jakarta.variable} ${geistMono.variable}`}
+    >
       <head>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                const theme = localStorage.getItem('porto_theme');
-                if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                const saved = localStorage.getItem('porto_theme');
+                if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                   document.documentElement.classList.add('dark');
                 } else {
                   document.documentElement.classList.remove('dark');
@@ -94,7 +101,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen bg-[#FAF9FE] text-zinc-900 dark:bg-[#0c0a14] dark:text-zinc-100 font-sans antialiased selection:bg-purple-500 selection:text-white transition-colors duration-300">
+      <body className="min-h-screen bg-[#faf9fe] dark:bg-[#09090b] text-zinc-900 dark:text-zinc-100 font-sans antialiased selection:bg-purple-500 selection:text-white transition-colors duration-300">
         <ThemeProvider>
           <CursorProvider>
             <CustomCursor />

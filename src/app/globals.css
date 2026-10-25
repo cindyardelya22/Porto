@@ -14,10 +14,14 @@
 }
 
 .dark {
-  --background: #0b0a10;
-  --foreground: #f4f4f6;
-  --card: #13111c;
-  --card-foreground: #f4f4f6;
+  --background: #09090b;
+  --foreground: #f4f4f5;
+  --card: #18181b;
+  --card-foreground: #f4f4f5;
+  --primary: #a855f7;
+  --primary-foreground: #ffffff;
+  --secondary: #fb7185;
+  --accent: #38bdf8;
 }
 
 @theme inline {
@@ -33,20 +37,32 @@ html {
   color: #18181b;
 }
 
+html.dark {
+  background-color: #09090b;
+  color: #f4f4f5;
+  color-scheme: dark;
+}
+
 body {
   background-color: #faf9fe;
   color: #18181b;
   overflow-x: hidden;
   font-family: var(--font-jakarta), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+html.dark body {
+  background-color: #09090b;
+  color: #f4f4f5;
 }
 
 ::selection {
-  background: #f472b6;
+  background: #a855f7;
   color: #ffffff;
 }
 
-/* Custom Colorful Smooth Scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -56,10 +72,19 @@ body {
   background: #f1f0f7;
 }
 
+html.dark ::-webkit-scrollbar-track {
+  background: #121216;
+}
+
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 9999px;
   border: 2px solid #f1f0f7;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-color: #121216;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -74,9 +99,17 @@ body {
   background: #f8fafc;
 }
 
+html.dark .custom-scrollbar::-webkit-scrollbar-track {
+  background: #18181b;
+}
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: #d8b4fe;
   border-radius: 9999px;
+}
+
+html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #7c3aed;
 }
 
 /* Dribbble Mesh Gradient Glows */
@@ -84,12 +117,24 @@ body {
   background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.15), transparent 70%);
 }
 
+html.dark .mesh-glow-1 {
+  background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.25), transparent 70%);
+}
+
 .mesh-glow-2 {
   background: radial-gradient(circle at 50% 50%, rgba(244, 63, 94, 0.12), transparent 70%);
 }
 
+html.dark .mesh-glow-2 {
+  background: radial-gradient(circle at 50% 50%, rgba(244, 63, 94, 0.18), transparent 70%);
+}
+
 .mesh-glow-3 {
   background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.15), transparent 70%);
+}
+
+html.dark .mesh-glow-3 {
+  background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.22), transparent 70%);
 }
 
 /* Glassmorphism Card Style */
@@ -98,4 +143,11 @@ body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+html.dark .glass-card {
+  background: rgba(24, 24, 27, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }

@@ -12,7 +12,6 @@ import {
   ChevronUp,
   Sparkles,
   Phone,
-  GraduationCap,
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/Icons';
 
@@ -56,7 +55,6 @@ export default function ContactFooter() {
       await navigator.clipboard.writeText(email);
       setCopiedEmail(true);
 
-      // Trigger colorful pastel confetti celebration!
       confetti({
         particleCount: 50,
         spread: 70,
@@ -88,10 +86,10 @@ export default function ContactFooter() {
   };
 
   return (
-    <footer id="contact" className="py-20 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-16">
+    <footer id="contact" className="py-16 sm:py-20 relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
         {/* Vibrant Gradient Banner Card */}
-        <div className="relative rounded-[2.5rem] bg-gradient-to-tr from-violet-600 via-purple-600 to-fuchsia-500 text-white p-8 sm:p-14 shadow-2xl shadow-purple-500/25 overflow-hidden">
+        <div className="relative rounded-[2rem] sm:rounded-[2.5rem] bg-gradient-to-tr from-violet-600 via-purple-600 to-fuchsia-500 text-white p-7 sm:p-12 lg:p-14 shadow-2xl shadow-purple-500/25 overflow-hidden">
           {/* Subtle decorative circles */}
           <div className="absolute -top-12 -right-12 w-64 h-64 rounded-full bg-white/10 blur-2xl pointer-events-none" />
           <div className="absolute -bottom-12 -left-12 w-64 h-64 rounded-full bg-fuchsia-400/20 blur-2xl pointer-events-none" />
@@ -103,12 +101,12 @@ export default function ContactFooter() {
                 <span>Open for Opportunities & Projects</span>
               </div>
 
-              <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.08]">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12]">
                 Ready to collaborate? <br />
                 <span className="text-purple-200">Let&apos;s build something meaningful ✨</span>
               </h2>
 
-              <p className="text-sm sm:text-base text-purple-100 font-normal max-w-xl leading-relaxed">
+              <p className="text-xs sm:text-base text-purple-100 font-normal max-w-xl leading-relaxed">
                 Whether discussing mobile engineering in Kotlin, fullstack systems in Laravel, or exciting career opportunities, I&apos;m always excited to connect!
               </p>
             </div>
@@ -122,11 +120,11 @@ export default function ContactFooter() {
                 onMouseMove={handleMagneticMove}
                 onMouseLeave={handleMagneticLeave}
                 onMouseEnter={() => setCursor('link', 'CHAT')}
-                className="inline-flex items-center justify-center h-28 w-28 sm:h-36 sm:w-36 rounded-full bg-white text-purple-700 font-extrabold text-xs uppercase tracking-wider shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all group"
+                className="inline-flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 lg:h-36 lg:w-36 rounded-full bg-white text-purple-700 font-extrabold text-xs uppercase tracking-wider shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all group shrink-0"
               >
                 <div className="flex flex-col items-center space-y-1">
                   <span>Say Hello</span>
-                  <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </div>
               </motion.a>
             </div>
@@ -134,22 +132,23 @@ export default function ContactFooter() {
         </div>
 
         {/* Copy Email & Phone + Direct Reach Bar */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 bg-white dark:bg-zinc-900 p-6 sm:p-8 rounded-3xl border border-purple-100/80 dark:border-zinc-800 shadow-sm">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 bg-white dark:bg-zinc-900 p-6 sm:p-8 rounded-3xl border border-purple-100/80 dark:border-zinc-800 shadow-xs">
           <div className="space-y-3 text-center lg:text-left w-full lg:w-auto">
             <span className="text-xs font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider block">
               Direct Contact & Information
             </span>
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
               {/* Email Button */}
               <div className="flex items-center gap-2">
-                <span className="text-base sm:text-xl font-extrabold text-zinc-900 dark:text-white">
+                <span className="text-sm sm:text-lg lg:text-xl font-extrabold text-zinc-900 dark:text-white">
                   {email}
                 </span>
                 <button
+                  type="button"
                   onClick={handleCopyEmail}
                   onMouseEnter={() => setCursor('copy', 'COPY')}
                   onMouseLeave={resetCursor}
-                  className="inline-flex items-center space-x-1 bg-purple-50 dark:bg-purple-950/60 hover:bg-purple-100 dark:hover:bg-purple-900/60 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-bold transition-all active:scale-95"
+                  className="inline-flex items-center space-x-1 bg-purple-50 dark:bg-purple-950/60 hover:bg-purple-100 dark:hover:bg-purple-900/60 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-bold transition-all active:scale-95 border border-purple-200/50 dark:border-purple-800/40"
                 >
                   {copiedEmail ? (
                     <>
@@ -167,12 +166,13 @@ export default function ContactFooter() {
 
               {/* Phone Button */}
               <div className="flex items-center gap-2">
-                <span className="text-sm sm:text-base font-bold text-zinc-600 dark:text-zinc-300">
+                <span className="text-xs sm:text-sm md:text-base font-bold text-zinc-600 dark:text-zinc-300">
                   {phone}
                 </span>
                 <button
+                  type="button"
                   onClick={handleCopyPhone}
-                  className="inline-flex items-center space-x-1 bg-emerald-50 dark:bg-emerald-950/60 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 px-3 py-1 rounded-full text-xs font-bold transition-all active:scale-95"
+                  className="inline-flex items-center space-x-1 bg-emerald-50 dark:bg-emerald-950/60 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 px-3 py-1 rounded-full text-xs font-bold transition-all active:scale-95 border border-emerald-200/50 dark:border-emerald-800/40"
                 >
                   {copiedPhone ? (
                     <>
@@ -229,6 +229,7 @@ export default function ContactFooter() {
           </div>
 
           <button
+            type="button"
             onClick={scrollToTop}
             className="flex items-center space-x-1.5 text-zinc-600 dark:text-zinc-400 hover:text-purple-600 dark:hover:text-purple-400 font-bold transition-colors"
           >

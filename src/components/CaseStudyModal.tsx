@@ -7,16 +7,10 @@ import { CaseStudy } from '@/types';
 import { useCursor } from '@/context/CursorContext';
 import {
   X,
-  ExternalLink,
   CheckCircle2,
-  Layers,
-  Cpu,
-  Compass,
-  TrendingUp,
   FileText,
   BookOpen,
   ArrowUpRight,
-  ShieldAlert,
 } from 'lucide-react';
 import { GithubIcon, FigmaIcon, CanvaIcon } from '@/components/Icons';
 
@@ -27,7 +21,9 @@ interface CaseStudyModalProps {
 
 export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps) {
   const { resetCursor } = useCursor();
-  const [activeTab, setActiveTab] = useState<'overview' | 'challenge' | 'architecture' | 'flow' | 'results' | 'documentation'>('overview');
+  const [activeTab, setActiveTab] = useState<
+    'overview' | 'challenge' | 'architecture' | 'flow' | 'results' | 'documentation'
+  >('overview');
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -39,7 +35,6 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
     if (project) {
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
-      // Reset active tab to overview whenever a new project is selected
       setActiveTab('overview');
     }
 
@@ -61,7 +56,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-purple-950/45 backdrop-blur-md">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/60 dark:bg-black/80 backdrop-blur-md">
         {/* Backdrop */}
         <div className="absolute inset-0" onClick={onClose} />
 
@@ -73,7 +68,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
           className="relative w-full max-w-5xl max-h-[90vh] flex flex-col bg-white dark:bg-zinc-900 rounded-3xl shadow-2xl border border-purple-100 dark:border-zinc-800 z-10 overflow-hidden text-zinc-900 dark:text-zinc-100"
         >
           {/* Header Bar */}
-          <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800 px-6 py-4 bg-white/95 dark:bg-zinc-900/95 sticky top-0 z-20 backdrop-blur-md">
+          <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800 px-5 sm:px-8 py-4 bg-white/95 dark:bg-zinc-900/95 sticky top-0 z-20 backdrop-blur-md">
             <div className="flex items-center space-x-3">
               <span className="text-xs font-bold px-3 py-1 bg-purple-100 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 rounded-full">
                 {project.category}
@@ -93,7 +88,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
           </div>
 
           {/* Modal Scrollable Body */}
-          <div className="overflow-y-auto p-6 sm:p-10 space-y-8 custom-scrollbar">
+          <div className="overflow-y-auto p-5 sm:p-8 lg:p-10 space-y-7 custom-scrollbar">
             {/* Title & Actions */}
             <div className="space-y-4">
               <div className="space-y-1">
@@ -164,16 +159,17 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                 src={project.heroImage}
                 alt={project.title}
                 fill
+                sizes="(max-width: 1024px) 100vw, 80vw"
                 priority
                 className="object-cover object-center"
               />
             </div>
 
             {/* Metrics Strip */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-5 bg-purple-50/60 dark:bg-zinc-800/60 rounded-2xl border border-purple-100 dark:border-zinc-700/60">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-5 bg-purple-50/60 dark:bg-zinc-800/60 rounded-2xl border border-purple-100 dark:border-zinc-750">
               {project.stats.map((st, idx) => (
                 <div key={idx} className="space-y-0.5">
-                  <div className="text-2xl sm:text-3xl font-extrabold text-purple-700 dark:text-purple-300">
+                  <div className="text-2xl sm:text-3xl font-extrabold text-purple-700 dark:text-purple-400">
                     {st.value}
                   </div>
                   <div className="text-xs font-bold text-zinc-800 dark:text-zinc-200">
@@ -191,6 +187,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
             {/* Tabs Navigation */}
             <div className="flex border-b border-zinc-200 dark:border-zinc-800 overflow-x-auto space-x-2 pb-2">
               <button
+                type="button"
                 onClick={() => setActiveTab('overview')}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap ${
                   activeTab === 'overview'
@@ -203,6 +200,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
 
               {project.documentationDetails && (
                 <button
+                  type="button"
                   onClick={() => setActiveTab('documentation')}
                   className={`px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap flex items-center space-x-1.5 ${
                     activeTab === 'documentation'
@@ -216,6 +214,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
               )}
 
               <button
+                type="button"
                 onClick={() => setActiveTab('challenge')}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap ${
                   activeTab === 'challenge'
@@ -226,6 +225,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                 The Challenge
               </button>
               <button
+                type="button"
                 onClick={() => setActiveTab('architecture')}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap ${
                   activeTab === 'architecture'
@@ -236,6 +236,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                 Architecture & Stack
               </button>
               <button
+                type="button"
                 onClick={() => setActiveTab('flow')}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap ${
                   activeTab === 'flow'
@@ -246,6 +247,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                 Workflow Steps
               </button>
               <button
+                type="button"
                 onClick={() => setActiveTab('results')}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap ${
                   activeTab === 'results'
@@ -444,6 +446,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                 Portofolio Cindy Ardelya • Politeknik Caltex Riau
               </span>
               <button
+                type="button"
                 onClick={onClose}
                 className="bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-200 dark:text-zinc-900 text-white text-xs font-bold px-6 py-2.5 rounded-full transition-colors"
               >
