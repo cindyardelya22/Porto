@@ -47,9 +47,9 @@ export default function AboutSection() {
 
             <div className="space-y-1">
               <h3 className="text-xl font-extrabold text-zinc-900 dark:text-white">Cindy Ardelya</h3>
-              <p className="text-xs font-semibold text-purple-600 dark:text-purple-400">Mobile & Fullstack Developer</p>
+              <p className="text-xs font-semibold text-purple-600 dark:text-purple-400">Informatics Engineering Graduate • Web Developer</p>
               <div className="text-xs text-zinc-500 dark:text-zinc-400 space-y-0.5">
-                <p>Politeknik Caltex Riau • Fresh Graduate</p>
+                <p>Politeknik Caltex Riau</p>
                 <p>Pekanbaru, Riau, Indonesia</p>
               </div>
             </div>
@@ -76,17 +76,17 @@ export default function AboutSection() {
           <div className="lg:col-span-8 space-y-4 sm:space-y-5">
             <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 text-xs font-bold uppercase tracking-wider">
               <GraduationCap className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
-              <span>Fresh Graduate • Mobile & Fullstack Developer</span>
+              <span>Informatics Engineering Graduate • Web Developer</span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight leading-tight">
-              Driven to solve human challenges through empathetic mobile design and solid engineering.
+              Passionate about technology, graphic design, and digital communication to build meaningful solutions.
             </h2>
 
             <div className="space-y-4 text-sm sm:text-base text-zinc-600 dark:text-zinc-300 font-normal leading-relaxed">
               <p>
-                Hello! I&apos;m <strong className="text-zinc-900 dark:text-white font-bold">Cindy Ardelya</strong>, a Fresh Graduate from <strong className="text-purple-700 dark:text-purple-400 font-semibold">Politeknik Caltex Riau</strong>.
-                I have a deep passion for building mobile applications, intuitive web platforms, and applied machine learning tools that create meaningful real-world impact.
+                Hello! I&apos;m <strong className="text-zinc-900 dark:text-white font-bold">Cindy Ardelya</strong>, an <strong className="text-purple-700 dark:text-purple-400 font-semibold">Informatics Engineering Graduate</strong> from Politeknik Caltex Riau.
+                I am a Web Developer deeply passionate about technology, graphic design, and digital communication, combining solid software engineering with clean, human-centered visual design.
               </p>
               <p>
                 My portfolio demonstrates versatility across diverse technical domains:

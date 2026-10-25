@@ -57,7 +57,7 @@ export default function Navbar() {
               <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             </div>
             <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-medium hidden md:block">
-              Politeknik Caltex Riau • Fresh Graduate
+              Informatics Engineering Graduate • Web Developer
             </div>
           </div>
         </Link>

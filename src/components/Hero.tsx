@@ -27,12 +27,12 @@ export default function Hero() {
             <span className="flex h-2 w-2 rounded-full bg-purple-500 animate-pulse" />
             <span>Hello! I&apos;m Cindy Ardelya</span>
             <span className="text-zinc-300 dark:text-zinc-600">✦</span>
-            <span className="text-zinc-600 dark:text-zinc-300">Fresh Graduate from Politeknik Caltex Riau</span>
+            <span className="text-zinc-600 dark:text-zinc-300">Informatics Engineering Graduate • Politeknik Caltex Riau</span>
             <Sparkles className="w-3.5 h-3.5 text-amber-500" />
           </div>
         </motion.div>
 
-        {/* Big Expressive Dribbble Headline */}
+        {/* Big Expressive Headline aligned with LinkedIn */}
         <div className="text-center max-w-4xl mx-auto space-y-5 sm:space-y-6">
           <motion.h1
             initial={{ opacity: 0, y: 25 }}
@@ -40,11 +40,10 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-[1.12]"
           >
-            Crafting{' '}
+            Informatics Engineering Graduate &{' '}
             <span className="bg-gradient-to-r from-violet-600 via-fuchsia-600 to-rose-500 dark:from-violet-400 dark:via-fuchsia-400 dark:to-rose-400 bg-clip-text text-transparent">
-              empathetic mobile apps
-            </span>{' '}
-            & impactful digital solutions.
+              Web Developer.
+            </span>
           </motion.h1>
 
           <motion.p
@@ -53,7 +52,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-sm sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-300 font-normal max-w-3xl mx-auto leading-relaxed px-2"
           >
-            Passionate software engineer with hands-on experience in native Android engineering (MindCare & By-Pro Sales Contract), fullstack web & GIS development (Alumna Islamic School Pekanbaru & AgriSmart), and applied deep learning.
+            Passionate about Technology, Graphic Design, and Digital Communication. Experienced in engineering native Android apps (MindCare & By-Pro Sales Contract), fullstack web & GIS platforms (Alumna Islamic School & AgriSmart), and applied deep learning.
           </motion.p>
 
           {/* Action CTAs */}

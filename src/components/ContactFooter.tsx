@@ -112,14 +112,16 @@ export default function ContactFooter() {
             </div>
 
             <div className="lg:col-span-4 flex flex-col items-start lg:items-end space-y-4">
-              {/* Magnetic CTA Button */}
+              {/* Magnetic CTA Button pointing to LinkedIn */}
               <motion.a
                 ref={buttonRef}
-                href={`mailto:${email}`}
+                href="https://www.linkedin.com/in/cindy-ardelya/"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{ x: magneticX, y: magneticY }}
                 onMouseMove={handleMagneticMove}
                 onMouseLeave={handleMagneticLeave}
-                onMouseEnter={() => setCursor('link', 'CHAT')}
+                onMouseEnter={() => setCursor('link', 'CONNECT')}
                 className="inline-flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 lg:h-36 lg:w-36 rounded-full bg-white text-purple-700 font-extrabold text-xs uppercase tracking-wider shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all group shrink-0"
               >
                 <div className="flex flex-col items-center space-y-1">
@@ -164,11 +166,16 @@ export default function ContactFooter() {
                 </button>
               </div>
 
-              {/* Phone Button */}
+              {/* Phone / WhatsApp Button */}
               <div className="flex items-center gap-2">
-                <span className="text-xs sm:text-sm md:text-base font-bold text-zinc-600 dark:text-zinc-300">
+                <a
+                  href="https://wa.me/6285119007433"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs sm:text-sm md:text-base font-bold text-zinc-600 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                >
                   {phone}
-                </span>
+                </a>
                 <button
                   type="button"
                   onClick={handleCopyPhone}
