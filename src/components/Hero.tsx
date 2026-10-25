@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useCursor } from '@/context/CursorContext';
-import { Sparkles, ArrowRight, Smartphone, Heart, GraduationCap, MapPin, Brain } from 'lucide-react';
+import { Sparkles, ArrowRight, Smartphone, Heart, GraduationCap, Palette, Brain } from 'lucide-react';
 
 export default function Hero() {
   const { setCursor, resetCursor } = useCursor();
@@ -52,7 +52,31 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-sm sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-300 font-normal max-w-3xl mx-auto leading-relaxed px-2"
           >
-            Passionate about Technology, Graphic Design, and Digital Communication. Experienced in engineering native Android apps (MindCare & By-Pro Sales Contract), fullstack web & GIS platforms (Alumna Islamic School & AgriSmart), and applied deep learning.
+            Passionate about{' '}
+            <span className="font-semibold text-zinc-900 dark:text-white underline decoration-violet-500/80 decoration-2 underline-offset-4">
+              Technology
+            </span>
+            ,{' '}
+            <span className="font-semibold text-zinc-900 dark:text-white underline decoration-fuchsia-500/80 decoration-2 underline-offset-4">
+              Graphic Design
+            </span>
+            , and{' '}
+            <span className="font-semibold text-zinc-900 dark:text-white underline decoration-rose-500/80 decoration-2 underline-offset-4">
+              Digital Communication
+            </span>
+            . I focus on developing{' '}
+            <span className="font-semibold text-zinc-900 dark:text-zinc-100">
+              modern web applications
+            </span>
+            ,{' '}
+            <span className="font-semibold text-zinc-900 dark:text-zinc-100">
+              native Android solutions
+            </span>
+            , and{' '}
+            <span className="font-semibold text-zinc-900 dark:text-zinc-100">
+              interactive digital media
+            </span>
+            —bridging aesthetic UI/UX with solid software engineering to solve real-world problems.
           </motion.p>
 
           {/* Action CTAs */}
@@ -91,47 +115,47 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-12 sm:pt-16 max-w-5xl mx-auto"
         >
-          {/* Badge 1: MindCare & By-Pro Mobile */}
+          {/* Badge 1: Web Development */}
           <div className="bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-purple-100 dark:border-zinc-800 rounded-2xl p-4 shadow-xs hover:shadow-md transition-all flex items-center space-x-3.5">
             <div className="h-11 w-11 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-300 flex items-center justify-center shrink-0">
+              <GraduationCap className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="text-sm font-extrabold text-zinc-900 dark:text-white">Web Development</div>
+              <div className="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium">Fullstack & Responsive Platforms</div>
+            </div>
+          </div>
+
+          {/* Badge 2: Native Android */}
+          <div className="bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-amber-100 dark:border-zinc-800 rounded-2xl p-4 shadow-xs hover:shadow-md transition-all flex items-center space-x-3.5">
+            <div className="h-11 w-11 rounded-xl bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-300 flex items-center justify-center shrink-0">
               <Smartphone className="w-5 h-5" />
             </div>
             <div>
               <div className="text-sm font-extrabold text-zinc-900 dark:text-white">Native Android</div>
-              <div className="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium">MindCare & By-Pro (Kotlin)</div>
+              <div className="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium">Kotlin, Jetpack & Mobile UX</div>
             </div>
           </div>
 
-          {/* Badge 2: Alumna Islamic School Pekanbaru Final Project */}
-          <div className="bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-amber-100 dark:border-zinc-800 rounded-2xl p-4 shadow-xs hover:shadow-md transition-all flex items-center space-x-3.5">
-            <div className="h-11 w-11 rounded-xl bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-300 flex items-center justify-center shrink-0">
-              <GraduationCap className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-sm font-extrabold text-zinc-900 dark:text-white">Final Project</div>
-              <div className="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium">Alumna Islamic School Pekanbaru</div>
-            </div>
-          </div>
-
-          {/* Badge 3: PTPN IV MBKM */}
-          <div className="bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-emerald-100 dark:border-zinc-800 rounded-2xl p-4 shadow-xs hover:shadow-md transition-all flex items-center space-x-3.5">
-            <div className="h-11 w-11 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-300 flex items-center justify-center shrink-0">
-              <MapPin className="w-5 h-5" />
-            </div>
-            <div>
-              <div className="text-sm font-extrabold text-zinc-900 dark:text-white">PTPN IV Regional III</div>
-              <div className="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium">By-Pro & AgriSmart GIS</div>
-            </div>
-          </div>
-
-          {/* Badge 4: Deep Learning */}
+          {/* Badge 3: Graphic Design & UI/UX */}
           <div className="bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-rose-100 dark:border-zinc-800 rounded-2xl p-4 shadow-xs hover:shadow-md transition-all flex items-center space-x-3.5">
             <div className="h-11 w-11 rounded-xl bg-rose-100 dark:bg-rose-950/60 text-rose-600 dark:text-rose-300 flex items-center justify-center shrink-0">
+              <Palette className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="text-sm font-extrabold text-zinc-900 dark:text-white">Graphic & UI/UX Design</div>
+              <div className="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium">Visual Identity & Creative Media</div>
+            </div>
+          </div>
+
+          {/* Badge 4: Applied AI & Systems */}
+          <div className="bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-emerald-100 dark:border-zinc-800 rounded-2xl p-4 shadow-xs hover:shadow-md transition-all flex items-center space-x-3.5">
+            <div className="h-11 w-11 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-300 flex items-center justify-center shrink-0">
               <Brain className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-sm font-extrabold text-zinc-900 dark:text-white">Deep Learning CNN</div>
-              <div className="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium">96.8% Malaria Detection</div>
+              <div className="text-sm font-extrabold text-zinc-900 dark:text-white">Applied AI & Systems</div>
+              <div className="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium">Enterprise Workflows & CNN AI</div>
             </div>
           </div>
         </motion.div>

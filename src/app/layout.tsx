@@ -30,28 +30,25 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://cindyardelya.dev'),
-  title: 'Cindy Ardelya — Mobile & Fullstack Developer | Personal Portfolio',
+  title: 'Cindy Ardelya — Informatics Engineering Graduate | Web Developer',
   description:
-    'Official portfolio of Cindy Ardelya, Fresh Graduate from Politeknik Caltex Riau. Showcasing native Android (MindCare & By-Pro PTPN IV), fullstack web & GIS (Alumna Islamic School Pekanbaru & AgriSmart), and applied deep learning.',
+    'Official portfolio of Cindy Ardelya. Passionate about Technology, Graphic Design, and Digital Communication. Focusing on modern web applications, native Android solutions, and interactive digital experiences.',
   keywords: [
     'Cindy Ardelya',
     'Personal Portfolio',
+    'Informatics Engineering Graduate',
+    'Web Developer',
     'Politeknik Caltex Riau',
-    'Fresh Graduate Software Engineer',
-    'MindCare',
-    'By-Pro Sales Contract',
-    'PTPN IV Regional III',
-    'Alumna Islamic School Pekanbaru',
-    'AgriSmart GIS',
-    'Malaria CNN',
     'Android Kotlin Developer',
     'Laravel Fullstack',
+    'UI UX Design',
+    'Digital Communication',
   ],
   authors: [{ name: 'Cindy Ardelya' }],
   openGraph: {
-    title: 'Cindy Ardelya — Mobile & Fullstack Developer | Personal Portfolio',
+    title: 'Cindy Ardelya — Informatics Engineering Graduate | Web Developer',
     description:
-      'Personal creative portfolio of Cindy Ardelya, Fresh Graduate from Politeknik Caltex Riau. Showcasing MindCare, By-Pro PTPN IV, Alumna Islamic School Pekanbaru, AgriSmart GIS, and Malaria CNN Classifier.',
+      'Official portfolio of Cindy Ardelya. Passionate about Technology, Graphic Design, and Digital Communication. Focusing on modern web applications, native Android solutions, and interactive digital experiences.',
     url: 'https://cindyardelya.dev',
     siteName: 'Cindy Ardelya Portfolio',
     images: [
@@ -67,9 +64,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cindy Ardelya — Mobile & Fullstack Developer | Personal Portfolio',
+    title: 'Cindy Ardelya — Informatics Engineering Graduate | Web Developer',
     description:
-      'Personal creative portfolio of Cindy Ardelya. Showcasing MindCare, By-Pro, Alumna Islamic School Pekanbaru, AgriSmart, and Malaria CNN.',
+      'Official portfolio of Cindy Ardelya. Passionate about Technology, Graphic Design, and Digital Communication. Focusing on modern web applications, native Android solutions, and interactive digital experiences.',
     images: ['/images/mindcare.jpg'],
   },
 };
