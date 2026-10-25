@@ -3,24 +3,24 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #faf9fe;
-  --foreground: #18181b;
+  --background: #fafaf9;
+  --foreground: #1c1917;
   --card: #ffffff;
-  --card-foreground: #18181b;
-  --primary: #8b5cf6;
+  --card-foreground: #1c1917;
+  --primary: #6366f1;
   --primary-foreground: #ffffff;
-  --secondary: #f43f5e;
+  --secondary: #fb7185;
   --accent: #38bdf8;
 }
 
 .dark {
-  --background: #09090b;
+  --background: #111215;
   --foreground: #f4f4f5;
-  --card: #18181b;
+  --card: #18191e;
   --card-foreground: #f4f4f5;
-  --primary: #a855f7;
+  --primary: #818cf8;
   --primary-foreground: #ffffff;
-  --secondary: #fb7185;
+  --secondary: #f43f5e;
   --accent: #38bdf8;
 }
 
@@ -33,19 +33,19 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #faf9fe;
-  color: #18181b;
+  background-color: #fafaf9;
+  color: #1c1917;
 }
 
 html.dark {
-  background-color: #09090b;
+  background-color: #111215;
   color: #f4f4f5;
   color-scheme: dark;
 }
 
 body {
-  background-color: #faf9fe;
-  color: #18181b;
+  background-color: #fafaf9;
+  color: #1c1917;
   overflow-x: hidden;
   font-family: var(--font-jakarta), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -53,12 +53,12 @@ body {
 }
 
 html.dark body {
-  background-color: #09090b;
+  background-color: #111215;
   color: #f4f4f5;
 }
 
 ::selection {
-  background: #a855f7;
+  background: #6366f1;
   color: #ffffff;
 }
 
@@ -88,7 +88,7 @@ html.dark ::-webkit-scrollbar-thumb {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a855f7;
+  background: #6366f1;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -96,45 +96,45 @@ html.dark ::-webkit-scrollbar-thumb {
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: #f4f4f5;
 }
 
 html.dark .custom-scrollbar::-webkit-scrollbar-track {
-  background: #18181b;
+  background: #18191e;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #d8b4fe;
+  background: #c7d2fe;
   border-radius: 9999px;
 }
 
 html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #7c3aed;
+  background: #4f46e5;
 }
 
-/* Dribbble Mesh Gradient Glows */
+/* Atmospheric Ambient Lighting (Soft & Subtle) */
 .mesh-glow-1 {
-  background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.15), transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.08), transparent 70%);
 }
 
 html.dark .mesh-glow-1 {
-  background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.25), transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.12), transparent 70%);
 }
 
 .mesh-glow-2 {
-  background: radial-gradient(circle at 50% 50%, rgba(244, 63, 94, 0.12), transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(251, 113, 133, 0.06), transparent 70%);
 }
 
 html.dark .mesh-glow-2 {
-  background: radial-gradient(circle at 50% 50%, rgba(244, 63, 94, 0.18), transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(251, 113, 133, 0.09), transparent 70%);
 }
 
 .mesh-glow-3 {
-  background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.15), transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.06), transparent 70%);
 }
 
 html.dark .mesh-glow-3 {
-  background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.22), transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.1), transparent 70%);
 }
 
 /* Glassmorphism Card Style */

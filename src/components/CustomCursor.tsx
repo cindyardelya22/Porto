@@ -65,20 +65,20 @@ export default function CustomCursor() {
         }}
         className={`fixed flex items-center justify-center rounded-full transition-all duration-200 ${
           isExpanded
-            ? 'h-16 w-16 bg-gradient-to-tr from-violet-600 via-fuchsia-500 to-rose-400 text-white shadow-xl shadow-purple-500/30 border-2 border-white'
-            : 'h-6 w-6 bg-purple-500/10 border-2 border-purple-500/60'
+            ? 'h-16 w-16 bg-zinc-900/90 dark:bg-white/90 backdrop-blur-md text-white dark:text-zinc-900 shadow-xl border border-white/20 dark:border-zinc-800'
+            : 'h-5 w-5 bg-indigo-500/10 border border-indigo-500/40'
         }`}
       >
         {isExpanded ? (
           <motion.span
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-[10px] font-bold tracking-wider uppercase text-white"
+            className="text-[10px] font-bold tracking-wider uppercase text-white dark:text-zinc-900"
           >
             {cursorText || cursorMode}
           </motion.span>
         ) : (
-          <span className="h-1.5 w-1.5 rounded-full bg-purple-600 shadow-sm" />
+          <span className="h-1.5 w-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400 shadow-xs" />
         )}
       </motion.div>
     </div>

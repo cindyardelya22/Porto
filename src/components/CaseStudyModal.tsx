@@ -56,21 +56,26 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/60 dark:bg-black/80 backdrop-blur-md">
+      <div
+        data-lenis-prevent
+        className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/60 dark:bg-black/80 backdrop-blur-md"
+      >
         {/* Backdrop */}
         <div className="absolute inset-0" onClick={onClose} />
 
         <motion.div
+          data-lenis-prevent
           initial={{ opacity: 0, y: 30, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, scale: 0.96 }}
           transition={{ duration: 0.3 }}
-          className="relative w-full max-w-5xl max-h-[90vh] flex flex-col bg-white dark:bg-zinc-900 rounded-3xl shadow-2xl border border-purple-100 dark:border-zinc-800 z-10 overflow-hidden text-zinc-900 dark:text-zinc-100"
+          className="relative w-full max-w-5xl max-h-[90vh] flex flex-col bg-white dark:bg-zinc-900 rounded-3xl shadow-2xl border border-zinc-200/80 dark:border-zinc-800 z-10 overflow-hidden text-zinc-900 dark:text-zinc-100"
+          onWheel={(e) => e.stopPropagation()}
         >
           {/* Header Bar */}
-          <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800 px-5 sm:px-8 py-4 bg-white/95 dark:bg-zinc-900/95 sticky top-0 z-20 backdrop-blur-md">
+          <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800 px-5 sm:px-8 py-4 bg-white/95 dark:bg-zinc-900/95 sticky top-0 z-20 backdrop-blur-md shrink-0">
             <div className="flex items-center space-x-3">
-              <span className="text-xs font-bold px-3 py-1 bg-purple-100 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 rounded-full">
+              <span className="text-xs font-bold px-3 py-1 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200/50 dark:border-indigo-800/40 rounded-full">
                 {project.category}
               </span>
               <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400 hidden sm:inline-block">
@@ -88,7 +93,11 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
           </div>
 
           {/* Modal Scrollable Body */}
-          <div className="overflow-y-auto p-5 sm:p-8 lg:p-10 space-y-7 custom-scrollbar">
+          <div
+            data-lenis-prevent
+            onWheel={(e) => e.stopPropagation()}
+            className="overflow-y-auto overscroll-contain flex-1 p-5 sm:p-8 lg:p-10 space-y-7 custom-scrollbar"
+          >
             {/* Title & Actions */}
             <div className="space-y-4">
               <div className="space-y-1">
@@ -166,10 +175,10 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
             </div>
 
             {/* Project Highlights Strip */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 p-4 bg-purple-50/50 dark:bg-zinc-800/50 rounded-2xl border border-purple-100/70 dark:border-zinc-750">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 p-4 bg-zinc-50/80 dark:bg-zinc-800/40 rounded-2xl border border-zinc-200/70 dark:border-zinc-800">
               {project.stats.map((st, idx) => (
                 <div key={idx} className="space-y-0.5">
-                  <div className="text-base sm:text-lg font-extrabold text-purple-700 dark:text-purple-400">
+                  <div className="text-base sm:text-lg font-extrabold text-indigo-600 dark:text-indigo-400">
                     {st.value}
                   </div>
                   <div className="text-xs font-bold text-zinc-900 dark:text-zinc-100">
@@ -191,8 +200,8 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                 onClick={() => setActiveTab('overview')}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap ${
                   activeTab === 'overview'
-                    ? 'bg-purple-600 text-white shadow-sm shadow-purple-500/25'
-                    : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-purple-50 dark:hover:bg-purple-950/40 hover:text-purple-600 dark:hover:text-purple-300'
+                    ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 shadow-xs'
+                    : 'bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200/70 dark:hover:bg-zinc-700/80 hover:text-zinc-900 dark:hover:text-white'
                 }`}
               >
                 Overview
@@ -204,7 +213,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                   onClick={() => setActiveTab('documentation')}
                   className={`px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap flex items-center space-x-1.5 ${
                     activeTab === 'documentation'
-                      ? 'bg-emerald-600 text-white shadow-sm shadow-emerald-500/25'
+                      ? 'bg-emerald-600 text-white shadow-xs'
                       : 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/40'
                   }`}
                 >
@@ -218,8 +227,8 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                 onClick={() => setActiveTab('challenge')}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap ${
                   activeTab === 'challenge'
-                    ? 'bg-purple-600 text-white shadow-sm shadow-purple-500/25'
-                    : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-purple-50 dark:hover:bg-purple-950/40 hover:text-purple-600 dark:hover:text-purple-300'
+                    ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 shadow-xs'
+                    : 'bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200/70 dark:hover:bg-zinc-700/80 hover:text-zinc-900 dark:hover:text-white'
                 }`}
               >
                 The Challenge
@@ -229,8 +238,8 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                 onClick={() => setActiveTab('architecture')}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap ${
                   activeTab === 'architecture'
-                    ? 'bg-purple-600 text-white shadow-sm shadow-purple-500/25'
-                    : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-purple-50 dark:hover:bg-purple-950/40 hover:text-purple-600 dark:hover:text-purple-300'
+                    ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 shadow-xs'
+                    : 'bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200/70 dark:hover:bg-zinc-700/80 hover:text-zinc-900 dark:hover:text-white'
                 }`}
               >
                 Architecture & Stack
@@ -240,8 +249,8 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                 onClick={() => setActiveTab('flow')}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap ${
                   activeTab === 'flow'
-                    ? 'bg-purple-600 text-white shadow-sm shadow-purple-500/25'
-                    : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-purple-50 dark:hover:bg-purple-950/40 hover:text-purple-600 dark:hover:text-purple-300'
+                    ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 shadow-xs'
+                    : 'bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200/70 dark:hover:bg-zinc-700/80 hover:text-zinc-900 dark:hover:text-white'
                 }`}
               >
                 Workflow Steps
@@ -251,8 +260,8 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                 onClick={() => setActiveTab('results')}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap ${
                   activeTab === 'results'
-                    ? 'bg-purple-600 text-white shadow-sm shadow-purple-500/25'
-                    : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:bg-purple-50 dark:hover:bg-purple-950/40 hover:text-purple-600 dark:hover:text-purple-300'
+                    ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 shadow-xs'
+                    : 'bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-200/70 dark:hover:bg-zinc-700/80 hover:text-zinc-900 dark:hover:text-white'
                 }`}
               >
                 Verified Results
@@ -275,7 +284,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                       <ul className="space-y-2 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
                         {project.solution.architecturePoints.map((pt, i) => (
                           <li key={i} className="flex items-start space-x-2">
-                            <CheckCircle2 className="w-4 h-4 text-purple-600 dark:text-purple-400 mt-0.5 shrink-0" />
+                            <CheckCircle2 className="w-4 h-4 text-indigo-600 dark:text-indigo-400 mt-0.5 shrink-0" />
                             <span>{pt}</span>
                           </li>
                         ))}
@@ -377,7 +386,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                           key={idx}
                           className="bg-zinc-50 dark:bg-zinc-800/60 border border-zinc-100 dark:border-zinc-700/60 p-4 rounded-xl text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 flex items-start space-x-2.5"
                         >
-                          <span className="font-extrabold text-purple-600 dark:text-purple-400">{idx + 1}.</span>
+                          <span className="font-extrabold text-indigo-600 dark:text-indigo-400">{idx + 1}.</span>
                           <span>{item}</span>
                         </div>
                       ))}
@@ -394,13 +403,13 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {project.techStack.map((group, i) => (
                       <div key={i} className="bg-zinc-50 dark:bg-zinc-800/60 p-5 rounded-2xl border border-zinc-100 dark:border-zinc-700/60 space-y-2">
-                        <h4 className="text-xs font-bold text-purple-700 dark:text-purple-300 uppercase tracking-wider">
+                        <h4 className="text-xs font-bold text-indigo-700 dark:text-indigo-300 uppercase tracking-wider">
                           {group.category}
                         </h4>
                         <ul className="space-y-1 text-xs text-zinc-600 dark:text-zinc-400">
                           {group.items.map((it, idx) => (
                             <li key={idx} className="flex items-center space-x-2">
-                              <span className="h-1.5 w-1.5 rounded-full bg-purple-500 dark:bg-purple-400 inline-block" />
+                              <span className="h-1.5 w-1.5 rounded-full bg-indigo-500 dark:bg-indigo-400 inline-block" />
                               <span>{it}</span>
                             </li>
                           ))}
@@ -420,9 +429,9 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                     {project.userFlow.map((flow, i) => (
                       <div
                         key={i}
-                        className="bg-purple-50/50 dark:bg-purple-950/30 border border-purple-100 dark:border-purple-900/50 p-4 rounded-2xl space-y-2"
+                        className="bg-zinc-50 dark:bg-zinc-800/50 border border-zinc-200/70 dark:border-zinc-700/60 p-4 rounded-2xl space-y-2"
                       >
-                        <span className="text-xl font-extrabold text-purple-600 dark:text-purple-400 block">
+                        <span className="text-xl font-extrabold text-indigo-600 dark:text-indigo-400 block">
                           {flow.step}
                         </span>
                         <h5 className="font-bold text-sm text-zinc-900 dark:text-white">{flow.title}</h5>

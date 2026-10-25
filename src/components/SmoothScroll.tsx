@@ -21,6 +21,7 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
       smoothWheel: true,
       wheelMultiplier: 0.95,
       touchMultiplier: 1.5,
+      allowNestedScroll: true,
     });
 
     lenisRef.current = lenis;

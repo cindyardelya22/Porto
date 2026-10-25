@@ -18,9 +18,7 @@ import { GithubIcon, LinkedinIcon } from '@/components/Icons';
 export default function ContactFooter() {
   const { setCursor, resetCursor } = useCursor();
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [copiedPhone, setCopiedPhone] = useState(false);
   const email = 'cindyardelya@gmail.com';
-  const phone = '+6285119007433';
 
   // Magnetic Button Spring Logic
   const buttonRef = useRef<HTMLAnchorElement>(null);
@@ -56,10 +54,10 @@ export default function ContactFooter() {
       setCopiedEmail(true);
 
       confetti({
-        particleCount: 50,
-        spread: 70,
+        particleCount: 40,
+        spread: 60,
         origin: { y: 0.8 },
-        colors: ['#a855f7', '#ec4899', '#38bdf8', '#fbbf24', '#34d399', '#f43f5e'],
+        colors: ['#6366f1', '#818cf8', '#38bdf8', '#34d399', '#fb7185'],
         disableForReducedMotion: true,
       });
 
@@ -70,17 +68,6 @@ export default function ContactFooter() {
     }
   };
 
-  const handleCopyPhone = async () => {
-    try {
-      await navigator.clipboard.writeText(phone);
-      setCopiedPhone(true);
-      setTimeout(() => setCopiedPhone(false), 2500);
-    } catch {
-      setCopiedPhone(true);
-      setTimeout(() => setCopiedPhone(false), 2500);
-    }
-  };
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -88,25 +75,25 @@ export default function ContactFooter() {
   return (
     <footer id="contact" className="py-16 sm:py-20 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
-        {/* Vibrant Gradient Banner Card */}
-        <div className="relative rounded-[2rem] sm:rounded-[2.5rem] bg-gradient-to-tr from-violet-600 via-purple-600 to-fuchsia-500 text-white p-7 sm:p-12 lg:p-14 shadow-2xl shadow-purple-500/25 overflow-hidden">
-          {/* Subtle decorative circles */}
-          <div className="absolute -top-12 -right-12 w-64 h-64 rounded-full bg-white/10 blur-2xl pointer-events-none" />
-          <div className="absolute -bottom-12 -left-12 w-64 h-64 rounded-full bg-fuchsia-400/20 blur-2xl pointer-events-none" />
+        {/* Soft, Refined Editorial Banner Card */}
+        <div className="relative rounded-[2rem] sm:rounded-[2.5rem] bg-gradient-to-br from-zinc-900 via-zinc-900 to-zinc-950 dark:from-zinc-900 dark:via-zinc-900 dark:to-black text-white p-7 sm:p-12 lg:p-14 border border-zinc-800 shadow-2xl overflow-hidden">
+          {/* Subtle ambient lighting */}
+          <div className="absolute -top-12 -right-12 w-64 h-64 rounded-full bg-indigo-500/10 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-12 -left-12 w-64 h-64 rounded-full bg-zinc-500/10 blur-3xl pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
-              <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-zinc-200 text-xs font-bold uppercase tracking-wider border border-white/10">
                 <Sparkles className="w-3.5 h-3.5 text-amber-300" />
                 <span>Open for Opportunities & Projects</span>
               </div>
 
               <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12]">
                 Ready to collaborate? <br />
-                <span className="text-purple-200">Let&apos;s build something meaningful ✨</span>
+                <span className="text-zinc-300">Let&apos;s build something meaningful ✨</span>
               </h2>
 
-              <p className="text-xs sm:text-base text-purple-100 font-normal max-w-xl leading-relaxed">
+              <p className="text-xs sm:text-base text-zinc-400 font-normal max-w-xl leading-relaxed">
                 Whether discussing mobile engineering in Kotlin, fullstack systems in Laravel, or exciting career opportunities, I&apos;m always excited to connect!
               </p>
             </div>
@@ -122,7 +109,7 @@ export default function ContactFooter() {
                 onMouseMove={handleMagneticMove}
                 onMouseLeave={handleMagneticLeave}
                 onMouseEnter={() => setCursor('link', 'CONNECT')}
-                className="inline-flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 lg:h-36 lg:w-36 rounded-full bg-white text-purple-700 font-extrabold text-xs uppercase tracking-wider shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all group shrink-0"
+                className="inline-flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 lg:h-36 lg:w-36 rounded-full bg-white text-zinc-950 font-extrabold text-xs uppercase tracking-wider shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all group shrink-0"
               >
                 <div className="flex flex-col items-center space-y-1">
                   <span>Say Hello</span>
@@ -133,8 +120,8 @@ export default function ContactFooter() {
           </div>
         </div>
 
-        {/* Copy Email & Phone + Direct Reach Bar */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 bg-white dark:bg-zinc-900 p-6 sm:p-8 rounded-3xl border border-purple-100/80 dark:border-zinc-800 shadow-xs">
+        {/* Copy Email + Direct Reach Bar */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 bg-white dark:bg-zinc-900 p-6 sm:p-8 rounded-3xl border border-zinc-200/80 dark:border-zinc-800 shadow-xs">
           <div className="space-y-3 text-center lg:text-left w-full lg:w-auto">
             <span className="text-xs font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider block">
               Direct Contact & Information
@@ -150,7 +137,7 @@ export default function ContactFooter() {
                   onClick={handleCopyEmail}
                   onMouseEnter={() => setCursor('copy', 'COPY')}
                   onMouseLeave={resetCursor}
-                  className="inline-flex items-center space-x-1 bg-purple-50 dark:bg-purple-950/60 hover:bg-purple-100 dark:hover:bg-purple-900/60 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-bold transition-all active:scale-95 border border-purple-200/50 dark:border-purple-800/40"
+                  className="inline-flex items-center space-x-1 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all active:scale-95 border border-zinc-200 dark:border-zinc-700"
                 >
                   {copiedEmail ? (
                     <>
@@ -160,36 +147,7 @@ export default function ContactFooter() {
                   ) : (
                     <>
                       <Copy className="w-3.5 h-3.5" />
-                      <span>Copy</span>
-                    </>
-                  )}
-                </button>
-              </div>
-
-              {/* Phone / WhatsApp Button */}
-              <div className="flex items-center gap-2">
-                <a
-                  href="https://wa.me/6285119007433"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs sm:text-sm md:text-base font-bold text-zinc-600 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
-                >
-                  {phone}
-                </a>
-                <button
-                  type="button"
-                  onClick={handleCopyPhone}
-                  className="inline-flex items-center space-x-1 bg-emerald-50 dark:bg-emerald-950/60 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 px-3 py-1 rounded-full text-xs font-bold transition-all active:scale-95 border border-emerald-200/50 dark:border-emerald-800/40"
-                >
-                  {copiedPhone ? (
-                    <>
-                      <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                      <span>Copied!</span>
-                    </>
-                  ) : (
-                    <>
-                      <Phone className="w-3.5 h-3.5" />
-                      <span>Call/WA</span>
+                      <span>Copy Email</span>
                     </>
                   )}
                 </button>
@@ -203,7 +161,7 @@ export default function ContactFooter() {
               href="https://github.com/cindyardelya22"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-zinc-50 dark:bg-zinc-800 hover:bg-purple-50 dark:hover:bg-purple-950/60 hover:text-purple-700 dark:hover:text-purple-300 text-zinc-700 dark:text-zinc-200 px-4 py-2 rounded-full text-xs font-bold transition-colors border border-zinc-200/70 dark:border-zinc-700"
+              className="flex items-center space-x-2 bg-zinc-50 dark:bg-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-white text-zinc-700 dark:text-zinc-200 px-4 py-2 rounded-full text-xs font-bold transition-colors border border-zinc-200/70 dark:border-zinc-700"
             >
               <GithubIcon className="w-3.5 h-3.5" />
               <span>GitHub</span>
@@ -212,14 +170,14 @@ export default function ContactFooter() {
               href="https://www.linkedin.com/in/cindy-ardelya/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-zinc-50 dark:bg-zinc-800 hover:bg-purple-50 dark:hover:bg-purple-950/60 hover:text-purple-700 dark:hover:text-purple-300 text-zinc-700 dark:text-zinc-200 px-4 py-2 rounded-full text-xs font-bold transition-colors border border-zinc-200/70 dark:border-zinc-700"
+              className="flex items-center space-x-2 bg-zinc-50 dark:bg-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-white text-zinc-700 dark:text-zinc-200 px-4 py-2 rounded-full text-xs font-bold transition-colors border border-zinc-200/70 dark:border-zinc-700"
             >
               <LinkedinIcon className="w-3.5 h-3.5" />
               <span>LinkedIn</span>
             </a>
             <a
               href={`mailto:${email}`}
-              className="flex items-center space-x-2 bg-zinc-50 dark:bg-zinc-800 hover:bg-purple-50 dark:hover:bg-purple-950/60 hover:text-purple-700 dark:hover:text-purple-300 text-zinc-700 dark:text-zinc-200 px-4 py-2 rounded-full text-xs font-bold transition-colors border border-zinc-200/70 dark:border-zinc-700"
+              className="flex items-center space-x-2 bg-zinc-50 dark:bg-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-white text-zinc-700 dark:text-zinc-200 px-4 py-2 rounded-full text-xs font-bold transition-colors border border-zinc-200/70 dark:border-zinc-700"
             >
               <Mail className="w-3.5 h-3.5" />
               <span>Email</span>
@@ -238,7 +196,7 @@ export default function ContactFooter() {
           <button
             type="button"
             onClick={scrollToTop}
-            className="flex items-center space-x-1.5 text-zinc-600 dark:text-zinc-400 hover:text-purple-600 dark:hover:text-purple-400 font-bold transition-colors"
+            className="flex items-center space-x-1.5 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white font-bold transition-colors"
           >
             <span>Back to top</span>
             <ChevronUp className="w-4 h-4" />

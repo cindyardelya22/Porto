@@ -21,8 +21,8 @@ const geistMono = Geist_Mono({
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#FAF9FE' },
-    { media: '(prefers-color-scheme: dark)', color: '#09090B' },
+    { media: '(prefers-color-scheme: light)', color: '#fafaf9' },
+    { media: '(prefers-color-scheme: dark)', color: '#111215' },
   ],
   width: 'device-width',
   initialScale: 1,
@@ -98,7 +98,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen bg-[#faf9fe] dark:bg-[#09090b] text-zinc-900 dark:text-zinc-100 font-sans antialiased selection:bg-purple-500 selection:text-white transition-colors duration-300">
+      <body className="min-h-screen bg-[#fafaf9] dark:bg-[#111215] text-zinc-900 dark:text-zinc-100 font-sans antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-300">
         <ThemeProvider>
           <CursorProvider>
             <CustomCursor />

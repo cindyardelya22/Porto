@@ -16,51 +16,51 @@ interface FeaturedProjectsProps {
 export default function FeaturedProjects({ projects, onSelectProject }: FeaturedProjectsProps) {
   const { setCursor, resetCursor } = useCursor();
 
-  // Distinct color palettes for all 5 portfolio projects (adaptable to light & dark modes)
+  // Distinct color palettes for all 5 portfolio projects (soft, elegant, non-AI-like)
   const projectStyles = [
     {
       // 1. MindCare
       cardBg:
-        'bg-gradient-to-br from-purple-50/90 via-indigo-50/70 to-pink-50/80 dark:from-purple-950/40 dark:via-zinc-900/90 dark:to-zinc-900/95 border-purple-200/70 dark:border-purple-800/40 shadow-purple-500/5 dark:shadow-black/50',
+        'bg-white dark:bg-zinc-900/90 border-zinc-200/80 dark:border-zinc-800 shadow-md shadow-black/[0.02] dark:shadow-black/50',
       badgeBg:
-        'bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800/60',
-      pillColor: 'bg-purple-600 text-white shadow-purple-500/25',
-      accentColor: 'text-purple-600 dark:text-purple-400',
+        'bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border-indigo-200/60 dark:border-indigo-800/50',
+      pillColor: 'bg-indigo-600 text-white shadow-xs',
+      accentColor: 'text-indigo-600 dark:text-indigo-400',
     },
     {
       // 2. By-Pro Sales Contract (PTPN IV)
       cardBg:
-        'bg-gradient-to-br from-emerald-50/90 via-teal-50/70 to-green-50/80 dark:from-emerald-950/40 dark:via-zinc-900/90 dark:to-zinc-900/95 border-emerald-200/70 dark:border-emerald-800/40 shadow-emerald-500/5 dark:shadow-black/50',
+        'bg-white dark:bg-zinc-900/90 border-zinc-200/80 dark:border-zinc-800 shadow-md shadow-black/[0.02] dark:shadow-black/50',
       badgeBg:
-        'bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/60',
-      pillColor: 'bg-emerald-600 text-white shadow-emerald-500/25',
+        'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-200/60 dark:border-emerald-800/50',
+      pillColor: 'bg-emerald-600 text-white shadow-xs',
       accentColor: 'text-emerald-600 dark:text-emerald-400',
     },
     {
       // 3. Alumna Islamic School Pekanbaru (Final Project)
       cardBg:
-        'bg-gradient-to-br from-amber-50/90 via-orange-50/70 to-yellow-50/80 dark:from-amber-950/40 dark:via-zinc-900/90 dark:to-zinc-900/95 border-amber-200/70 dark:border-amber-800/40 shadow-amber-500/5 dark:shadow-black/50',
+        'bg-white dark:bg-zinc-900/90 border-zinc-200/80 dark:border-zinc-800 shadow-md shadow-black/[0.02] dark:shadow-black/50',
       badgeBg:
-        'bg-amber-100 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800/60',
-      pillColor: 'bg-amber-600 text-white shadow-amber-500/25',
+        'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border-amber-200/60 dark:border-amber-800/50',
+      pillColor: 'bg-amber-600 text-white shadow-xs',
       accentColor: 'text-amber-600 dark:text-amber-400',
     },
     {
       // 4. AgriSmart GIS & Gemini AI (PTPN IV)
       cardBg:
-        'bg-gradient-to-br from-teal-50/90 via-cyan-50/70 to-sky-50/80 dark:from-teal-950/40 dark:via-zinc-900/90 dark:to-zinc-900/95 border-teal-200/70 dark:border-teal-800/40 shadow-teal-500/5 dark:shadow-black/50',
+        'bg-white dark:bg-zinc-900/90 border-zinc-200/80 dark:border-zinc-800 shadow-md shadow-black/[0.02] dark:shadow-black/50',
       badgeBg:
-        'bg-teal-100 dark:bg-teal-950/80 text-teal-700 dark:text-teal-300 border-teal-200 dark:border-teal-800/60',
-      pillColor: 'bg-teal-600 text-white shadow-teal-500/25',
+        'bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border-teal-200/60 dark:border-teal-800/50',
+      pillColor: 'bg-teal-600 text-white shadow-xs',
       accentColor: 'text-teal-600 dark:text-teal-400',
     },
     {
       // 5. Malaria Cell CNN Classifier
       cardBg:
-        'bg-gradient-to-br from-rose-50/90 via-pink-50/70 to-fuchsia-50/80 dark:from-rose-950/40 dark:via-zinc-900/90 dark:to-zinc-900/95 border-rose-200/70 dark:border-rose-800/40 shadow-rose-500/5 dark:shadow-black/50',
+        'bg-white dark:bg-zinc-900/90 border-zinc-200/80 dark:border-zinc-800 shadow-md shadow-black/[0.02] dark:shadow-black/50',
       badgeBg:
-        'bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-800/60',
-      pillColor: 'bg-rose-600 text-white shadow-rose-500/25',
+        'bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border-rose-200/60 dark:border-rose-800/50',
+      pillColor: 'bg-rose-600 text-white shadow-xs',
       accentColor: 'text-rose-600 dark:text-rose-400',
     },
   ];
@@ -79,8 +79,8 @@ export default function FeaturedProjects({ projects, onSelectProject }: Featured
       <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-3">
-          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-purple-100/80 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 text-xs font-bold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-purple-500 dark:text-purple-400" />
+          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-bold uppercase tracking-wider border border-zinc-200/60 dark:border-zinc-700">
+            <Sparkles className="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400" />
             <span>Featured Works & Case Studies</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
@@ -117,7 +117,7 @@ export default function FeaturedProjects({ projects, onSelectProject }: Featured
                       >
                         {project.category}
                       </span>
-                      <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-white/90 dark:bg-zinc-800/90 border border-zinc-200/80 dark:border-zinc-700 text-purple-700 dark:text-purple-300 shadow-2xs">
+                      <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-white/90 dark:bg-zinc-800/90 border border-zinc-200/80 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 shadow-2xs">
                         ⏱ {project.timeline}
                       </span>
                       <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
@@ -126,7 +126,7 @@ export default function FeaturedProjects({ projects, onSelectProject }: Featured
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                         {project.title}
                       </h3>
                       <p className="text-sm sm:text-base text-zinc-700 dark:text-zinc-200 font-medium">
@@ -184,7 +184,7 @@ export default function FeaturedProjects({ projects, onSelectProject }: Featured
                         <button
                           type="button"
                           onClick={(e) => handleExternalPreview(e, project.primaryLink.url, project)}
-                          className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-full text-xs font-bold bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 border border-zinc-300 dark:border-zinc-700 shadow-xs hover:shadow-md hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-300 transition-all"
+                          className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-full text-xs font-bold bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 border border-zinc-300 dark:border-zinc-700 shadow-xs hover:shadow-md hover:border-indigo-400 dark:hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-300 transition-all"
                         >
                           {project.primaryLink.type === 'figma' && <FigmaIcon className="w-3.5 h-3.5" />}
                           {project.primaryLink.type === 'canva' && <CanvaIcon className="w-3.5 h-3.5" />}
@@ -194,8 +194,8 @@ export default function FeaturedProjects({ projects, onSelectProject }: Featured
                         </button>
                       )}
 
-                      <div className="inline-flex items-center space-x-1 text-xs font-bold text-zinc-700 dark:text-zinc-300 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                        <span className="underline underline-offset-4 decoration-purple-300 dark:decoration-purple-600 group-hover:decoration-purple-600">
+                      <div className="inline-flex items-center space-x-1 text-xs font-bold text-zinc-700 dark:text-zinc-300 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                        <span className="underline underline-offset-4 decoration-zinc-300 dark:decoration-zinc-700 group-hover:decoration-indigo-600 dark:group-hover:decoration-indigo-400">
                           Explore Case Study
                         </span>
                         <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

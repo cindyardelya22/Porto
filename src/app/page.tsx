@@ -24,12 +24,15 @@ export default function Home() {
   };
 
   return (
-    <main className="relative min-h-screen bg-[#faf9fe] dark:bg-[#09090b] text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+    <main className="relative min-h-screen bg-[#fafaf9] dark:bg-[#111215] text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
       {/* Navigation */}
       <Navbar />
 
       {/* Hero Section */}
       <Hero />
+
+      {/* About & Technical Capabilities Matrix + Timeline */}
+      <AboutSection />
 
       {/* Featured Works (Sticky Stacking Narrative Showcase) */}
       <FeaturedProjects
@@ -43,9 +46,6 @@ export default function Home() {
         projects={featuredProjects}
         onSelectProject={handleOpenCaseStudy}
       />
-
-      {/* About & Technical Capabilities Matrix + Timeline */}
-      <AboutSection />
 
       {/* Interactive Footer & Contact (Magnetic CTA & Confetti Email Copy) */}
       <ContactFooter />

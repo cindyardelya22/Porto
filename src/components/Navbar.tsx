@@ -28,8 +28,8 @@ export default function Navbar() {
       <div
         className={`max-w-6xl mx-auto flex items-center justify-between px-3 sm:px-5 py-2.5 sm:py-3 transition-all duration-300 rounded-full ${
           isScrolled
-            ? 'bg-white/90 dark:bg-zinc-900/90 backdrop-blur-xl shadow-lg shadow-purple-500/5 dark:shadow-black/40 border border-purple-100/90 dark:border-zinc-800'
-            : 'bg-white/75 dark:bg-zinc-900/75 backdrop-blur-md border border-purple-100/60 dark:border-zinc-800/80 shadow-xs'
+            ? 'bg-white/90 dark:bg-zinc-900/90 backdrop-blur-xl shadow-md shadow-black/[0.04] dark:shadow-black/40 border border-zinc-200/80 dark:border-zinc-800'
+            : 'bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border border-zinc-200/60 dark:border-zinc-800/80 shadow-xs'
         }`}
       >
         {/* Brand / Logo */}
@@ -39,7 +39,7 @@ export default function Navbar() {
           onMouseEnter={() => setCursor('default')}
           onMouseLeave={resetCursor}
         >
-          <div className="h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-gradient-to-tr from-violet-600 via-fuchsia-500 to-rose-400 p-[2px] shadow-md shadow-purple-500/20 group-hover:scale-105 transition-transform duration-300">
+          <div className="h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-gradient-to-tr from-zinc-200 via-indigo-200 to-zinc-300 dark:from-zinc-700 dark:via-indigo-900/40 dark:to-zinc-700 p-[2px] shadow-sm group-hover:scale-105 transition-transform duration-300">
             <div className="relative h-full w-full rounded-full overflow-hidden bg-white dark:bg-zinc-800 shadow-inner">
               <Image
                 src="/images/profile.jpg"
@@ -52,7 +52,7 @@ export default function Navbar() {
             </div>
           </div>
           <div>
-            <div className="font-extrabold text-xs sm:text-sm tracking-tight text-zinc-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors flex items-center gap-1">
+            <div className="font-extrabold text-xs sm:text-sm tracking-tight text-zinc-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors flex items-center gap-1">
               <span>Cindy Ardelya</span>
               <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             </div>
@@ -76,8 +76,16 @@ export default function Navbar() {
         {/* Nav Links & Controls */}
         <nav className="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm font-semibold">
           <a
+            href="#about"
+            className="px-2.5 sm:px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-all text-xs sm:text-sm"
+            onMouseEnter={() => setCursor('explore')}
+            onMouseLeave={resetCursor}
+          >
+            About
+          </a>
+          <a
             href="#featured"
-            className="px-2.5 sm:px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-zinc-800/80 rounded-full transition-all text-xs sm:text-sm"
+            className="px-2.5 sm:px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-all text-xs sm:text-sm"
             onMouseEnter={() => setCursor('explore')}
             onMouseLeave={resetCursor}
           >
@@ -85,23 +93,15 @@ export default function Navbar() {
           </a>
           <a
             href="#archive"
-            className="hidden sm:inline-block px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-zinc-800/80 rounded-full transition-all text-xs sm:text-sm"
+            className="hidden sm:inline-block px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-all text-xs sm:text-sm"
             onMouseEnter={() => setCursor('explore')}
             onMouseLeave={resetCursor}
           >
             Gallery
           </a>
           <a
-            href="#about"
-            className="hidden md:inline-block px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-zinc-800/80 rounded-full transition-all text-xs sm:text-sm"
-            onMouseEnter={() => setCursor('explore')}
-            onMouseLeave={resetCursor}
-          >
-            About
-          </a>
-          <a
             href="#experience"
-            className="hidden lg:inline-block px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-zinc-800/80 rounded-full transition-all text-xs sm:text-sm"
+            className="hidden lg:inline-block px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-all text-xs sm:text-sm"
             onMouseEnter={() => setCursor('explore')}
             onMouseLeave={resetCursor}
           >
@@ -114,7 +114,7 @@ export default function Navbar() {
             onClick={toggleTheme}
             aria-label={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
             title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-            className="p-2 rounded-full border transition-all duration-300 text-zinc-700 dark:text-amber-300 bg-purple-50/80 dark:bg-zinc-800/90 border-purple-200/60 dark:border-zinc-700/80 hover:bg-purple-100 dark:hover:bg-zinc-700 hover:scale-105 active:scale-95 shadow-2xs"
+            className="p-2 rounded-full border transition-all duration-300 text-zinc-700 dark:text-amber-300 bg-zinc-100 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 hover:bg-zinc-200/70 dark:hover:bg-zinc-700 hover:scale-105 active:scale-95 shadow-2xs"
             onMouseEnter={() => setCursor('link')}
             onMouseLeave={resetCursor}
           >
@@ -122,7 +122,7 @@ export default function Navbar() {
               theme === 'dark' ? (
                 <Sun className="w-4 h-4 text-amber-400 animate-in spin-in-90 duration-300" />
               ) : (
-                <Moon className="w-4 h-4 text-purple-600 animate-in spin-in-90 duration-300" />
+                <Moon className="w-4 h-4 text-zinc-700 animate-in spin-in-90 duration-300" />
               )
             ) : (
               <span className="w-4 h-4 block" />
@@ -132,7 +132,7 @@ export default function Navbar() {
           {/* Connect CTA Button */}
           <a
             href="#contact"
-            className="inline-flex items-center space-x-1 sm:space-x-1.5 bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 font-bold text-xs rounded-full shadow-md shadow-purple-500/20 hover:shadow-lg hover:shadow-purple-500/35 hover:scale-105 active:scale-95 transition-all shrink-0"
+            className="inline-flex items-center space-x-1 sm:space-x-1.5 bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-zinc-900 px-3.5 sm:px-4 py-1.5 sm:py-2 font-bold text-xs rounded-full shadow-xs hover:shadow-md transition-all shrink-0"
             onMouseEnter={() => setCursor('link')}
             onMouseLeave={resetCursor}
           >
