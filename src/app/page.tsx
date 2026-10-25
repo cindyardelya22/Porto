@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import FeaturedProjects from '@/components/FeaturedProjects';
+import ExperienceSection from '@/components/ExperienceSection';
 import WorksArchive from '@/components/WorksArchive';
 import AboutSection from '@/components/AboutSection';
 import ContactFooter from '@/components/ContactFooter';
@@ -31,14 +32,17 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
 
-      {/* About & Technical Capabilities Matrix + Timeline */}
+      {/* About & Technical Capabilities Matrix */}
       <AboutSection />
 
-      {/* Featured Works (Sticky Stacking Narrative Showcase) */}
+      {/* Featured Works (5 Core Projects Narrative Showcase) */}
       <FeaturedProjects
         projects={featuredProjects}
         onSelectProject={handleOpenCaseStudy}
       />
+
+      {/* Career Milestones & Experience Documentation (Internship Slideshow + Timeline) */}
+      <ExperienceSection />
 
       {/* Signal-A Style Works Archive Table with Floating Pointer Thumbnail */}
       <WorksArchive
