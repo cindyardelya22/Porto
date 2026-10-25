@@ -10,7 +10,7 @@ export const featuredProjects: CaseStudy[] = [
     year: '2025',
     client: 'Individual Academic Project (UAS) • Politeknik Caltex Riau',
     role: 'Fullstack Mobile Developer & UI/UX Designer',
-    timeline: '3 Months (Figma Design to Native Implementation)',
+    timeline: '1 Month',
     status: 'Featured',
     summary:
       'Native Android application developed with Kotlin featuring a conversational chatbot assessment that analyzes psychological responses, provides mood tracking insights, and delivers tailored mental wellness exercises.',
@@ -113,7 +113,7 @@ export const featuredProjects: CaseStudy[] = [
     year: '2026',
     client: 'PT Perkebunan Nusantara (PTPN) IV Regional III (MBKM)',
     role: 'Fullstack Mobile Developer & Workflow Architect',
-    timeline: '6 Months (Corporate MBKM Program)',
+    timeline: '2 Months',
     status: 'Featured',
     summary:
       'Enterprise mobile application built with Kotlin for Android to digitize the drafting, multi-tier approval, Delivery Order (DO) tracking, and legally compliant digital signing of agricultural commodity sales contracts.',
@@ -128,7 +128,7 @@ export const featuredProjects: CaseStudy[] = [
     primaryLink: {
       type: 'pdf',
       label: 'Open Application SOP (PDF)',
-      url: '#guide-bypro',
+      url: '/docs/sop-bypro-sales-contract.pdf',
     },
     secondaryLink: {
       type: 'canva',
@@ -214,6 +214,7 @@ export const featuredProjects: CaseStudy[] = [
     documentationDetails: {
       title: 'Sales Contract Application Manual - PTPN IV Regional III',
       documentType: 'PDF Standard Operating Procedure (13 Pages)',
+      pdfUrl: '/docs/sop-bypro-sales-contract.pdf',
       sections: [
         {
           heading: '1. Secure Authentication Portal',
@@ -255,7 +256,7 @@ export const featuredProjects: CaseStudy[] = [
     year: '2025',
     client: 'Alumna Islamic School Pekanbaru',
     role: 'Fullstack Web Developer & System Designer (Individual Project)',
-    timeline: '6 Months (Undergraduate Final Thesis / TA)',
+    timeline: '4 - 5 Months',
     status: 'Featured',
     summary:
       'Web-based child development monitoring system developed with Laravel and MySQL to help educators and parents track cognitive, motoric, and Islamic character growth through standardized assessments and visual growth charts.',
@@ -358,7 +359,7 @@ export const featuredProjects: CaseStudy[] = [
     year: '2026',
     client: 'PT Perkebunan Nusantara (PTPN) IV Regional III (MBKM)',
     role: 'Frontend Developer & UI/UX Specialist',
-    timeline: '6 Months (Corporate MBKM Program)',
+    timeline: '2 Months',
     status: 'Featured',
     summary:
       'Web-based Geographic Information System (GIS) developed with Laravel Livewire integrating interactive satellite mapping of plantation blocks, soil nutrient evaluation (N, P, K, pH), and a Gemini-powered AI conversational assistant.',
@@ -373,7 +374,7 @@ export const featuredProjects: CaseStudy[] = [
     primaryLink: {
       type: 'pdf',
       label: 'Open AgriSmart SOP Manual (PDF)',
-      url: '#guide-agrismart',
+      url: '/docs/sop-agrismart-gis.pdf',
     },
     secondaryLink: {
       type: 'github',
@@ -459,6 +460,7 @@ export const featuredProjects: CaseStudy[] = [
     documentationDetails: {
       title: 'AgriSmart System Operations Manual - PTPN IV Regional III (2026)',
       documentType: 'PDF Manual & Technical Architecture (16 Pages)',
+      pdfUrl: '/docs/sop-agrismart-gis.pdf',
       sections: [
         {
           heading: 'Chapter I: System Setup & Deployment Guide',
@@ -495,7 +497,7 @@ export const featuredProjects: CaseStudy[] = [
     year: '2025',
     client: 'Machine Learning Academic Research Project • Politeknik Caltex Riau',
     role: 'Machine Learning Engineer',
-    timeline: '4 Months (Dataset Research & Model Training)',
+    timeline: '2 Months',
     status: 'Featured',
     summary:
       'Computer vision medical diagnostic system utilizing Convolutional Neural Networks (CNN) to automatically analyze microscopic blood smear images and classify malaria-parasitized cells versus uninfected cells.',

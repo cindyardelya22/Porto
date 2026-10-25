@@ -54,6 +54,7 @@ export interface CaseStudy {
   documentationDetails?: {
     title: string;
     documentType: string;
+    pdfUrl?: string;
     sections: {
       heading: string;
       description: string;
@@ -69,6 +70,7 @@ export interface ArchiveItem {
   role: string;
   platform: string;
   category: string;
+  duration?: string;
   tags: string[];
   image: string;
   link?: string;

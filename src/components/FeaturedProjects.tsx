@@ -117,6 +117,9 @@ export default function FeaturedProjects({ projects, onSelectProject }: Featured
                       >
                         {project.category}
                       </span>
+                      <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-white/90 dark:bg-zinc-800/90 border border-zinc-200/80 dark:border-zinc-700 text-purple-700 dark:text-purple-300 shadow-2xs">
+                        ⏱ {project.timeline}
+                      </span>
                       <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
                         {project.client} • {project.year}
                       </span>

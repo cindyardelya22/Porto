@@ -161,7 +161,7 @@ export default function WorksArchive({ archive, projects, onSelectProject }: Wor
                 {/* Hover Quick Overlay */}
                 <div className="absolute inset-0 bg-purple-950/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <span className="bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white font-bold text-xs px-4 py-2 rounded-full shadow-lg flex items-center space-x-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform border border-transparent dark:border-zinc-700">
-                    <span>View Case Study</span>
+                    <span>{item.caseStudyId ? 'View Case Study' : item.linkLabel || 'Open Preview'}</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
@@ -170,8 +170,15 @@ export default function WorksArchive({ archive, projects, onSelectProject }: Wor
               {/* Card Meta Content */}
               <div className="p-5 space-y-3">
                 <div className="flex items-center justify-between text-xs text-zinc-400 dark:text-zinc-500 font-medium">
-                  <span>{item.client}</span>
-                  <span>{item.year}</span>
+                  <span className="truncate pr-2">{item.client}</span>
+                  <div className="flex items-center space-x-2 shrink-0">
+                    {item.duration && (
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-100 dark:border-purple-800/40">
+                        ⏱ {item.duration}
+                      </span>
+                    )}
+                    <span>{item.year}</span>
+                  </div>
                 </div>
 
                 <div className="space-y-1">

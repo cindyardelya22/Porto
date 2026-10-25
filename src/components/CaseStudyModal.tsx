@@ -312,8 +312,22 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                       </h3>
                     </div>
                     <p className="text-xs sm:text-sm text-emerald-700 dark:text-emerald-300 font-medium">
-                      Dokumen Resmi: {project.documentationDetails.documentType}
+                      Official Document: {project.documentationDetails.documentType}
                     </p>
+                    {project.documentationDetails.pdfUrl && (
+                      <div className="pt-2">
+                        <a
+                          href={project.documentationDetails.pdfUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm px-5 py-2 rounded-full shadow-md shadow-emerald-600/20 hover:scale-102 transition-all"
+                        >
+                          <FileText className="w-4 h-4" />
+                          <span>Open Full PDF in New Tab</span>
+                          <ArrowUpRight className="w-4 h-4" />
+                        </a>
+                      </div>
+                    )}
                   </div>
 
                   <div className="space-y-4">

@@ -87,4 +87,19 @@ export const experienceTimeline: ExperienceItem[] = [
     ],
     skills: ['Kotlin', 'Android', 'Python', 'TensorFlow / Keras', 'CNN', 'Deep Learning', 'Figma'],
   },
+  {
+    period: '2024 (2 Months)',
+    role: 'Fullstack Web Developer & IT Support (Internship)',
+    company: 'PT Perkebunan Nusantara (PTPN) IV Regional III',
+    location: 'Pekanbaru, Riau, Indonesia',
+    type: 'Industrial Internship (Kerja Praktik)',
+    description:
+      'Engineered internal enterprise web solutions including the "Akomodasi Dinas Online" room and official duty reservation system, while providing IT hardware provisioning and hybrid event technical operations.',
+    highlights: [
+      'Developed and deployed the "Akomodasi Dinas Online" web system with Laravel and MySQL for managing corporate duty travel accommodations.',
+      'Provisioned and staged corporate Dell laptops, partitioned OS disks via PowerShell, and supported corporate network infrastructure.',
+      'Operated audiovisual telemetry and presentation controllers for executive boardroom meetings and corporate townhalls.',
+    ],
+    skills: ['Laravel', 'PHP', 'MySQL', 'IT Support', 'PowerShell', 'Network Diagnostics', 'AV Operations'],
+  },
 ];
