@@ -320,10 +320,14 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                           href={project.documentationDetails.pdfUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm px-5 py-2 rounded-full shadow-md shadow-emerald-600/20 hover:scale-102 transition-all"
+                          className="inline-flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-full shadow-md shadow-emerald-600/20 hover:scale-102 transition-all"
                         >
                           <FileText className="w-4 h-4" />
-                          <span>Open Full PDF in New Tab</span>
+                          <span>
+                            {project.documentationDetails.pdfUrl.includes('docs.google.com')
+                              ? 'Open Official Guide in Google Docs'
+                              : 'Open Full Document in New Tab'}
+                          </span>
                           <ArrowUpRight className="w-4 h-4" />
                         </a>
                       </div>

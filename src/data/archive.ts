@@ -27,9 +27,9 @@ export const archiveProjects: ArchiveItem[] = [
     tags: ['Kotlin', 'Android Jetpack', 'Digital Signature', 'DO Tracking', 'Clean Architecture'],
     image: '/images/bypro.jpg',
     caseStudyId: 'by-pro',
-    link: '/docs/sop-bypro-sales-contract.pdf',
+    link: 'https://docs.google.com/document/d/15bzy7SLlvdko-dPdV5C56NsWqLghpTV0NPyaBzxzt5g/edit?tab=t.0',
     linkType: 'pdf',
-    linkLabel: 'View SOP Guide (PDF)',
+    linkLabel: 'View SOP Guide (Docs)',
   },
   {
     year: '2025',
@@ -57,9 +57,9 @@ export const archiveProjects: ArchiveItem[] = [
     tags: ['Laravel Livewire', 'Web GIS', 'Gemini AI Assistant', 'Leaflet', 'Tailwind CSS'],
     image: '/images/agrismart.jpg',
     caseStudyId: 'agrismart-gis',
-    link: '/docs/sop-agrismart-gis.pdf',
+    link: 'https://docs.google.com/document/d/1tXJQurlJ5azr6Z7o4EO_o-R7jZfeI_8_/edit',
     linkType: 'pdf',
-    linkLabel: 'View System Guide (PDF)',
+    linkLabel: 'View System Guide (Docs)',
   },
   {
     year: '2024',

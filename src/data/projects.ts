@@ -127,8 +127,8 @@ export const featuredProjects: CaseStudy[] = [
     tags: ['Kotlin', 'Android Jetpack', 'Digital Signature', 'PTPN IV Regional III', 'Clean Architecture', 'PDF Engine'],
     primaryLink: {
       type: 'pdf',
-      label: 'Open Application SOP (PDF)',
-      url: '/docs/sop-bypro-sales-contract.pdf',
+      label: 'Open SOP Guide (Docs)',
+      url: 'https://docs.google.com/document/d/15bzy7SLlvdko-dPdV5C56NsWqLghpTV0NPyaBzxzt5g/edit?tab=t.0',
     },
     secondaryLink: {
       type: 'canva',
@@ -213,8 +213,8 @@ export const featuredProjects: CaseStudy[] = [
     ],
     documentationDetails: {
       title: 'Sales Contract Application Manual - PTPN IV Regional III',
-      documentType: 'PDF Standard Operating Procedure (13 Pages)',
-      pdfUrl: '/docs/sop-bypro-sales-contract.pdf',
+      documentType: 'Official SOP Guide (Google Docs / 13 Pages)',
+      pdfUrl: 'https://docs.google.com/document/d/15bzy7SLlvdko-dPdV5C56NsWqLghpTV0NPyaBzxzt5g/edit?tab=t.0',
       sections: [
         {
           heading: '1. Secure Authentication Portal',
@@ -373,8 +373,8 @@ export const featuredProjects: CaseStudy[] = [
     tags: ['Web GIS', 'Laravel Livewire', 'Gemini AI Chatbot', 'PTPN IV Regional III', 'Leaflet', 'Tailwind CSS'],
     primaryLink: {
       type: 'pdf',
-      label: 'Open AgriSmart SOP Manual (PDF)',
-      url: '/docs/sop-agrismart-gis.pdf',
+      label: 'Open AgriSmart Guide (Docs)',
+      url: 'https://docs.google.com/document/d/1tXJQurlJ5azr6Z7o4EO_o-R7jZfeI_8_/edit',
     },
     secondaryLink: {
       type: 'github',
@@ -459,8 +459,8 @@ export const featuredProjects: CaseStudy[] = [
     ],
     documentationDetails: {
       title: 'AgriSmart System Operations Manual - PTPN IV Regional III (2026)',
-      documentType: 'PDF Manual & Technical Architecture (16 Pages)',
-      pdfUrl: '/docs/sop-agrismart-gis.pdf',
+      documentType: 'Official Operations Manual (Google Docs / 16 Pages)',
+      pdfUrl: 'https://docs.google.com/document/d/1tXJQurlJ5azr6Z7o4EO_o-R7jZfeI_8_/edit',
       sections: [
         {
           heading: 'Chapter I: System Setup & Deployment Guide',
