@@ -4,7 +4,7 @@ export const archiveProjects: ArchiveItem[] = [
   {
     year: '2025',
     title: 'MindCare: Chatbot Mental Health Detection',
-    client: 'Individual Academic Project (UAS)',
+    client: 'Individual Academic Project',
     role: 'Fullstack Mobile Developer',
     platform: 'Android / Kotlin',
     category: 'Mobile Application',
@@ -13,7 +13,7 @@ export const archiveProjects: ArchiveItem[] = [
     caseStudyId: 'mindcare',
     link: 'https://www.figma.com/design/vBFVEddHXaTTR9WEMTyvN5/Mindcare-design?node-id=0-1&p=f',
     linkType: 'figma',
-    linkLabel: 'Buka Desain Figma',
+    linkLabel: 'View Figma Design',
   },
   {
     year: '2026',
@@ -27,7 +27,7 @@ export const archiveProjects: ArchiveItem[] = [
     caseStudyId: 'by-pro',
     link: '#guide-bypro',
     linkType: 'pdf',
-    linkLabel: 'Buka Panduan SOP (PDF)',
+    linkLabel: 'View SOP Guide (PDF)',
   },
   {
     year: '2025',
@@ -36,12 +36,12 @@ export const archiveProjects: ArchiveItem[] = [
     role: 'Fullstack Web Developer',
     platform: 'Fullstack Web / Laravel',
     category: 'Web Platform',
-    tags: ['Laravel', 'MySQL', 'Visual Growth Charts', 'Proyek Akhir / TA', 'Tailwind CSS'],
+    tags: ['Laravel', 'MySQL', 'Visual Growth Charts', 'Final Project / TA', 'Tailwind CSS'],
     image: '/images/allumna.jpg',
     caseStudyId: 'allumna-school',
     link: 'https://www.figma.com/design/bvoXtZOnz4oTGPB6Fw5YAC/PA?node-id=0-1&p=f',
     linkType: 'figma',
-    linkLabel: 'Buka Desain Figma',
+    linkLabel: 'View Figma Design',
   },
   {
     year: '2026',
@@ -55,7 +55,7 @@ export const archiveProjects: ArchiveItem[] = [
     caseStudyId: 'agrismart-gis',
     link: '#guide-agrismart',
     linkType: 'pdf',
-    linkLabel: 'Buka Panduan Sistem (PDF)',
+    linkLabel: 'View System Guide (PDF)',
   },
   {
     year: '2025',
@@ -69,6 +69,6 @@ export const archiveProjects: ArchiveItem[] = [
     caseStudyId: 'malaria-detection',
     link: 'https://www.canva.com/design/DAGnSRBlMyw/2o9EVtakLUgiyg7EyRuSPg/edit',
     linkType: 'canva',
-    linkLabel: 'Buka Slide Riset (Canva)',
+    linkLabel: 'View Research Slides (Canva)',
   },
 ];

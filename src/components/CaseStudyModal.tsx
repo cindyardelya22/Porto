@@ -209,7 +209,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                   }`}
                 >
                   <BookOpen className="w-3.5 h-3.5" />
-                  <span>Panduan Aplikasi (PDF SOP)</span>
+                  <span>Application Guide (PDF SOP)</span>
                 </button>
               )}
 
@@ -443,14 +443,14 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
             {/* Bottom Close */}
             <div className="border-t border-zinc-100 dark:border-zinc-800 pt-4 flex justify-between items-center">
               <span className="text-xs font-medium text-zinc-400 dark:text-zinc-500">
-                Portofolio Cindy Ardelya • Politeknik Caltex Riau
+                Cindy Ardelya Portfolio • Politeknik Caltex Riau
               </span>
               <button
                 type="button"
                 onClick={onClose}
                 className="bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-200 dark:text-zinc-900 text-white text-xs font-bold px-6 py-2.5 rounded-full transition-colors"
               >
-                Tutup Case Study
+                Close Case Study
               </button>
             </div>
           </div>

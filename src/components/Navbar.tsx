@@ -100,12 +100,12 @@ export default function Navbar() {
             About
           </a>
           <a
-            href="#kp"
+            href="#experience"
             className="hidden lg:inline-block px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-zinc-800/80 rounded-full transition-all text-xs sm:text-sm"
             onMouseEnter={() => setCursor('explore')}
             onMouseLeave={resetCursor}
           >
-            KP & MBKM
+            Experience
           </a>
 
           {/* Theme Switcher Toggle Button (Sun / Moon) */}
@@ -113,7 +113,7 @@ export default function Navbar() {
             type="button"
             onClick={toggleTheme}
             aria-label={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-            title={theme === 'dark' ? 'Mode Terang (Light Mode)' : 'Mode Gelap (Dark Mode)'}
+            title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
             className="p-2 rounded-full border transition-all duration-300 text-zinc-700 dark:text-amber-300 bg-purple-50/80 dark:bg-zinc-800/90 border-purple-200/60 dark:border-zinc-700/80 hover:bg-purple-100 dark:hover:bg-zinc-700 hover:scale-105 active:scale-95 shadow-2xs"
             onMouseEnter={() => setCursor('link')}
             onMouseLeave={resetCursor}

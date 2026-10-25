@@ -19,12 +19,12 @@ export const featuredProjects: CaseStudy[] = [
     tags: ['Kotlin', 'Android Jetpack', 'Chatbot Assessment', 'UI/UX Design', 'Figma Prototype', 'Coroutines'],
     primaryLink: {
       type: 'figma',
-      label: 'Lihat Desain di Figma',
+      label: 'View Figma Prototype',
       url: 'https://www.figma.com/design/vBFVEddHXaTTR9WEMTyvN5/Mindcare-design?node-id=0-1&p=f',
     },
     secondaryLink: {
       type: 'canva',
-      label: 'Dokumentasi Portofolio',
+      label: 'Project Documentation',
       url: 'https://www.canva.com/design/DAHL91AQq8M/1HScgvwLZlFhChzqSqzYNw/edit',
     },
     stats: [
@@ -127,12 +127,12 @@ export const featuredProjects: CaseStudy[] = [
     tags: ['Kotlin', 'Android Jetpack', 'Digital Signature', 'PTPN IV Regional III', 'Clean Architecture', 'PDF Engine'],
     primaryLink: {
       type: 'pdf',
-      label: 'Buka Panduan Aplikasi (PDF SOP)',
+      label: 'Open Application SOP (PDF)',
       url: '#guide-bypro',
     },
     secondaryLink: {
       type: 'canva',
-      label: 'Dokumentasi Portofolio',
+      label: 'Project Documentation',
       url: 'https://www.canva.com/design/DAHL91AQq8M/1HScgvwLZlFhChzqSqzYNw/edit',
     },
     stats: [
@@ -178,28 +178,28 @@ export const featuredProjects: CaseStudy[] = [
     userFlow: [
       {
         step: '01',
-        title: 'Halaman Login & Autentikasi',
-        description: 'Pengguna melakukan login menggunakan email terdaftar dan password. Sistem membatasi akses sesuai hak akses role.',
+        title: 'Authentication & Role Gate',
+        description: 'Authorized personnel log in with their corporate credentials. Dynamic ACL routing directs users to their respective permission workspaces.',
       },
       {
         step: '02',
-        title: 'Draft Kontrak Baru (User Intan)',
-        description: 'Input data detail kontrak: nomor kontrak, pembeli, jenis barang (Abu Boiler, Solid, dll), kuantiti (kg), harga satuan, PPN, dan rekening.',
+        title: 'Contract Draft Creation (Commercial Admin)',
+        description: 'Admin populates contract metadata: buyer identification, commodity category (Boiler Ash, Solid), volume (kg), unit pricing, and payment slips.',
       },
       {
         step: '03',
-        title: 'Verifikasi & Approval (User Yogi & Kabag)',
-        description: 'User Yogi dan Kabag memeriksa draft, lampiran bukti pembayaran DANA/Bank Mandiri, dan membubuhkan tanda tangan digital.',
+        title: 'Supervisor & Division Head Approval',
+        description: 'Supervisor and Division Head review draft provisions, inspect payment receipts, and sign using secure digital authentication.',
       },
       {
         step: '04',
-        title: 'Tanda Tangan Buyer & Unduh PDF Kontrak',
-        description: 'Buyer menandatangani kontrak secara digital. Sistem menghasilkan file PDF resmi lengkap dengan barcode/QR code tanda tangan.',
+        title: 'Buyer E-Signature & PDF Issuance',
+        description: 'Buyer confirms terms and applies an authenticated digital signature. The system compiles and issues an official legal PDF with QR verification.',
       },
     ],
     results: [
       {
-        metric: 'BUMN Operational Efficiency',
+        metric: 'Corporate Operational Velocity',
         detail: 'Contract approval lifecycle reduced from an average of 4-7 business days down to under 2 hours.',
       },
       {
@@ -207,41 +207,41 @@ export const featuredProjects: CaseStudy[] = [
         detail: 'Successfully passed PTPN IV Regional III internal compliance and data security verification.',
       },
       {
-        metric: 'Panduan Aplikasi Disusun',
-        detail: 'Menyusun dokumen resmi 13 halaman "Panduan Aplikasi Sales Contract PTPN IV Regional III".',
+        metric: 'Official SOP Documentation',
+        detail: 'Authored 13-page official technical document "Sales Contract Application Guide" for PTPN IV Regional III.',
       },
     ],
     documentationDetails: {
-      title: 'Panduan Aplikasi Sales Contract PTPN IV Regional III',
-      documentType: 'PDF Standard Operating Procedure (13 Halaman)',
+      title: 'Sales Contract Application Manual - PTPN IV Regional III',
+      documentType: 'PDF Standard Operating Procedure (13 Pages)',
       sections: [
         {
-          heading: '1. Halaman Login',
-          description: 'Pengguna masuk dengan email & password terdaftar (contoh: intan@ptpn4.com). Jika data benar, diarahkan ke halaman List Kontrak.',
+          heading: '1. Secure Authentication Portal',
+          description: 'Authorized users log in via role-based credentials. On authentication, users are redirected to the Contract Management Dashboard.',
         },
         {
-          heading: '2. Halaman List Kontrak',
-          description: 'Menampilkan seluruh daftar kontrak sesuai hak akses role masing-masing, status draft, status "Disetujui Sepenuhnya", dan filter tanggal.',
+          heading: '2. Contract Overview & Status Dashboard',
+          description: 'Displays active contracts according to user permissions, live status badges (Draft, Pending Approval, Fully Approved), and chronological filters.',
         },
         {
-          heading: '3. Proses Pembuatan Draft Kontrak (User Intan)',
-          description: 'User Intan memiliki hak akses membuat kontrak baru, mengedit, dan menghapus. Mengisi data pembeli, jenis barang (Abu Boiler, Tankos, Decanter Solid), kuantiti (kg), harga, PPN 11%, dan lampiran bukti.',
+          heading: '3. Draft Contract Creation (Commercial Admin)',
+          description: 'Commercial Admin creates, edits, and manages contracts. Enters buyer metadata, commodity types (Boiler Ash, Tankos, Decanter Solid), volume (kg), pricing, 11% VAT, and payment slips.',
         },
         {
-          heading: '4. Proses Approval Oleh User Yogi',
-          description: 'User Yogi memeriksa draft kontrak dari User Intan, melihat lampiran pembayaran, dan mengklik tombol "Approve Kontrak". Status berubah menjadi Approved by Yogi.',
+          heading: '4. First-Stage Review & Supervisor Approval',
+          description: 'Supervisor inspects the contract draft, verifies payment slip attachments, and triggers approval, transitioning status to Approved by Supervisor.',
         },
         {
-          heading: '5. Proses Approval Oleh User Kabag',
-          description: 'Hanya kontrak yang disetujui User Yogi yang muncul pada akun Kabag. Kabag mengklik tombol "Approve/TTD Kabag" untuk membubuhkan tanda tangan digital.',
+          heading: '5. Executive Sign-Off & Division Head Approval',
+          description: 'Supervisor-cleared contracts route to Division Head for executive evaluation and certified digital signature application.',
         },
         {
-          heading: '6. Proses Approval Oleh Buyer',
-          description: 'Akun Buyer membuka draft, memeriksa ketentuan jual beli, dan menekan tombol "TTD Buyer" untuk menyimpan tanda tangan digital sah.',
+          heading: '6. Buyer Counter-Signature',
+          description: 'Buyer logs in via dedicated portal, verifies transaction terms, and applies certified e-signature to bind the transaction.',
         },
         {
-          heading: '7. Unduh Dokumen PDF Kontrak Resmi',
-          description: 'Setelah seluruh pihak menyetujui, sistem otomatis menghasilkan file PDF resmi PTPN IV lengkap dengan QR Code barcode verifikasi tanda tangan digital Kabag dan Buyer.',
+          heading: '7. Cryptographic PDF Generation & Export',
+          description: 'Once all stakeholders approve, the engine compiles the finalized legal PDF with cryptographic QR codes verifying signatures.',
         },
       ],
     },
@@ -261,15 +261,15 @@ export const featuredProjects: CaseStudy[] = [
       'Web-based child development monitoring system developed with Laravel and MySQL to help educators and parents track cognitive, motoric, and Islamic character growth through standardized assessments and visual growth charts.',
     heroImage: '/images/allumna.jpg',
     gallery: ['/images/allumna.jpg', '/images/mindcare.jpg'],
-    tags: ['Laravel', 'MySQL', 'Fullstack Web', 'Child Development', 'Visual Charts', 'Proyek Akhir / TA'],
+    tags: ['Laravel', 'MySQL', 'Fullstack Web', 'Child Development', 'Visual Charts', 'Final Thesis (TA)'],
     primaryLink: {
       type: 'figma',
-      label: 'Lihat Rancangan di Figma',
+      label: 'View Figma Prototype',
       url: 'https://www.figma.com/design/bvoXtZOnz4oTGPB6Fw5YAC/PA?node-id=0-1&p=f',
     },
     secondaryLink: {
       type: 'canva',
-      label: 'Dokumentasi Portofolio',
+      label: 'Project Documentation',
       url: 'https://www.canva.com/design/DAHL91AQq8M/1HScgvwLZlFhChzqSqzYNw/edit',
     },
     stats: [
@@ -372,12 +372,12 @@ export const featuredProjects: CaseStudy[] = [
     tags: ['Web GIS', 'Laravel Livewire', 'Gemini AI Chatbot', 'PTPN IV Regional III', 'Leaflet', 'Tailwind CSS'],
     primaryLink: {
       type: 'pdf',
-      label: 'Buka Panduan Sistem AgriSmart (PDF SOP)',
+      label: 'Open AgriSmart SOP Manual (PDF)',
       url: '#guide-agrismart',
     },
     secondaryLink: {
       type: 'github',
-      label: 'Repository PTPN GIS',
+      label: 'PTPN GIS GitHub Repo',
       url: 'https://github.com/cindyardelya22/ptpn_gis',
     },
     stats: [
@@ -423,23 +423,23 @@ export const featuredProjects: CaseStudy[] = [
     userFlow: [
       {
         step: '01',
-        title: 'Login & Keamanan Akun',
-        description: 'Login menggunakan nomor SAP dan Password. Dilengkapi pengamanan penguncian otomatis 10 menit jika gagal 10 kali.',
+        title: 'Authentication & Security',
+        description: 'Login utilizing SAP personnel ID and password with automated 10-minute lockout protection after failed attempts.',
       },
       {
         step: '02',
-        title: 'Dashboard & Peta Blok Interaktif',
-        description: 'Menampilkan 4 kartu ringkasan, diagram status kesuburan, dan peta satelit poligon blok kebun berwarna.',
+        title: 'Interactive Spatial Dashboard',
+        description: 'Displays 4 KPI cards, fertility status distribution charts, and colored satellite polygon overlays.',
       },
       {
         step: '03',
-        title: 'Input & Klasifikasi Unsur Hara',
-        description: 'Input data unsur hara (N, P, K, pH) diproses oleh model machine learning untuk klasifikasi kesuburan tanah otomatis.',
+        title: 'Soil Nutrient Input & ML Scoring',
+        description: 'Nutrient parameters (N, P, K, pH) are evaluated by machine learning algorithms to automate soil fertility scoring.',
       },
       {
         step: '04',
-        title: 'Konsultasi Chatbot AI & Export Laporan',
-        description: 'Pengguna berkonsultasi dengan chatbot AgriBot (Gemini 2.5 Flash) dan mengunduh laporan rekap dalam format PDF/Excel.',
+        title: 'AI Agronomist Chatbot & PDF Export',
+        description: 'Field officers query AgriBot (powered by Gemini 2.5 Flash) and export consolidated agronomic reports to PDF/Excel.',
       },
     ],
     results: [
@@ -452,35 +452,35 @@ export const featuredProjects: CaseStudy[] = [
         detail: 'Recognized for pioneering generative AI integration with geospatial agronomy workflows during the MBKM program.',
       },
       {
-        metric: 'Buku Panduan 16 Halaman Disusun',
-        detail: 'Disusun oleh Cindy Ardelya, M. Zikri Haykal, Verry Adrian untuk PT Perkebunan Nusantara IV Regional III (2026).',
+        metric: 'Comprehensive SOP Documentation',
+        detail: 'Authored by Cindy Ardelya, M. Zikri Haykal, and Verry Adrian for PT Perkebunan Nusantara IV Regional III (2026).',
       },
     ],
     documentationDetails: {
-      title: 'Panduan Penggunaan Sistem AgriSmart PTPN IV Regional III (2026)',
-      documentType: 'PDF Manual & Technical Architecture (16 Halaman)',
+      title: 'AgriSmart System Operations Manual - PTPN IV Regional III (2026)',
+      documentType: 'PDF Manual & Technical Architecture (16 Pages)',
       sections: [
         {
-          heading: 'BAB I Panduan Menjalankan Sistem',
-          description: 'Kebutuhan sistem: PHP 8.3+, Composer 2.8+, Python 3.11+, MySQL 8.0+. Struktur source code terdiri atas AgriSmart-app (Laravel) dan Flask-ml (Machine Learning).',
+          heading: 'Chapter I: System Setup & Deployment Guide',
+          description: 'System prerequisites: PHP 8.3+, Composer 2.8+, Python 3.11+, MySQL 8.0+. Architecture consists of AgriSmart-app (Laravel) and Flask-ml service.',
           steps: [
-            'Unduh source code: git clone https://github.com/cindyardelya22/ptpn_gis.git',
-            'Konfigurasi Laravel: composer install, cp .env.example .env, php artisan key:generate',
-            'Konfigurasi Database: DB_DATABASE=agrismart, php artisan migrate --seed',
-            'Konfigurasi API Key: GEMINI_API_KEY= (Gemini 2.5 Flash)',
-            'Jalankan Flask ML: pip install -r requirements.txt && python app.py',
-            'Jalankan Laravel: php artisan serve (akses http://127.0.0.1:8000)',
+            'Clone repository: git clone https://github.com/cindyardelya22/ptpn_gis.git',
+            'Configure Laravel: composer install, cp .env.example .env, php artisan key:generate',
+            'Configure Database: DB_DATABASE=agrismart, php artisan migrate --seed',
+            'Configure API Key: GEMINI_API_KEY= (Gemini 2.5 Flash)',
+            'Run Flask ML Service: pip install -r requirements.txt && python app.py',
+            'Start Laravel Dev Server: php artisan serve (access at http://127.0.0.1:8000)',
           ],
         },
         {
-          heading: 'BAB II Panduan Menggunakan Sistem',
-          description: 'Terdiri dari halaman Login dengan proteksi batas percobaan, Dashboard peta blok kebun, Manajemen data unsur hara, Analisis detail kesuburan tanah, Konsultasi Chatbot AgriBot, serta Laporan & Cetak Dokumen PDF/Excel.',
+          heading: 'Chapter II: Operational User Workflows',
+          description: 'Comprehensive guide covering secure login with rate-limiting, geospatial dashboard, soil parameter input, AgriBot AI assistant, and report generation.',
           steps: [
-            'Halaman Login: nomor SAP & password, proteksi lock akun 10 menit.',
-            'Halaman Dashboard: kartu ringkasan, peta satelit blok interaktif, status kesuburan (Subur, Kurang Subur, Tidak Subur).',
-            'Chatbot AgriBot: asisten AI pintar yang menjelaskan analisis tanah & rekomendasi tindakan pemupukan.',
-            'Data Unsur Hara: penambahan & pengubahan data dengan kalkulasi machine learning.',
-            'Laporan & Cetak: ekspor data rekap kesuburan tanah dan rekomendasi pemupukan ke file PDF dan Excel.',
+            'Login Portal: SAP personnel ID & password authentication with 10-minute lockout protection.',
+            'Dashboard: Real-time KPI summaries, satellite estate maps, and fertility classifications (Optimal, Moderate, Low).',
+            'AgriBot Assistant: Intelligent conversational AI providing soil analysis & corrective fertilization advice.',
+            'Nutrient Registry: CRUD management of soil samples with machine-learning-driven fertility calculation.',
+            'Reporting & Export: 1-click export of agronomic summaries and recommendations to PDF and Excel.',
           ],
         },
       ],
@@ -504,12 +504,12 @@ export const featuredProjects: CaseStudy[] = [
     tags: ['Deep Learning', 'CNN (Convolutional Neural Networks)', 'Python', 'TensorFlow / Keras', 'Medical AI'],
     primaryLink: {
       type: 'canva',
-      label: 'Buka Slide Riset di Canva',
+      label: 'Open Research Presentation (Canva)',
       url: 'https://www.canva.com/design/DAGnSRBlMyw/2o9EVtakLUgiyg7EyRuSPg/edit',
     },
     secondaryLink: {
       type: 'canva',
-      label: 'Dokumentasi Portofolio',
+      label: 'Project Documentation',
       url: 'https://www.canva.com/design/DAHL91AQq8M/1HScgvwLZlFhChzqSqzYNw/edit',
     },
     stats: [

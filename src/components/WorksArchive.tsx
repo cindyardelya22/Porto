@@ -87,7 +87,7 @@ export default function WorksArchive({ archive, projects, onSelectProject }: Wor
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 dark:text-zinc-500" />
               <input
                 type="text"
-                placeholder="Cari proyek atau teknologi..."
+                placeholder="Search projects, stack, or tools..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full sm:w-56 bg-white dark:bg-zinc-800/90 border border-zinc-200 dark:border-zinc-700 focus:border-purple-500 dark:focus:border-purple-400 rounded-full pl-9 pr-4 py-2.5 text-xs text-zinc-900 dark:text-white placeholder-zinc-400 dark:placeholder-zinc-500 outline-none shadow-2xs transition-all focus:ring-2 focus:ring-purple-200 dark:focus:ring-purple-900/40"
@@ -161,7 +161,7 @@ export default function WorksArchive({ archive, projects, onSelectProject }: Wor
                 {/* Hover Quick Overlay */}
                 <div className="absolute inset-0 bg-purple-950/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <span className="bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white font-bold text-xs px-4 py-2 rounded-full shadow-lg flex items-center space-x-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform border border-transparent dark:border-zinc-700">
-                    <span>Lihat Dokumentasi</span>
+                    <span>View Case Study</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
@@ -219,7 +219,7 @@ export default function WorksArchive({ archive, projects, onSelectProject }: Wor
         {filteredArchive.length === 0 && (
           <div className="py-16 text-center bg-white dark:bg-zinc-900 rounded-3xl border border-zinc-200 dark:border-zinc-800">
             <p className="text-sm font-semibold text-zinc-500 dark:text-zinc-400">
-              Tidak ada proyek yang sesuai dengan kata kunci pencarian.
+              No projects found matching your search keyword.
             </p>
           </div>
         )}

@@ -24,53 +24,57 @@ import {
 type TabType = 'kp' | 'mbkm';
 
 const kpPhotos = [
-  { id: 1, src: '/images/kp/kp-presentation.jpg', title: 'Presentasi Sistem Dashboard Internal' },
-  { id: 2, src: '/images/kp/kp-building.jpg', title: 'Gedung Kantor Pusat PTPN IV Regional III' },
-  { id: 3, src: '/images/kp/kp-team-meeting.jpg', title: 'Koordinasi Tim & Review Teknis Meja Bundar' },
-  { id: 4, src: '/images/kp/kp-workspace.jpg', title: 'Setup Workstation & Penyiapan Staging Dell' },
+  { id: 1, src: '/images/kp/kp-presentation.jpg', title: 'Internal System Dashboard Presentation' },
+  { id: 2, src: '/images/kp/kp-building.jpg', title: 'PTPN IV Regional III Corporate Headquarters' },
+  { id: 3, src: '/images/kp/kp-team-meeting.jpg', title: 'Team Coordination & Technical Review Roundtable' },
+  { id: 4, src: '/images/kp/kp-workspace.jpg', title: 'Workstation Setup & Dell Staging Preparation' },
   { id: 5, src: '/images/kp/kp-devices.jpg', title: 'Hardware Provisioning & Testing Unit' },
 ];
 
 const mbkmPhotos = [
-  { id: 1, src: '/images/mbkm/mbkm-event-brondolan.jpg', title: 'Partisipasi Acara BRONDOLAN Karyawan PTPN IV' },
-  { id: 2, src: '/images/mbkm/mbkm-team-celebration.jpg', title: 'Kebersamaan & Solidaritas Tim Magang MBKM' },
-  { id: 3, src: '/images/mbkm/mbkm-hybrid-meeting-operator.jpg', title: 'Operator Display Zoom Hybrid Meeting' },
-  { id: 4, src: '/images/mbkm/mbkm-boardroom-work.jpg', title: 'Programming & Analisis Data di Ruang Rapat Utama' },
-  { id: 5, src: '/images/mbkm/mbkm-hardware-repair.jpg', title: 'IT Support & Hardware Disassembly Laptop' },
+  { id: 1, src: '/images/mbkm/mbkm-event-brondolan.jpg', title: 'BRONDOLAN Employee Engagement Event' },
+  { id: 2, src: '/images/mbkm/mbkm-team-celebration.jpg', title: 'MBKM Internship Cohort & Team Solidarity' },
+  { id: 3, src: '/images/mbkm/mbkm-hybrid-meeting-operator.jpg', title: 'Executive Zoom Hybrid Conference Operator' },
+  { id: 4, src: '/images/mbkm/mbkm-boardroom-work.jpg', title: 'Software Engineering in Main Boardroom' },
+  { id: 5, src: '/images/mbkm/mbkm-hardware-repair.jpg', title: 'IT Support & Laptop Hardware Maintenance' },
 ];
 
 const kpActivities = [
   {
     icon: Code2,
     color: 'from-violet-500 to-purple-600',
-    bgColor: 'bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border-purple-100 dark:border-purple-800/50',
-    title: 'Pengembangan & Pembuatan Sistem',
+    bgColor:
+      'bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border-purple-100 dark:border-purple-800/50',
+    title: 'System Architecture & Engineering',
     description:
-      'Merancang arsitektur dan membangun sistem internal perusahaan (Dashboard Akomodasi & Peminjaman, By-Pro digital signing, dan GIS pemetaan perkebunan).',
+      'Architected and engineered internal enterprise systems (Resource & Accommodation Booking, By-Pro digital signing, and plantation GIS mapping).',
   },
   {
     icon: Wrench,
     color: 'from-blue-500 to-indigo-600',
-    bgColor: 'bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border-blue-100 dark:border-blue-800/50',
+    bgColor:
+      'bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border-blue-100 dark:border-blue-800/50',
     title: 'IT Support & Device Provisioning',
     description:
-      'Melakukan unboxing, konfigurasi OS Windows, partisi disk via PowerShell, penyiapan environment staging, serta troubleshooting hardware dan jaringan kantor.',
+      'Conducted hardware unboxing, Windows OS deployment, disk partitioning via PowerShell, staging environment preparation, and office network troubleshooting.',
   },
   {
     icon: MonitorPlay,
     color: 'from-amber-500 to-rose-500',
-    bgColor: 'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border-amber-100 dark:border-amber-800/50',
-    title: 'Operator Acara & Teknis Multimedia',
+    bgColor:
+      'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border-amber-100 dark:border-amber-800/50',
+    title: 'Event Operations & AV Technical Lead',
     description:
-      'Bertindak sebagai operator teknis display audio-visual, proyektor, serta pemantauan dashboard langsung pada kegiatan resmi dan presentasi korporat.',
+      'Operated audiovisual displays, high-lumen projectors, and live data telemetry dashboards during official corporate presentations and stakeholder sessions.',
   },
   {
     icon: Users2,
     color: 'from-emerald-500 to-teal-600',
-    bgColor: 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-100 dark:border-emerald-800/50',
-    title: 'Kolaborasi & Koordinasi Tim',
+    bgColor:
+      'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-100 dark:border-emerald-800/50',
+    title: 'Cross-Functional Team Collaboration',
     description:
-      'Terlibat aktif dalam rapat meja bundar bersama pembimbing industri dan divisi TI untuk penyelarasan proses bisnis dan validasi sistem digitalisasi.',
+      'Engaged actively in technical roundtables with industrial supervisors and IT directors for business process alignment and system digitalization.',
   },
 ];
 
@@ -78,34 +82,38 @@ const mbkmActivities = [
   {
     icon: Code2,
     color: 'from-violet-500 to-purple-600',
-    bgColor: 'bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border-purple-100 dark:border-purple-800/50',
-    title: 'Programmer & Software Engineering',
+    bgColor:
+      'bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border-purple-100 dark:border-purple-800/50',
+    title: 'Software Developer & Engineering',
     description:
-      'Mengembangkan solusi perangkat lunak internal perusahaan, merancang arsitektur database, dan mengimplementasikan alur digitalisasi sistem kontrak By-Pro.',
+      'Engineered internal enterprise software, developed secure database schemas, and implemented cryptographic digital signatures for By-Pro sales contracts.',
   },
   {
     icon: Wrench,
     color: 'from-blue-500 to-indigo-600',
-    bgColor: 'bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border-blue-100 dark:border-blue-800/50',
-    title: 'Hardware Maintenance & IT Support',
+    bgColor:
+      'bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border-blue-100 dark:border-blue-800/50',
+    title: 'Hardware Servicing & IT Infrastructure',
     description:
-      'Melakukan pembongkaran unit laptop (motherboard, RAM, SSD, kipas pendingin), diagnosis kendala perangkat, instalasi sistem, dan pemeliharaan teknis perangkat staf.',
+      'Executed laptop disassembly (motherboard, RAM, SSD, cooling units), hardware diagnostics, OS clean installations, and staff IT troubleshooting.',
   },
   {
     icon: MonitorPlay,
     color: 'from-amber-500 to-rose-500',
-    bgColor: 'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border-amber-100 dark:border-amber-800/50',
-    title: 'Operator Acara & Hybrid Meeting Setup',
+    bgColor:
+      'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border-amber-100 dark:border-amber-800/50',
+    title: 'Hybrid Meeting & AV Operations',
     description:
-      'Mengoperasikan sistem display multi-monitor, integrasi kamera video conference Zoom hybrid, audio mixer, dan proyektor di ruang rapat pimpinan direksi.',
+      'Operated multi-monitor display controllers, executive Zoom hybrid conferences, audio mixers, and presentation technology in the executive boardroom.',
   },
   {
     icon: Activity,
     color: 'from-emerald-500 to-teal-600',
-    bgColor: 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-100 dark:border-emerald-800/50',
-    title: 'Partisipasi Acara Korporat & Gathering',
+    bgColor:
+      'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-100 dark:border-emerald-800/50',
+    title: 'Corporate Events & Team Engagement',
     description:
-      'Terlibat aktif dan mendampingi kelancaran kegiatan bersama karyawan, seperti olahraga bersama "BRONDOLAN PTPN IV", briefing tim, dan kebersamaan rekan kerja.',
+      'Supported employee community programs such as the corporate "BRONDOLAN PTPN IV" sports gatherings, morning briefings, and departmental teamwork initiatives.',
   },
 ];
 
@@ -123,7 +131,7 @@ export default function KpSlideshow() {
         if (window.location.hash === '#mbkm') {
           setActiveTab('mbkm');
           setCurrentIndex(0);
-        } else if (window.location.hash === '#kp') {
+        } else if (window.location.hash === '#kp' || window.location.hash === '#experience') {
           setActiveTab('kp');
           setCurrentIndex(0);
         }
@@ -164,55 +172,60 @@ export default function KpSlideshow() {
   }, [nextSlide, prevSlide]);
 
   return (
-    <div id="kp" className="space-y-10 scroll-mt-24">
-      {/* Anchor for MBKM */}
+    <div id="experience" className="space-y-10 scroll-mt-24">
+      {/* Anchors for backward compatibility */}
+      <div id="kp" className="-mt-24 pt-24" />
       <div id="mbkm" className="-mt-24 pt-24" />
 
       {/* Section Header & Tab Switcher */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-purple-100 pb-6 gap-6">
+      <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-purple-100 dark:border-zinc-800 pb-6 gap-6">
         <div className="space-y-3">
-          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 text-xs font-bold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
             <span>
               {activeTab === 'kp'
-                ? 'Dokumentasi Kerja Praktik (KP)'
-                : 'Dokumentasi Magang Bersertifikat (MBKM)'}
+                ? 'Corporate Experience & Internship'
+                : 'Certified Internship (MBKM)'}
             </span>
           </div>
 
-          <h3 className="text-2xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight">
+          <h3 className="text-2xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
             {activeTab === 'kp'
-              ? 'Aktivitas Nyata di PTPN IV Regional III.'
-              : 'Peran Programmer & IT Support di MBKM.'}
+              ? 'Engineering & Operations at PTPN IV Regional III.'
+              : 'Software Developer & IT Support Specialist.'}
           </h3>
 
-          <p className="text-xs sm:text-sm text-zinc-500 max-w-xl">
+          <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 max-w-xl">
             {activeTab === 'kp'
-              ? 'Dokumentasi visual pengalaman Kerja Praktik industri di PT Perkebunan Nusantara IV Regional III — mencakup pengembangan sistem, IT Support, hingga operator teknis acara.'
-              : 'Dokumentasi pengalaman program MBKM di PTPN IV Regional III — menjalankan peran ganda sebagai programmer aplikasi internal, teknisi IT support hardware laptop, dan operator acara.'}
+              ? 'Visual documentation of professional internship experience at PT Perkebunan Nusantara IV Regional III — software engineering, IT infrastructure provisioning, and multimedia operations.'
+              : 'Visual documentation of certified MBKM internship at PTPN IV Regional III — performing dual responsibilities as an application developer, hardware technician, and executive event operator.'}
           </p>
         </div>
 
         {/* Tab Switcher Pills */}
-        <div className="flex items-center p-1.5 bg-gradient-to-r from-purple-50 via-pink-50 to-amber-50 border border-purple-100 rounded-2xl w-fit shadow-2xs shrink-0">
+        <div className="flex items-center p-1.5 bg-gradient-to-r from-purple-50 via-pink-50 to-amber-50 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-800 border border-purple-100 dark:border-zinc-800 rounded-2xl w-fit shadow-2xs shrink-0">
           <button
             type="button"
             onClick={() => {
               setActiveTab('kp');
               setCurrentIndex(0);
             }}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 ${activeTab === 'kp'
-                ? 'bg-white text-purple-700 shadow-md shadow-purple-500/10 scale-102'
-                : 'text-zinc-600 hover:text-zinc-900'
-              }`}
+            className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 ${
+              activeTab === 'kp'
+                ? 'bg-white dark:bg-zinc-800 text-purple-700 dark:text-purple-300 shadow-md shadow-purple-500/10 scale-102'
+                : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
+            }`}
           >
-            <Briefcase className="w-3.5 h-3.5 text-purple-600" />
-            <span>Kerja Praktik (KP)</span>
+            <Briefcase className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
+            <span>Internship (KP)</span>
             <span
-              className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${activeTab === 'kp' ? 'bg-purple-100 text-purple-700' : 'bg-zinc-200/70 text-zinc-600'
-                }`}
+              className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${
+                activeTab === 'kp'
+                  ? 'bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300'
+                  : 'bg-zinc-200/70 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400'
+              }`}
             >
-              5 Foto
+              5 Photos
             </span>
           </button>
 
@@ -222,18 +235,22 @@ export default function KpSlideshow() {
               setActiveTab('mbkm');
               setCurrentIndex(0);
             }}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 ${activeTab === 'mbkm'
-                ? 'bg-white text-purple-700 shadow-md shadow-purple-500/10 scale-102'
-                : 'text-zinc-600 hover:text-zinc-900'
-              }`}
+            className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 ${
+              activeTab === 'mbkm'
+                ? 'bg-white dark:bg-zinc-800 text-purple-700 dark:text-purple-300 shadow-md shadow-purple-500/10 scale-102'
+                : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
+            }`}
           >
-            <GraduationCap className="w-4 h-4 text-pink-600" />
-            <span>Magang MBKM</span>
+            <GraduationCap className="w-4 h-4 text-pink-600 dark:text-pink-400" />
+            <span>MBKM Program</span>
             <span
-              className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${activeTab === 'mbkm' ? 'bg-purple-100 text-purple-700' : 'bg-zinc-200/70 text-zinc-600'
-                }`}
+              className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${
+                activeTab === 'mbkm'
+                  ? 'bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300'
+                  : 'bg-zinc-200/70 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400'
+              }`}
             >
-              5 Foto
+              5 Photos
             </span>
           </button>
         </div>
@@ -303,7 +320,7 @@ export default function KpSlideshow() {
                 <span>PTPN IV Regional III</span>
                 <span className="text-white/40">•</span>
                 <span className="text-purple-300 font-semibold uppercase">
-                  {activeTab === 'kp' ? 'Kerja Praktik' : 'Magang MBKM'}
+                  {activeTab === 'kp' ? 'Internship (KP)' : 'MBKM Program'}
                 </span>
                 <span className="text-white/40">•</span>
                 <span className="text-emerald-300">
@@ -316,7 +333,7 @@ export default function KpSlideshow() {
                 <button
                   type="button"
                   onClick={() => setIsPlaying(!isPlaying)}
-                  title={isPlaying ? 'Jeda Slideshow' : 'Putar Slideshow'}
+                  title={isPlaying ? 'Pause Slideshow' : 'Play Slideshow'}
                   className="bg-black/60 hover:bg-black/90 backdrop-blur-md border border-white/10 text-white p-2 rounded-full transition-all shadow-lg hover:scale-105 active:scale-95"
                 >
                   {isPlaying ? <Pause className="w-4 h-4 text-emerald-400" /> : <Play className="w-4 h-4 text-white" />}
@@ -326,7 +343,7 @@ export default function KpSlideshow() {
                 <button
                   type="button"
                   onClick={() => setIsLightboxOpen(true)}
-                  title="Perbesar Foto"
+                  title="Expand Fullscreen"
                   className="bg-black/60 hover:bg-black/90 backdrop-blur-md border border-white/10 text-white p-2 rounded-full transition-all shadow-lg hover:scale-105 active:scale-95"
                 >
                   <Maximize2 className="w-4 h-4 text-purple-300" />
@@ -338,8 +355,8 @@ export default function KpSlideshow() {
             <button
               type="button"
               onClick={prevSlide}
-              title="Foto Sebelumnya"
-              className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-zinc-900 p-2.5 sm:p-3 rounded-full shadow-xl backdrop-blur-md transition-all hover:scale-110 active:scale-90"
+              title="Previous Photo"
+              className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 bg-white/80 dark:bg-zinc-800/80 hover:bg-white dark:hover:bg-zinc-700 text-zinc-900 dark:text-white p-2.5 sm:p-3 rounded-full shadow-xl backdrop-blur-md transition-all hover:scale-110 active:scale-90 border border-transparent dark:border-zinc-700/60"
               onMouseEnter={() => setCursor('link')}
               onMouseLeave={resetCursor}
             >
@@ -349,8 +366,8 @@ export default function KpSlideshow() {
             <button
               type="button"
               onClick={nextSlide}
-              title="Foto Selanjutnya"
-              className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-zinc-900 p-2.5 sm:p-3 rounded-full shadow-xl backdrop-blur-md transition-all hover:scale-110 active:scale-90"
+              title="Next Photo"
+              className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 bg-white/80 dark:bg-zinc-800/80 hover:bg-white dark:hover:bg-zinc-700 text-zinc-900 dark:text-white p-2.5 sm:p-3 rounded-full shadow-xl backdrop-blur-md transition-all hover:scale-110 active:scale-90 border border-transparent dark:border-zinc-700/60"
               onMouseEnter={() => setCursor('link')}
               onMouseLeave={resetCursor}
             >
@@ -367,10 +384,11 @@ export default function KpSlideshow() {
                   key={`${activeTab}-${photo.id}`}
                   type="button"
                   onClick={() => setCurrentIndex(idx)}
-                  className={`relative w-14 h-11 sm:w-16 sm:h-12 rounded-xl overflow-hidden shrink-0 transition-all duration-300 border-2 ${currentIndex === idx
+                  className={`relative w-14 h-11 sm:w-16 sm:h-12 rounded-xl overflow-hidden shrink-0 transition-all duration-300 border-2 ${
+                    currentIndex === idx
                       ? 'border-purple-600 scale-105 shadow-md shadow-purple-500/20'
                       : 'border-transparent opacity-60 hover:opacity-100'
-                    }`}
+                  }`}
                 >
                   <Image
                     src={photo.src}
@@ -390,11 +408,12 @@ export default function KpSlideshow() {
                   key={idx}
                   type="button"
                   onClick={() => setCurrentIndex(idx)}
-                  aria-label={`Pindah ke foto ${idx + 1}`}
-                  className={`h-2 rounded-full transition-all duration-300 ${currentIndex === idx
+                  aria-label={`Go to slide ${idx + 1}`}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    currentIndex === idx
                       ? 'w-6 bg-gradient-to-r from-purple-600 to-pink-500'
-                      : 'w-2 bg-zinc-200 hover:bg-zinc-300'
-                    }`}
+                      : 'w-2 bg-zinc-200 dark:bg-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-600'
+                  }`}
                 />
               ))}
             </div>
@@ -402,24 +421,24 @@ export default function KpSlideshow() {
         </div>
 
         {/* Unified Activities Overview (5 Cols on LG) */}
-        <div className="lg:col-span-5 space-y-5 bg-gradient-to-br from-purple-50/70 via-white to-pink-50/70 rounded-[2rem] border border-purple-100 p-6 sm:p-8 shadow-sm">
+        <div className="lg:col-span-5 space-y-5 bg-gradient-to-br from-purple-50/70 via-white to-pink-50/70 dark:from-zinc-900 dark:via-zinc-900/90 dark:to-zinc-900 rounded-[2rem] border border-purple-100 dark:border-zinc-800 p-6 sm:p-8 shadow-sm">
           <div className="space-y-2">
-            <span className="text-[11px] font-bold text-purple-700 uppercase tracking-wider bg-purple-100/70 px-3 py-1 rounded-full inline-block">
-              {activeTab === 'kp' ? 'Peran & Kontribusi KP' : 'Peran & Kontribusi MBKM'}
+            <span className="text-[11px] font-bold text-purple-700 dark:text-purple-300 uppercase tracking-wider bg-purple-100/70 dark:bg-purple-950/70 px-3 py-1 rounded-full inline-block">
+              {activeTab === 'kp' ? 'Internship Responsibilities' : 'MBKM Responsibilities'}
             </span>
-            <h4 className="text-xl sm:text-2xl font-extrabold text-zinc-900 leading-snug">
+            <h4 className="text-xl sm:text-2xl font-extrabold text-zinc-900 dark:text-white leading-snug">
               {activeTab === 'kp'
-                ? 'Rangkaian Pengalaman Nyata di Lingkungan Korporat'
-                : 'Programmer, IT Support, & Pendukung Acara'}
+                ? 'Real-World Experience in Corporate IT'
+                : 'Software Engineering & IT Operations'}
             </h4>
-            <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed pt-1">
+            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed pt-1">
               {activeTab === 'kp' ? (
                 <>
-                  Selama menjalani Kerja Praktik (KP) di <strong>PT Perkebunan Nusantara IV (PTPN IV) Regional III</strong>, Cindy berkontribusi aktif menjalankan beragam tugas teknis dan operasional di divisi Teknologi Informasi:
+                  During the industrial internship at <strong>PT Perkebunan Nusantara IV (PTPN IV) Regional III</strong>, Cindy actively contributed across engineering, IT operations, and corporate event management:
                 </>
               ) : (
                 <>
-                  Pada program Magang MBKM di <strong>PT Perkebunan Nusantara IV (PTPN IV) Regional III</strong>, Cindy mengemban tanggung jawab komprehensif sebagai <strong>Programmer</strong> sekaligus <strong>IT Support</strong>, serta aktif mendampingi jalannya berbagai acara resmi perusahaan:
+                  During the certified MBKM internship at <strong>PT Perkebunan Nusantara IV (PTPN IV) Regional III</strong>, Cindy carried out comprehensive responsibilities as a <strong>Programmer</strong> and <strong>IT Support</strong> specialist, while assisting executive events:
                 </>
               )}
             </p>
@@ -432,7 +451,7 @@ export default function KpSlideshow() {
               return (
                 <div
                   key={aIdx}
-                  className="bg-white/90 rounded-2xl p-4 border border-purple-100/80 shadow-2xs hover:shadow-md transition-all duration-200 flex items-start space-x-3.5 group"
+                  className="bg-white/90 dark:bg-zinc-800/90 rounded-2xl p-4 border border-purple-100/80 dark:border-zinc-800 shadow-2xs hover:shadow-md transition-all duration-200 flex items-start space-x-3.5 group"
                 >
                   <div
                     className={`h-10 w-10 rounded-xl flex items-center justify-center shrink-0 border ${act.bgColor} group-hover:scale-105 transition-transform`}
@@ -440,10 +459,10 @@ export default function KpSlideshow() {
                     <Icon className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h5 className="font-extrabold text-xs sm:text-sm text-zinc-900">
+                    <h5 className="font-extrabold text-xs sm:text-sm text-zinc-900 dark:text-white">
                       {act.title}
                     </h5>
-                    <p className="text-xs text-zinc-600 leading-relaxed font-normal">
+                    <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-normal">
                       {act.description}
                     </p>
                   </div>
@@ -469,10 +488,10 @@ export default function KpSlideshow() {
               <div className="text-white text-xs sm:text-sm font-bold flex items-center space-x-2">
                 <span className="bg-purple-600 px-2.5 py-0.5 rounded-full text-xs">PTPN IV Regional III</span>
                 <span className="text-zinc-400">
-                  {activeTab === 'kp' ? 'Dokumentasi Kerja Praktik (KP)' : 'Dokumentasi Magang MBKM'}
+                  {activeTab === 'kp' ? 'Industrial Internship (KP)' : 'Certified Internship (MBKM)'}
                 </span>
                 <span className="text-zinc-600">•</span>
-                <span className="text-emerald-400">Foto {currentIndex + 1} / {activePhotos.length}</span>
+                <span className="text-emerald-400">Photo {currentIndex + 1} / {activePhotos.length}</span>
               </div>
               <button
                 type="button"
@@ -487,7 +506,7 @@ export default function KpSlideshow() {
             <div className="relative w-full h-[60vh] sm:h-[70vh] bg-black flex items-center justify-center p-4">
               <Image
                 src={activePhotos[currentIndex].src}
-                alt="Dokumentasi Full View"
+                alt="Fullscreen Documentation View"
                 fill
                 sizes="100vw"
                 className="object-contain"

@@ -87,7 +87,7 @@ export default function FeaturedProjects({ projects, onSelectProject }: Featured
             5 Core Projects & Case Studies.
           </h2>
           <p className="text-zinc-600 dark:text-zinc-300 text-sm sm:text-base leading-relaxed">
-            Menampilkan rancangan desain asli di <strong>Figma</strong>, dokumentasi buku <strong>Panduan Aplikasi (PDF SOP)</strong>, dan slide riset <strong>Canva</strong> melalui tombol preview di setiap proyek.
+            Showcasing original UI designs on <strong>Figma</strong>, official <strong>System Manuals (PDF SOP)</strong>, and research presentations on <strong>Canva</strong> via direct preview buttons on each project.
           </p>
         </div>
 
@@ -188,7 +188,7 @@ export default function FeaturedProjects({ projects, onSelectProject }: Featured
 
                       <div className="inline-flex items-center space-x-1 text-xs font-bold text-zinc-700 dark:text-zinc-300 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                         <span className="underline underline-offset-4 decoration-purple-300 dark:decoration-purple-600 group-hover:decoration-purple-600">
-                          Buka Detail Case Study
+                          Explore Case Study
                         </span>
                         <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                       </div>
@@ -207,7 +207,7 @@ export default function FeaturedProjects({ projects, onSelectProject }: Featured
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
                         <span className="text-xs font-bold text-white bg-black/70 backdrop-blur-md px-3.5 py-1.5 rounded-full flex items-center space-x-1.5 border border-white/10">
-                          <span>Klik untuk Membuka Dokumentasi Lengkap</span>
+                          <span>Click to View Full Documentation</span>
                           <ArrowUpRight className="w-3.5 h-3.5" />
                         </span>
                       </div>

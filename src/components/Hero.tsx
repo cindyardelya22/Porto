@@ -109,7 +109,7 @@ export default function Hero() {
               <GraduationCap className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-sm font-extrabold text-zinc-900 dark:text-white">Proyek Akhir (TA)</div>
+              <div className="text-sm font-extrabold text-zinc-900 dark:text-white">Final Thesis (TA)</div>
               <div className="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium">Alumna Islamic School Pekanbaru</div>
             </div>
           </div>
