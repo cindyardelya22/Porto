@@ -14,7 +14,7 @@ export default function ExperienceSection() {
           <div className="text-center max-w-xl mx-auto space-y-2">
             <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-bold uppercase tracking-wider border border-zinc-200/60 dark:border-zinc-700">
               <Award className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400" />
-              <span>Project & Career Milestones</span>
+              <span>Corporate Experience & Internship</span>
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
               Journey & Accomplishments.

@@ -41,15 +41,15 @@ export default function Home() {
         onSelectProject={handleOpenCaseStudy}
       />
 
-      {/* Career Milestones & Experience Documentation (Internship Slideshow + Timeline) */}
-      <ExperienceSection />
-
-      {/* Signal-A Style Works Archive Table with Floating Pointer Thumbnail */}
+      {/* Selected Works & Shots (Project Directory & Lab) */}
       <WorksArchive
         archive={archiveProjects}
         projects={featuredProjects}
         onSelectProject={handleOpenCaseStudy}
       />
+
+      {/* Corporate Experience & Certified Internship Documentation (Timeline + KpSlideshow) */}
+      <ExperienceSection />
 
       {/* Interactive Footer & Contact (Magnetic CTA & Confetti Email Copy) */}
       <ContactFooter />

@@ -137,7 +137,7 @@ export default function AboutSection() {
               return (
                 <div
                   key={idx}
-                  className={`rounded-3xl border p-6 sm:p-7 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between space-y-6 ${bgColors[idx % bgColors.length]}`}
+                  className={`rounded-3xl border p-6 sm:p-7 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-start h-full ${bgColors[idx % bgColors.length]}`}
                   onMouseEnter={() => setCursor('explore')}
                   onMouseLeave={resetCursor}
                 >
@@ -158,13 +158,13 @@ export default function AboutSection() {
                       </div>
                     </div>
 
-                    <p className="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                    <p className="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed min-h-[36px]">
                       {cat.description}
                     </p>
                   </div>
 
                   {/* Skills List without level badge */}
-                  <div className="space-y-2 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+                  <div className="space-y-2 pt-4 mt-4 border-t border-zinc-100 dark:border-zinc-800">
                     {cat.skills.map((skill, sIdx) => (
                       <div
                         key={sIdx}

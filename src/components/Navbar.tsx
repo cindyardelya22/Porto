@@ -92,20 +92,20 @@ export default function Navbar() {
             Projects
           </a>
           <a
-            href="#experience"
+            href="#archive"
             className="hidden sm:inline-block px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-all text-xs sm:text-sm"
             onMouseEnter={() => setCursor('explore')}
             onMouseLeave={resetCursor}
           >
-            Experience
+            Selected Works
           </a>
           <a
-            href="#archive"
+            href="#experience"
             className="hidden md:inline-block px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-all text-xs sm:text-sm"
             onMouseEnter={() => setCursor('explore')}
             onMouseLeave={resetCursor}
           >
-            Gallery
+            Experience
           </a>
 
           {/* Theme Switcher Toggle Button (Sun / Moon) */}
