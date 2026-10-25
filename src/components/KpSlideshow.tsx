@@ -217,7 +217,7 @@ export default function KpSlideshow() {
             }`}
           >
             <Briefcase className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400" />
-            <span>Internship (KP)</span>
+            <span>Internship</span>
             <span
               className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${
                 activeTab === 'kp'
@@ -320,7 +320,7 @@ export default function KpSlideshow() {
                 <span>PTPN IV Regional III</span>
                 <span className="text-white/40">•</span>
                 <span className="text-purple-300 font-semibold uppercase">
-                  {activeTab === 'kp' ? 'Internship (KP)' : 'MBKM Program'}
+                  {activeTab === 'kp' ? 'Internship' : 'MBKM Program'}
                 </span>
                 <span className="text-white/40">•</span>
                 <span className="text-emerald-300">
@@ -488,7 +488,7 @@ export default function KpSlideshow() {
               <div className="text-white text-xs sm:text-sm font-bold flex items-center space-x-2">
                 <span className="bg-purple-600 px-2.5 py-0.5 rounded-full text-xs">PTPN IV Regional III</span>
                 <span className="text-zinc-400">
-                  {activeTab === 'kp' ? 'Industrial Internship (KP)' : 'Certified Internship (MBKM)'}
+                  {activeTab === 'kp' ? 'Industrial Internship' : 'Certified Internship (MBKM)'}
                 </span>
                 <span className="text-zinc-600">•</span>
                 <span className="text-emerald-400">Photo {currentIndex + 1} / {activePhotos.length}</span>

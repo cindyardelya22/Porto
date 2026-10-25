@@ -263,7 +263,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Industrial Internship (KP) & Certified MBKM Slideshow Component */}
+        {/* Industrial Internship & Certified MBKM Slideshow Component */}
         <KpSlideshow />
       </div>
     </section>
