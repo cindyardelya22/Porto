@@ -59,16 +59,16 @@ export const experienceTimeline: ExperienceItem[] = [
   },
   {
     period: '2024 - 2025',
-    role: 'Fullstack Web Developer (Proyek Akhir / TA)',
+    role: 'Fullstack Web Developer (Final Project)',
     company: 'Alumna Islamic School Pekanbaru',
     location: 'Pekanbaru, Riau, Indonesia',
-    type: 'Undergraduate Thesis (Proyek Akhir)',
+    type: 'Undergraduate Final Project',
     description:
       'Individually designed and developed a comprehensive web-based child growth and development monitoring system to streamline developmental milestone tracking for educators and parents.',
     highlights: [
       'Built complete multi-role Laravel web system featuring visual growth percentiles (Chart.js), daily classroom activity logging, and automated semester report cards.',
       'Conducted user interviews with daycare principals and parents, increasing parent-school milestone visibility by 85%.',
-      'Achieved top distinction in final thesis defense at Politeknik Caltex Riau.',
+      'Achieved top distinction in final project defense at Politeknik Caltex Riau.',
     ],
     skills: ['Laravel', 'PHP', 'MySQL', 'Visual Charts', 'UI/UX Design', 'Fullstack Web', 'Tailwind CSS'],
   },

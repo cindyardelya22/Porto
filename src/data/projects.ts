@@ -251,7 +251,7 @@ export const featuredProjects: CaseStudy[] = [
     id: 'allumna-school',
     slug: 'allumna-child-monitoring-system',
     title: 'Alumna Islamic School Pekanbaru',
-    subtitle: 'Child Growth & Early Development Monitoring Web Platform (Proyek Akhir / TA)',
+    subtitle: 'Child Growth & Early Development Monitoring Web Platform (Final Project)',
     category: 'Web Platform',
     year: '2025',
     client: 'Alumna Islamic School Pekanbaru',
@@ -262,7 +262,7 @@ export const featuredProjects: CaseStudy[] = [
       'Web-based child development monitoring system developed with Laravel and MySQL to help educators and parents track cognitive, motoric, and Islamic character growth through standardized assessments and visual growth charts.',
     heroImage: '/images/allumna.jpg',
     gallery: ['/images/allumna.jpg', '/images/mindcare.jpg'],
-    tags: ['Laravel', 'MySQL', 'Fullstack Web', 'Child Development', 'Visual Charts', 'Final Thesis (TA)'],
+    tags: ['Laravel', 'MySQL', 'Fullstack Web', 'Child Development', 'Visual Charts', 'Final Project'],
     primaryLink: {
       type: 'figma',
       label: 'View Figma Prototype',
@@ -277,7 +277,7 @@ export const featuredProjects: CaseStudy[] = [
       { label: 'Child Growth Tracking', value: '6 Domains', subtext: 'Cognitive, motoric, language & character' },
       { label: 'Progress Visualization', value: 'Growth Charts', subtext: 'Interactive visual developmental milestones' },
       { label: 'Automated Reporting', value: '1-Click PDF', subtext: 'Comprehensive student semester reports' },
-      { label: 'Fullstack Platform', value: 'Laravel & MySQL', subtext: 'Complete undergraduate final thesis' },
+      { label: 'Fullstack Platform', value: 'Laravel & MySQL', subtext: 'Individual undergraduate final project' },
     ],
     challenge: {
       description:
@@ -337,8 +337,8 @@ export const featuredProjects: CaseStudy[] = [
     ],
     results: [
       {
-        metric: 'Full Thesis Completion',
-        detail: 'Successfully defended as undergraduate final project (TA) at Politeknik Caltex Riau with top distinction.',
+        metric: 'Final Project Distinction',
+        detail: 'Successfully defended as undergraduate Final Project at Politeknik Caltex Riau with top distinction.',
       },
       {
         metric: 'Adopted in Live School Operations',

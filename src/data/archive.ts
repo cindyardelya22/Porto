@@ -39,7 +39,7 @@ export const archiveProjects: ArchiveItem[] = [
     platform: 'Fullstack Web / Laravel',
     category: 'Web Platform',
     duration: '4 - 5 Months',
-    tags: ['Laravel', 'MySQL', 'Visual Growth Charts', 'Final Project / TA', 'Tailwind CSS'],
+    tags: ['Laravel', 'MySQL', 'Visual Growth Charts', 'Final Project', 'Tailwind CSS'],
     image: '/images/allumna.jpg',
     caseStudyId: 'allumna-school',
     link: 'https://www.figma.com/design/bvoXtZOnz4oTGPB6Fw5YAC/PA?node-id=0-1&p=f',

@@ -102,13 +102,13 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Badge 2: Alumna Islamic School Pekanbaru Final Thesis */}
+          {/* Badge 2: Alumna Islamic School Pekanbaru Final Project */}
           <div className="bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-amber-100 dark:border-zinc-800 rounded-2xl p-4 shadow-xs hover:shadow-md transition-all flex items-center space-x-3.5">
             <div className="h-11 w-11 rounded-xl bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-300 flex items-center justify-center shrink-0">
               <GraduationCap className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-sm font-extrabold text-zinc-900 dark:text-white">Final Thesis (TA)</div>
+              <div className="text-sm font-extrabold text-zinc-900 dark:text-white">Final Project</div>
               <div className="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium">Alumna Islamic School Pekanbaru</div>
             </div>
           </div>

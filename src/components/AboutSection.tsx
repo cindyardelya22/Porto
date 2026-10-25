@@ -102,7 +102,7 @@ export default function AboutSection() {
                 </li>
                 <li className="flex items-start space-x-2">
                   <span className="text-purple-600 dark:text-purple-400 font-bold">✦</span>
-                  <span><strong className="text-zinc-900 dark:text-white font-semibold">Alumna Islamic School Pekanbaru (Final Thesis / TA):</strong> End-to-end Laravel web monitoring platform for Alumna Islamic School Pekanbaru visualizing child anthropometric growth curves and developmental milestones.</span>
+                  <span><strong className="text-zinc-900 dark:text-white font-semibold">Alumna Islamic School Pekanbaru (Final Project):</strong> End-to-end Laravel web monitoring platform for Alumna Islamic School Pekanbaru visualizing child anthropometric growth curves and developmental milestones.</span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <span className="text-purple-600 dark:text-purple-400 font-bold">✦</span>

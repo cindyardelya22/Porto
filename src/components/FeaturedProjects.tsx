@@ -37,7 +37,7 @@ export default function FeaturedProjects({ projects, onSelectProject }: Featured
       accentColor: 'text-emerald-600 dark:text-emerald-400',
     },
     {
-      // 3. Alumna Islamic School Pekanbaru (Proyek Akhir / TA)
+      // 3. Alumna Islamic School Pekanbaru (Final Project)
       cardBg:
         'bg-gradient-to-br from-amber-50/90 via-orange-50/70 to-yellow-50/80 dark:from-amber-950/40 dark:via-zinc-900/90 dark:to-zinc-900/95 border-amber-200/70 dark:border-amber-800/40 shadow-amber-500/5 dark:shadow-black/50',
       badgeBg:
