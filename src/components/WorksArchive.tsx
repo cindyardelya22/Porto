@@ -14,19 +14,20 @@ interface WorksArchiveProps {
   onSelectProject: (project: CaseStudy) => void;
 }
 
+const CATEGORIES = ['All', 'Mobile', 'Web Platform', 'GIS', 'Deep Learning'];
+
 export default function WorksArchive({ archive, projects, onSelectProject }: WorksArchiveProps) {
   const { setCursor, resetCursor } = useCursor();
-  const [activeCategory, setActiveCategory] = useState<string>('ALL');
+  const [activeCategory, setActiveCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [likedItems, setLikedItems] = useState<{ [key: string]: boolean }>({});
 
-  const categories = ['ALL', 'MOBILE', 'WEB PLATFORM', 'GIS', 'DEEP LEARNING'];
-
   const filteredArchive = archive.filter((item) => {
     const matchesCategory =
+      activeCategory === 'All' ||
       activeCategory === 'ALL' ||
-      item.category.toUpperCase().includes(activeCategory) ||
-      item.platform.toUpperCase().includes(activeCategory);
+      item.category.toLowerCase().includes(activeCategory.toLowerCase()) ||
+      item.platform.toLowerCase().includes(activeCategory.toLowerCase());
 
     const matchesSearch =
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -71,8 +72,8 @@ export default function WorksArchive({ archive, projects, onSelectProject }: Wor
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-zinc-200/80 dark:border-zinc-800 pb-8">
           <div>
-            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-bold uppercase tracking-wider mb-2 border border-zinc-200/60 dark:border-zinc-700">
-              <FolderArchive className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400" />
+            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-teal-50 dark:bg-teal-950/50 text-teal-800 dark:text-teal-300 text-xs font-bold uppercase tracking-wider mb-2 border border-teal-200/70 dark:border-teal-800/50">
+              <FolderArchive className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400" />
               <span>Project Directory & Lab</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
@@ -96,17 +97,19 @@ export default function WorksArchive({ archive, projects, onSelectProject }: Wor
 
             {/* Filter Pills */}
             <div className="flex flex-wrap gap-1.5 text-xs font-semibold">
-              {categories.map((cat) => (
+              {CATEGORIES.map((cat) => (
                 <button
                   key={cat}
+                  type="button"
+                  suppressHydrationWarning
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-3.5 py-2 rounded-full transition-all ${
-                    activeCategory === cat
-                      ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-bold shadow-xs'
-                      : 'bg-white dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-700 border border-zinc-200/80 dark:border-zinc-700/80'
+                  className={`px-3.5 py-2 rounded-full transition-all text-xs font-bold ${
+                    activeCategory.toLowerCase() === cat.toLowerCase()
+                      ? 'bg-amber-700 dark:bg-amber-600 text-white shadow-xs'
+                      : 'bg-white dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-amber-50/50 dark:hover:bg-zinc-700 border border-zinc-200/80 dark:border-zinc-700/80'
                   }`}
                 >
-                  {cat}
+                  <span suppressHydrationWarning>{cat}</span>
                 </button>
               ))}
             </div>
@@ -182,7 +185,7 @@ export default function WorksArchive({ archive, projects, onSelectProject }: Wor
                 </div>
 
                 <div className="space-y-1">
-                  <h3 className="font-extrabold text-base text-zinc-900 dark:text-white group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors line-clamp-1">
+                  <h3 className="font-extrabold text-base text-zinc-900 dark:text-white group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors line-clamp-1">
                     {item.title}
                   </h3>
                   <p className="text-xs text-zinc-500 dark:text-zinc-400 font-medium">
@@ -208,7 +211,7 @@ export default function WorksArchive({ archive, projects, onSelectProject }: Wor
                     <button
                       type="button"
                       onClick={(e) => handleDirectPreview(e, item)}
-                      className="inline-flex items-center space-x-1.5 text-xs font-bold text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:underline"
+                      className="inline-flex items-center space-x-1.5 text-xs font-bold text-zinc-700 dark:text-zinc-300 hover:text-amber-700 dark:hover:text-amber-400 hover:underline"
                     >
                       {item.linkType === 'figma' && <FigmaIcon className="w-3.5 h-3.5" />}
                       {item.linkType === 'canva' && <CanvaIcon className="w-3.5 h-3.5" />}

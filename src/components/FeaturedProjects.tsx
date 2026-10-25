@@ -79,8 +79,8 @@ export default function FeaturedProjects({ projects, onSelectProject }: Featured
       <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-3">
-          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-bold uppercase tracking-wider border border-zinc-200/60 dark:border-zinc-700">
-            <FolderGit2 className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400" />
+          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-200/70 dark:border-amber-800/50">
+            <FolderGit2 className="w-3.5 h-3.5 text-amber-700 dark:text-amber-400" />
             <span>Featured Works & Case Studies</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
@@ -126,7 +126,7 @@ export default function FeaturedProjects({ projects, onSelectProject }: Featured
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors">
+                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors">
                         {project.title}
                       </h3>
                       <p className="text-sm sm:text-base text-zinc-700 dark:text-zinc-200 font-medium">
@@ -194,8 +194,8 @@ export default function FeaturedProjects({ projects, onSelectProject }: Featured
                         </button>
                       )}
 
-                      <div className="inline-flex items-center space-x-1 text-xs font-bold text-zinc-700 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors">
-                        <span className="underline underline-offset-4 decoration-zinc-300 dark:decoration-zinc-700 group-hover:decoration-zinc-900 dark:group-hover:decoration-white">
+                      <div className="inline-flex items-center space-x-1 text-xs font-bold text-zinc-700 dark:text-zinc-300 group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors">
+                        <span className="underline underline-offset-4 decoration-zinc-300 dark:decoration-zinc-700 group-hover:decoration-amber-700 dark:group-hover:decoration-amber-400">
                           Explore Case Study
                         </span>
                         <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

@@ -9,7 +9,7 @@ export interface CertificationItem {
   status: string;
   description: string;
   skills: string[];
-  iconType: 'code' | 'network' | 'shield' | 'building' | 'briefcase';
+  iconType: 'code' | 'network' | 'shield' | 'building' | 'briefcase' | 'lock' | 'languages';
 }
 
 export const certificationsData: CertificationItem[] = [
@@ -32,6 +32,26 @@ export const certificationsData: CertificationItem[] = [
       'QA & Production Standards',
     ],
     iconType: 'code',
+  },
+  {
+    id: 'ec-council-ehe',
+    title: 'Ethical Hacking Essentials (EHE)',
+    issuer: 'EC-Council',
+    organization: 'International Council of E-Commerce Consultants',
+    category: 'Global Cybersecurity Certification',
+    credentialId: 'Certificate No: 345112',
+    date: 'July 18, 2024',
+    status: 'Certified (EC-Council)',
+    description:
+      'Accredited international cybersecurity certification covering ethical hacking concepts, threat vectors, vulnerability assessment, network penetration testing, and security countermeasures.',
+    skills: [
+      'Ethical Hacking',
+      'Vulnerability Assessment',
+      'Threat Vectors',
+      'Network Countermeasures',
+      'Penetration Testing Concepts',
+    ],
+    iconType: 'lock',
   },
   {
     id: 'mikrotik-mtcna',
@@ -72,6 +92,26 @@ export const certificationsData: CertificationItem[] = [
       'Security Laws & Compliance',
     ],
     iconType: 'shield',
+  },
+  {
+    id: 'toefl-lti',
+    title: 'TOEFL Prediction Test — Score 547',
+    issuer: 'Language Training Institution (LTI)',
+    organization: 'Standardized English Proficiency Assessment',
+    category: 'Language Proficiency',
+    credentialId: 'Listening: 44 • Structure: 59 • Reading: 61',
+    date: 'May 2024',
+    status: 'Overall Score: 547 (High Proficiency)',
+    description:
+      'Standardized English proficiency test demonstrating high-level academic and professional competency across listening comprehension, grammatical structure & written expression, and reading analysis.',
+    skills: [
+      'Technical English',
+      'Written Expression (Score 59)',
+      'Reading Comprehension (Score 61)',
+      'Listening Analysis (Score 44)',
+      'Professional Communication',
+    ],
+    iconType: 'languages',
   },
   {
     id: 'ptpn-mbkm',

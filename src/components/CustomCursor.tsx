@@ -78,7 +78,7 @@ export default function CustomCursor() {
             {cursorText || cursorMode}
           </motion.span>
         ) : (
-          <span className="h-1.5 w-1.5 rounded-full bg-zinc-800 dark:bg-zinc-200 shadow-xs" />
+          <span className="h-1.5 w-1.5 rounded-full bg-amber-600 dark:bg-amber-400 shadow-xs" />
         )}
       </motion.div>
     </div>

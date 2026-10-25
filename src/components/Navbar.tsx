@@ -52,7 +52,7 @@ export default function Navbar() {
             </div>
           </div>
           <div>
-            <div className="font-extrabold text-xs sm:text-sm tracking-tight text-zinc-900 dark:text-white group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors flex items-center gap-1">
+            <div className="font-extrabold text-xs sm:text-sm tracking-tight text-zinc-900 dark:text-white group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors flex items-center gap-1">
               <span>Cindy Ardelya</span>
             </div>
             <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-medium hidden md:block">
@@ -62,12 +62,12 @@ export default function Navbar() {
         </Link>
 
         {/* Career Availability Badge (Hidden on mobile/tablet) */}
-        <div className="hidden xl:flex items-center space-x-2 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800 rounded-full px-3.5 py-1.5 bg-zinc-50 dark:bg-zinc-800/60">
+        <div className="hidden xl:flex items-center space-x-2 text-xs font-medium text-teal-800 dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/60 rounded-full px-3.5 py-1.5 bg-teal-50/80 dark:bg-teal-950/40">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
           </span>
-          <span className="text-zinc-800 dark:text-zinc-200 font-bold text-[11px] flex items-center gap-1">
+          <span className="text-teal-900 dark:text-teal-200 font-bold text-[11px] flex items-center gap-1">
             <span>Open for Opportunities & Projects</span>
           </span>
         </div>
