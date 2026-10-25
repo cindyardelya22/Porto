@@ -43,7 +43,7 @@ export default function AboutSection() {
 
             <div className="space-y-1">
               <h3 className="text-xl font-extrabold text-zinc-900 dark:text-white">Cindy Ardelya</h3>
-              <p className="text-xs font-semibold text-indigo-600 dark:text-indigo-400">Informatics Engineering Graduate • Web Developer</p>
+              <p className="text-xs font-semibold text-indigo-600 dark:text-indigo-400">Informatics Engineering Graduate</p>
               <div className="text-xs text-zinc-500 dark:text-zinc-400 space-y-0.5">
                 <p>Politeknik Caltex Riau</p>
                 <p>Pekanbaru, Riau, Indonesia</p>
@@ -65,7 +65,7 @@ export default function AboutSection() {
           <div className="lg:col-span-8 space-y-4 sm:space-y-5">
             <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-bold uppercase tracking-wider border border-zinc-200/60 dark:border-zinc-700">
               <GraduationCap className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
-              <span>Informatics Engineering Graduate • Web Developer</span>
+              <span>Informatics Engineering Graduate</span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight leading-tight">
