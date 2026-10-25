@@ -66,7 +66,7 @@ export default function CustomCursor() {
         className={`fixed flex items-center justify-center rounded-full transition-all duration-200 ${
           isExpanded
             ? 'h-16 w-16 bg-zinc-900/90 dark:bg-white/90 backdrop-blur-md text-white dark:text-zinc-900 shadow-xl border border-white/20 dark:border-zinc-800'
-            : 'h-5 w-5 bg-indigo-500/10 border border-indigo-500/40'
+            : 'h-5 w-5 bg-zinc-500/10 border border-zinc-500/40'
         }`}
       >
         {isExpanded ? (
@@ -78,7 +78,7 @@ export default function CustomCursor() {
             {cursorText || cursorMode}
           </motion.span>
         ) : (
-          <span className="h-1.5 w-1.5 rounded-full bg-indigo-600 dark:bg-indigo-400 shadow-xs" />
+          <span className="h-1.5 w-1.5 rounded-full bg-zinc-800 dark:bg-zinc-200 shadow-xs" />
         )}
       </motion.div>
     </div>

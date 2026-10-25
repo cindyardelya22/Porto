@@ -3,17 +3,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useCursor } from '@/context/CursorContext';
-import { Sparkles, ArrowRight, Smartphone, Heart, GraduationCap, Palette, Brain } from 'lucide-react';
+import { ArrowRight, Smartphone, Heart, GraduationCap, Palette, Brain, CheckCircle2 } from 'lucide-react';
 
 export default function Hero() {
   const { setCursor, resetCursor } = useCursor();
 
   return (
     <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-24 md:pt-44 md:pb-28 overflow-hidden">
-      {/* Soft Ambient Pastel Glow Orbs */}
-      <div className="absolute top-10 left-1/4 w-96 h-96 rounded-full bg-indigo-200/20 dark:bg-indigo-600/10 blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-32 right-1/4 w-80 h-80 rounded-full bg-rose-100/20 dark:bg-pink-600/5 blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-10 left-1/3 w-80 h-80 rounded-full bg-amber-100/20 dark:bg-amber-600/5 blur-3xl pointer-events-none -z-10" />
+      {/* Soft Ambient Subtle Ambient Light */}
+      <div className="absolute top-10 left-1/4 w-96 h-96 rounded-full bg-zinc-200/30 dark:bg-zinc-800/20 blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-32 right-1/4 w-80 h-80 rounded-full bg-zinc-200/20 dark:bg-zinc-800/15 blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Intro Pill */}
@@ -26,9 +25,9 @@ export default function Hero() {
           <div className="inline-flex items-center space-x-2 bg-white/90 dark:bg-zinc-900/90 border border-zinc-200/80 dark:border-zinc-800 rounded-full px-3.5 sm:px-4 py-1.5 sm:py-2 shadow-xs text-xs font-semibold text-zinc-700 dark:text-zinc-300 transition-colors">
             <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
             <span>Hello! I&apos;m Cindy Ardelya</span>
-            <span className="text-zinc-300 dark:text-zinc-600">✦</span>
+            <span className="text-zinc-300 dark:text-zinc-600 select-none">•</span>
             <span className="text-zinc-600 dark:text-zinc-400">Informatics Engineering Graduate • Politeknik Caltex Riau</span>
-            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+            <CheckCircle2 className="w-3.5 h-3.5 text-zinc-400 dark:text-zinc-500" />
           </div>
         </motion.div>
 
@@ -41,7 +40,7 @@ export default function Hero() {
             className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-[1.12]"
           >
             Informatics Engineering Graduate &{' '}
-            <span className="bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-800 dark:from-indigo-300 dark:via-violet-200 dark:to-indigo-200 bg-clip-text text-transparent">
+            <span className="text-zinc-900 dark:text-zinc-100">
               Web Developer.
             </span>
           </motion.h1>
@@ -53,15 +52,15 @@ export default function Hero() {
             className="text-sm sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-300 font-normal max-w-3xl mx-auto leading-relaxed px-2"
           >
             Passionate about{' '}
-            <span className="font-semibold text-zinc-900 dark:text-white underline decoration-indigo-300/80 dark:decoration-indigo-700/80 decoration-2 underline-offset-4">
+            <span className="font-semibold text-zinc-900 dark:text-white underline decoration-zinc-300 dark:decoration-zinc-700 decoration-2 underline-offset-4">
               Technology
             </span>
             ,{' '}
-            <span className="font-semibold text-zinc-900 dark:text-white underline decoration-pink-300/80 dark:decoration-pink-700/80 decoration-2 underline-offset-4">
+            <span className="font-semibold text-zinc-900 dark:text-white underline decoration-zinc-300 dark:decoration-zinc-700 decoration-2 underline-offset-4">
               Graphic Design
             </span>
             , and{' '}
-            <span className="font-semibold text-zinc-900 dark:text-white underline decoration-amber-300/80 dark:decoration-amber-700/80 decoration-2 underline-offset-4">
+            <span className="font-semibold text-zinc-900 dark:text-white underline decoration-zinc-300 dark:decoration-zinc-700 decoration-2 underline-offset-4">
               Digital Communication
             </span>
             . I focus on developing{' '}
@@ -103,7 +102,7 @@ export default function Hero() {
               onMouseLeave={resetCursor}
             >
               <span>Contact Cindy</span>
-              <Heart className="w-4 h-4 text-rose-500 fill-rose-500/20" />
+              <Heart className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
             </a>
           </motion.div>
         </div>
@@ -117,7 +116,7 @@ export default function Hero() {
         >
           {/* Badge 1: Web Development */}
           <div className="bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-zinc-200/80 dark:border-zinc-800 rounded-2xl p-4 shadow-xs hover:shadow-md transition-all flex items-center space-x-3.5">
-            <div className="h-11 w-11 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0 border border-indigo-100 dark:border-indigo-900/40">
+            <div className="h-11 w-11 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 flex items-center justify-center shrink-0 border border-zinc-200/80 dark:border-zinc-700">
               <GraduationCap className="w-5 h-5" />
             </div>
             <div>
@@ -128,7 +127,7 @@ export default function Hero() {
 
           {/* Badge 2: Native Android */}
           <div className="bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-zinc-200/80 dark:border-zinc-800 rounded-2xl p-4 shadow-xs hover:shadow-md transition-all flex items-center space-x-3.5">
-            <div className="h-11 w-11 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 border border-amber-100 dark:border-amber-900/40">
+            <div className="h-11 w-11 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 flex items-center justify-center shrink-0 border border-zinc-200/80 dark:border-zinc-700">
               <Smartphone className="w-5 h-5" />
             </div>
             <div>
@@ -139,7 +138,7 @@ export default function Hero() {
 
           {/* Badge 3: Graphic Design & UI/UX */}
           <div className="bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-zinc-200/80 dark:border-zinc-800 rounded-2xl p-4 shadow-xs hover:shadow-md transition-all flex items-center space-x-3.5">
-            <div className="h-11 w-11 rounded-xl bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 flex items-center justify-center shrink-0 border border-rose-100 dark:border-rose-900/40">
+            <div className="h-11 w-11 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 flex items-center justify-center shrink-0 border border-zinc-200/80 dark:border-zinc-700">
               <Palette className="w-5 h-5" />
             </div>
             <div>
@@ -150,7 +149,7 @@ export default function Hero() {
 
           {/* Badge 4: Applied AI & Systems */}
           <div className="bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-zinc-200/80 dark:border-zinc-800 rounded-2xl p-4 shadow-xs hover:shadow-md transition-all flex items-center space-x-3.5">
-            <div className="h-11 w-11 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 border border-emerald-100 dark:border-emerald-900/40">
+            <div className="h-11 w-11 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 flex items-center justify-center shrink-0 border border-zinc-200/80 dark:border-zinc-700">
               <Brain className="w-5 h-5" />
             </div>
             <div>

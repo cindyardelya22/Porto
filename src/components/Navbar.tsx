@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useCursor } from '@/context/CursorContext';
 import { useTheme } from '@/context/ThemeContext';
-import { Sparkles, MessageCircleHeart, Sun, Moon } from 'lucide-react';
+import { MessageCircleHeart, Sun, Moon } from 'lucide-react';
 
 export default function Navbar() {
   const { setCursor, resetCursor } = useCursor();
@@ -39,7 +39,7 @@ export default function Navbar() {
           onMouseEnter={() => setCursor('default')}
           onMouseLeave={resetCursor}
         >
-          <div className="h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-gradient-to-tr from-zinc-200 via-indigo-200 to-zinc-300 dark:from-zinc-700 dark:via-indigo-900/40 dark:to-zinc-700 p-[2px] shadow-sm group-hover:scale-105 transition-transform duration-300">
+          <div className="h-8 w-8 sm:h-9 sm:w-9 rounded-full border border-zinc-200 dark:border-zinc-700 bg-zinc-100 dark:bg-zinc-800 p-[2px] shadow-sm group-hover:scale-105 transition-transform duration-300">
             <div className="relative h-full w-full rounded-full overflow-hidden bg-white dark:bg-zinc-800 shadow-inner">
               <Image
                 src="/images/profile.jpg"
@@ -52,9 +52,8 @@ export default function Navbar() {
             </div>
           </div>
           <div>
-            <div className="font-extrabold text-xs sm:text-sm tracking-tight text-zinc-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors flex items-center gap-1">
+            <div className="font-extrabold text-xs sm:text-sm tracking-tight text-zinc-900 dark:text-white group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors flex items-center gap-1">
               <span>Cindy Ardelya</span>
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             </div>
             <div className="text-[10px] text-zinc-500 dark:text-zinc-400 font-medium hidden md:block">
               Informatics Engineering Graduate • Web Developer
@@ -63,12 +62,12 @@ export default function Navbar() {
         </Link>
 
         {/* Career Availability Badge (Hidden on mobile/tablet) */}
-        <div className="hidden xl:flex items-center space-x-2 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-emerald-200 dark:border-emerald-800/60 rounded-full px-3.5 py-1.5 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-950/40 dark:to-teal-950/30">
+        <div className="hidden xl:flex items-center space-x-2 text-xs font-medium text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800 rounded-full px-3.5 py-1.5 bg-zinc-50 dark:bg-zinc-800/60">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
-          <span className="text-emerald-800 dark:text-emerald-300 font-bold text-[11px] flex items-center gap-1">
+          <span className="text-zinc-800 dark:text-zinc-200 font-bold text-[11px] flex items-center gap-1">
             <span>Open for Opportunities & Projects</span>
           </span>
         </div>
@@ -84,6 +83,14 @@ export default function Navbar() {
             About
           </a>
           <a
+            href="#certifications"
+            className="hidden sm:inline-block px-2.5 sm:px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-all text-xs sm:text-sm"
+            onMouseEnter={() => setCursor('explore')}
+            onMouseLeave={resetCursor}
+          >
+            Certifications
+          </a>
+          <a
             href="#featured"
             className="px-2.5 sm:px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-all text-xs sm:text-sm"
             onMouseEnter={() => setCursor('explore')}
@@ -93,7 +100,7 @@ export default function Navbar() {
           </a>
           <a
             href="#archive"
-            className="hidden sm:inline-block px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-all text-xs sm:text-sm"
+            className="hidden md:inline-block px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-all text-xs sm:text-sm"
             onMouseEnter={() => setCursor('explore')}
             onMouseLeave={resetCursor}
           >
@@ -101,7 +108,7 @@ export default function Navbar() {
           </a>
           <a
             href="#experience"
-            className="hidden md:inline-block px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-all text-xs sm:text-sm"
+            className="hidden lg:inline-block px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-all text-xs sm:text-sm"
             onMouseEnter={() => setCursor('explore')}
             onMouseLeave={resetCursor}
           >

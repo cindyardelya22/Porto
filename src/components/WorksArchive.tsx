@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArchiveItem, CaseStudy } from '@/types';
 import { useCursor } from '@/context/CursorContext';
-import { Search, ArrowUpRight, Heart, Sparkles, FileText } from 'lucide-react';
+import { Search, ArrowUpRight, Heart, FolderArchive, FileText } from 'lucide-react';
 import { FigmaIcon, CanvaIcon } from '@/components/Icons';
 
 interface WorksArchiveProps {
@@ -72,7 +72,7 @@ export default function WorksArchive({ archive, projects, onSelectProject }: Wor
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-zinc-200/80 dark:border-zinc-800 pb-8">
           <div>
             <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-bold uppercase tracking-wider mb-2 border border-zinc-200/60 dark:border-zinc-700">
-              <Sparkles className="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400" />
+              <FolderArchive className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400" />
               <span>Project Directory & Lab</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
@@ -128,7 +128,7 @@ export default function WorksArchive({ archive, projects, onSelectProject }: Wor
               className="group cursor-pointer bg-white dark:bg-zinc-900 rounded-3xl border border-zinc-200/80 dark:border-zinc-800 overflow-hidden shadow-xs hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-black/60 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
             >
               {/* Thumbnail Container */}
-              <div className="relative aspect-[16/11] bg-gradient-to-br from-purple-100 to-pink-50 dark:from-zinc-800 dark:to-zinc-850 overflow-hidden">
+              <div className="relative aspect-[16/11] bg-zinc-100 dark:bg-zinc-800 overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -182,7 +182,7 @@ export default function WorksArchive({ archive, projects, onSelectProject }: Wor
                 </div>
 
                 <div className="space-y-1">
-                  <h3 className="font-extrabold text-base text-zinc-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-1">
+                  <h3 className="font-extrabold text-base text-zinc-900 dark:text-white group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors line-clamp-1">
                     {item.title}
                   </h3>
                   <p className="text-xs text-zinc-500 dark:text-zinc-400 font-medium">
@@ -208,7 +208,7 @@ export default function WorksArchive({ archive, projects, onSelectProject }: Wor
                     <button
                       type="button"
                       onClick={(e) => handleDirectPreview(e, item)}
-                      className="inline-flex items-center space-x-1.5 text-xs font-bold text-zinc-700 dark:text-zinc-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:underline"
+                      className="inline-flex items-center space-x-1.5 text-xs font-bold text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:underline"
                     >
                       {item.linkType === 'figma' && <FigmaIcon className="w-3.5 h-3.5" />}
                       {item.linkType === 'canva' && <CanvaIcon className="w-3.5 h-3.5" />}
