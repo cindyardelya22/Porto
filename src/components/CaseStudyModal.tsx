@@ -165,14 +165,14 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
               />
             </div>
 
-            {/* Metrics Strip */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-5 bg-purple-50/60 dark:bg-zinc-800/60 rounded-2xl border border-purple-100 dark:border-zinc-750">
+            {/* Project Highlights Strip */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 p-4 bg-purple-50/50 dark:bg-zinc-800/50 rounded-2xl border border-purple-100/70 dark:border-zinc-750">
               {project.stats.map((st, idx) => (
                 <div key={idx} className="space-y-0.5">
-                  <div className="text-2xl sm:text-3xl font-extrabold text-purple-700 dark:text-purple-400">
+                  <div className="text-base sm:text-lg font-extrabold text-purple-700 dark:text-purple-400">
                     {st.value}
                   </div>
-                  <div className="text-xs font-bold text-zinc-800 dark:text-zinc-200">
+                  <div className="text-xs font-bold text-zinc-900 dark:text-zinc-100">
                     {st.label}
                   </div>
                   {st.subtext && (

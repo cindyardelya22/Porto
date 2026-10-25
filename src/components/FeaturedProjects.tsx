@@ -138,24 +138,29 @@ export default function FeaturedProjects({ projects, onSelectProject }: Featured
                       {project.summary}
                     </p>
 
-                    {/* Stats Strip */}
-                    <div className="grid grid-cols-2 gap-3 py-1">
+                    {/* Key Highlights (Minimalist & Clean) */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 py-1">
                       {project.stats.slice(0, 2).map((st, i) => (
                         <div
                           key={i}
-                          className="bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm rounded-2xl p-3.5 border border-white/60 dark:border-zinc-700/60 shadow-xs"
+                          className="flex items-start space-x-3 bg-white/70 dark:bg-zinc-800/70 backdrop-blur-sm rounded-xl p-3 border border-zinc-200/60 dark:border-zinc-700/60 shadow-2xs"
                         >
-                          <div className={`text-xl sm:text-2xl font-extrabold ${style.accentColor}`}>
-                            {st.value}
+                          <div className={`h-8 w-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5 bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-700/80 ${style.accentColor} shadow-2xs`}>
+                            <Sparkles className="w-4 h-4" />
                           </div>
-                          <div className="text-[11px] font-semibold text-zinc-800 dark:text-zinc-200">
-                            {st.label}
-                          </div>
-                          {st.subtext && (
-                            <div className="text-[10px] text-zinc-500 dark:text-zinc-400">
-                              {st.subtext}
+                          <div className="min-w-0 space-y-0.5">
+                            <div className="text-xs font-extrabold text-zinc-900 dark:text-white">
+                              {st.value}
                             </div>
-                          )}
+                            <div className="text-[11px] font-semibold text-zinc-700 dark:text-zinc-300">
+                              {st.label}
+                            </div>
+                            {st.subtext && (
+                              <div className="text-[10px] text-zinc-500 dark:text-zinc-400 line-clamp-1">
+                                {st.subtext}
+                              </div>
+                            )}
+                          </div>
                         </div>
                       ))}
                     </div>

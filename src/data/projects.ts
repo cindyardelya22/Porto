@@ -28,10 +28,10 @@ export const featuredProjects: CaseStudy[] = [
       url: 'https://www.canva.com/design/DAHL91AQq8M/1HScgvwLZlFhChzqSqzYNw/edit',
     },
     stats: [
-      { label: 'Assessment Accuracy', value: '94.2%', subtext: 'Conversational emotion mapping' },
-      { label: 'Design System', value: '100%', subtext: 'Custom Figma design & prototype' },
-      { label: 'Response Latency', value: '<120ms', subtext: 'Interactive chat engine' },
-      { label: 'Well-being Modules', value: '5+', subtext: 'Therapy, mood journal, guidance' },
+      { label: 'Conversational Assessment', value: 'Chatbot AI', subtext: 'Interactive mental well-being check' },
+      { label: 'Kotlin Mobile Architecture', value: 'Android SDK', subtext: 'Native Jetpack & Coroutines' },
+      { label: 'Wellness Features', value: '5+ Modules', subtext: 'Therapy exercises & mood journal' },
+      { label: 'UI/UX Prototype', value: 'Figma Design', subtext: 'Complete user flow & design system' },
     ],
     challenge: {
       description:
@@ -136,10 +136,10 @@ export const featuredProjects: CaseStudy[] = [
       url: 'https://www.canva.com/design/DAHL91AQq8M/1HScgvwLZlFhChzqSqzYNw/edit',
     },
     stats: [
-      { label: 'Approval Turnaround', value: '-65%', subtext: 'Faster multi-stakeholder sign-off' },
-      { label: 'Contract Integrity', value: '100%', subtext: 'Cryptographic QR verification' },
-      { label: 'Paperless Impact', value: '10,000+', subtext: 'Physical sheets eliminated/year' },
-      { label: 'Active Commodity DOs', value: 'Hundreds', subtext: 'Tracked across Regional III' },
+      { label: 'Corporate Workflow', value: '4 User Roles', subtext: 'Admin, Supervisor, Kabag & Buyer' },
+      { label: 'Digital Authentication', value: 'E-Signature', subtext: 'Vector canvas & QR verified PDF' },
+      { label: 'Paperless Automation', value: 'Instant PDF', subtext: 'Automated legal contract issuance' },
+      { label: 'Native Mobile Client', value: 'Android Kotlin', subtext: 'Clean Architecture with offline cache' },
     ],
     challenge: {
       description:
@@ -274,10 +274,10 @@ export const featuredProjects: CaseStudy[] = [
       url: 'https://www.canva.com/design/DAHL91AQq8M/1HScgvwLZlFhChzqSqzYNw/edit',
     },
     stats: [
-      { label: 'Developmental Domains', value: '6 Areas', subtext: 'Cognitive, motor, moral, etc.' },
-      { label: 'Parent Engagement', value: '+85%', subtext: 'Real-time daily activity tracking' },
-      { label: 'Report Generation', value: '1-Click', subtext: 'Automated semester report cards' },
-      { label: 'System Completeness', value: '100%', subtext: 'Individual end-to-end project' },
+      { label: 'Child Growth Tracking', value: '6 Domains', subtext: 'Cognitive, motoric, language & character' },
+      { label: 'Progress Visualization', value: 'Growth Charts', subtext: 'Interactive visual developmental milestones' },
+      { label: 'Automated Reporting', value: '1-Click PDF', subtext: 'Comprehensive student semester reports' },
+      { label: 'Fullstack Platform', value: 'Laravel & MySQL', subtext: 'Complete undergraduate final thesis' },
     ],
     challenge: {
       description:
@@ -382,10 +382,10 @@ export const featuredProjects: CaseStudy[] = [
       url: 'https://github.com/cindyardelya22/ptpn_gis',
     },
     stats: [
-      { label: 'Plantation Blocks Mapped', value: '54+ Blocks', subtext: 'Color-coded spatial polygons' },
-      { label: 'AI Soil Advisor', value: 'Gemini 2.5', subtext: 'Integrated interactive assistant' },
-      { label: 'Nutrient Indexing', value: 'NPK + pH', subtext: 'Comprehensive soil chemistry' },
-      { label: 'Fertilizer Optimization', value: '24%', subtext: 'Projected agrochemical savings' },
+      { label: 'Interactive Web GIS', value: '54+ Blocks', subtext: 'Satellite estate maps & soil status' },
+      { label: 'Smart Soil Advisor', value: 'Gemini AI', subtext: 'Chatbot agronomy recommendations' },
+      { label: 'Chemical Evaluation', value: 'NPK + pH', subtext: 'Machine learning fertility scoring' },
+      { label: 'Reactive Web Engine', value: 'Laravel Livewire', subtext: 'Single-page spatial interface' },
     ],
     challenge: {
       description:
@@ -515,10 +515,10 @@ export const featuredProjects: CaseStudy[] = [
       url: 'https://www.canva.com/design/DAHL91AQq8M/1HScgvwLZlFhChzqSqzYNw/edit',
     },
     stats: [
-      { label: 'Classification Accuracy', value: '96.8%', subtext: 'Validated on test split' },
-      { label: 'Model Architecture', value: 'Custom CNN', subtext: 'Multi-layer Conv2D + Pooling' },
-      { label: 'Inference Speed', value: '<80ms', subtext: 'Per microscopic cell image' },
-      { label: 'Dataset Analyzed', value: '27,500+', subtext: 'Cell images processed' },
+      { label: 'Deep Learning Model', value: 'Custom CNN', subtext: 'Convolutional neural network architecture' },
+      { label: 'Image Dataset', value: '27,500+ Cells', subtext: 'Microscopic blood smear image split' },
+      { label: 'Model Evaluation', value: 'High Accuracy', subtext: 'Validated on scientific test benchmark' },
+      { label: 'Medical AI Pipeline', value: 'Python & Keras', subtext: 'End-to-end training & inference' },
     ],
     challenge: {
       description:
