@@ -179,54 +179,40 @@ export default function KpSlideshow() {
 
       {/* Section Header & Tab Switcher */}
       <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-zinc-200/80 dark:border-zinc-800 pb-6 gap-6">
-        <div className="space-y-3">
-          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-bold uppercase tracking-wider border border-zinc-200/60 dark:border-zinc-700">
-            <Briefcase className="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400" />
-            <span>
-              {activeTab === 'kp'
-                ? 'Corporate Experience & Internship'
-                : 'Certified Internship (MBKM)'}
-            </span>
+        <div className="space-y-3 max-w-xl">
+          <div className="text-xs font-mono uppercase tracking-widest text-zinc-600 dark:text-zinc-400">
+            Field Documentation · PTPN IV Regional III
           </div>
 
-          <h3 className="text-2xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
+          <h3 className="text-2xl sm:text-3xl font-semibold text-zinc-950 dark:text-zinc-50 tracking-tight">
             {activeTab === 'kp'
               ? 'Engineering & Operations at PTPN IV Regional III.'
               : 'Software Developer & IT Support Specialist.'}
           </h3>
 
-          <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 max-w-xl">
+          <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
             {activeTab === 'kp'
-              ? 'Visual documentation from industrial internship at PT Perkebunan Nusantara IV Regional III — software engineering, IT infrastructure provisioning, and multimedia operations.'
-              : 'Visual documentation from certified MBKM internship at PTPN IV Regional III — software engineering, hardware troubleshooting, and executive boardroom technical operations.'}
+              ? 'Visual records from industrial placement at PT Perkebunan Nusantara IV Regional III — internal system architecture, IT staging, and multimedia operations.'
+              : 'Certified MBKM internship documentation at PTPN IV Regional III — native mobile development, hardware diagnostics, and executive conference support.'}
           </p>
         </div>
 
-        {/* Tab Switcher Pills */}
-        <div className="flex items-center p-1.5 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-2xl w-fit shadow-2xs shrink-0">
+        {/* Tab Switcher */}
+        <div className="flex items-center p-1 bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200/80 dark:border-zinc-700/80 rounded-lg w-fit shrink-0 font-mono text-xs">
           <button
             type="button"
             onClick={() => {
               setActiveTab('kp');
               setCurrentIndex(0);
             }}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 ${
+            className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-md transition-colors ${
               activeTab === 'kp'
-                ? 'bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white shadow-xs'
-                : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
+                ? 'bg-white dark:bg-zinc-900 text-zinc-950 dark:text-zinc-100 font-semibold shadow-xs'
+                : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100'
             }`}
           >
-            <Briefcase className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400" />
             <span>Internship (KP)</span>
-            <span
-              className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${
-                activeTab === 'kp'
-                  ? 'bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200'
-                  : 'bg-zinc-200/70 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400'
-              }`}
-            >
-              5 Photos
-            </span>
+            <span className="text-[10px] text-zinc-600 dark:text-zinc-400">5</span>
           </button>
 
           <button
@@ -235,23 +221,14 @@ export default function KpSlideshow() {
               setActiveTab('mbkm');
               setCurrentIndex(0);
             }}
-            className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 ${
+            className={`flex items-center space-x-2 px-3.5 py-1.5 rounded-md transition-colors ${
               activeTab === 'mbkm'
-                ? 'bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white shadow-xs'
-                : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
+                ? 'bg-white dark:bg-zinc-900 text-zinc-950 dark:text-zinc-100 font-semibold shadow-xs'
+                : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100'
             }`}
           >
-            <GraduationCap className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
             <span>MBKM Program</span>
-            <span
-              className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${
-                activeTab === 'mbkm'
-                  ? 'bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200'
-                  : 'bg-zinc-200/70 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400'
-              }`}
-            >
-              5 Photos
-            </span>
+            <span className="text-[10px] text-zinc-600 dark:text-zinc-400">5</span>
           </button>
         </div>
       </div>
@@ -265,78 +242,53 @@ export default function KpSlideshow() {
           onMouseLeave={() => setIsPlaying(true)}
         >
           {/* Main Slide Card */}
-          <div className="relative w-full h-[380px] sm:h-[460px] md:h-[500px] rounded-[2rem] overflow-hidden bg-zinc-950 shadow-2xl shadow-purple-500/10 border border-zinc-800 flex items-center justify-center group">
-            {/* Ambient Blurred Colored Glow from Active Slide */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={`${activeTab}-${currentIndex}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.4 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.6 }}
-                className="absolute inset-0 pointer-events-none"
-              >
-                <Image
-                  src={activePhotos[currentIndex].src}
-                  alt="Backdrop ambient glow"
-                  fill
-                  sizes="100vw"
-                  className="object-cover blur-3xl scale-125"
-                  priority
-                />
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Dark Vignette Overlay */}
-            <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/40 to-black/80 pointer-events-none z-10" />
-
+          <div className="relative w-full h-[380px] sm:h-[460px] md:h-[480px] rounded-xl overflow-hidden bg-zinc-950 border border-zinc-200/80 dark:border-zinc-800 flex items-center justify-center group shadow-sm">
             {/* Animated Photo Transition */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={`${activeTab}-${currentIndex}`}
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 1.04 }}
-                transition={{ duration: 0.5, ease: 'easeInOut' }}
-                className="relative w-full h-full p-4 sm:p-6 flex items-center justify-center z-10"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
+                className="relative w-full h-full p-4 flex items-center justify-center z-10"
               >
-                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center">
+                <div className="relative w-full h-full rounded-lg overflow-hidden flex items-center justify-center">
                   <Image
                     src={activePhotos[currentIndex].src}
                     alt={activePhotos[currentIndex].title}
                     fill
                     sizes="(max-width: 1024px) 100vw, 60vw"
-                    className="object-contain drop-shadow-2xl"
+                    className="object-contain"
                     priority
                   />
                 </div>
               </motion.div>
             </AnimatePresence>
 
-            {/* Top Slide Badge & Controls */}
+            {/* Top Slide Meta & Controls */}
             <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-auto">
-              <div className="bg-black/60 backdrop-blur-md border border-white/10 text-white text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center space-x-2 shadow-lg">
-                <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+              <div className="bg-zinc-950/80 backdrop-blur-md border border-white/10 text-white text-[11px] font-mono px-3 py-1.5 rounded-md flex items-center space-x-2">
                 <span>PTPN IV Regional III</span>
-                <span className="text-white/40">•</span>
-                <span className="text-purple-300 font-semibold uppercase">
-                  {activeTab === 'kp' ? 'Internship' : 'MBKM Program'}
+                <span className="text-zinc-500">•</span>
+                <span className="text-zinc-300">
+                  {activeTab === 'kp' ? 'Internship' : 'MBKM'}
                 </span>
-                <span className="text-white/40">•</span>
-                <span className="text-emerald-300">
+                <span className="text-zinc-500">•</span>
+                <span className="text-zinc-400">
                   {currentIndex + 1} / {activePhotos.length}
                 </span>
               </div>
 
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-1.5">
                 {/* Play/Pause Button */}
                 <button
                   type="button"
                   onClick={() => setIsPlaying(!isPlaying)}
                   title={isPlaying ? 'Pause Slideshow' : 'Play Slideshow'}
-                  className="bg-black/60 hover:bg-black/90 backdrop-blur-md border border-white/10 text-white p-2 rounded-full transition-all shadow-lg hover:scale-105 active:scale-95"
+                  className="bg-zinc-950/80 hover:bg-zinc-900 backdrop-blur-md border border-white/10 text-white p-2 rounded-md transition-colors"
                 >
-                  {isPlaying ? <Pause className="w-4 h-4 text-emerald-400" /> : <Play className="w-4 h-4 text-white" />}
+                  {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
                 </button>
 
                 {/* Lightbox Fullscreen Button */}
@@ -344,10 +296,17 @@ export default function KpSlideshow() {
                   type="button"
                   onClick={() => setIsLightboxOpen(true)}
                   title="Expand Fullscreen"
-                  className="bg-black/60 hover:bg-black/90 backdrop-blur-md border border-white/10 text-white p-2 rounded-full transition-all shadow-lg hover:scale-105 active:scale-95"
+                  className="bg-zinc-950/80 hover:bg-zinc-900 backdrop-blur-md border border-white/10 text-white p-2 rounded-md transition-colors"
                 >
-                  <Maximize2 className="w-4 h-4 text-purple-300" />
+                  <Maximize2 className="w-3.5 h-3.5" />
                 </button>
+              </div>
+            </div>
+
+            {/* Slide Title Bar */}
+            <div className="absolute bottom-4 left-4 right-4 z-20 pointer-events-none">
+              <div className="bg-zinc-950/85 backdrop-blur-md border border-white/10 text-white text-xs px-3.5 py-2 rounded-md truncate">
+                {activePhotos[currentIndex].title}
               </div>
             </div>
 
@@ -356,38 +315,37 @@ export default function KpSlideshow() {
               type="button"
               onClick={prevSlide}
               title="Previous Photo"
-              className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 bg-white/80 dark:bg-zinc-800/80 hover:bg-white dark:hover:bg-zinc-700 text-zinc-900 dark:text-white p-2.5 sm:p-3 rounded-full shadow-xl backdrop-blur-md transition-all hover:scale-110 active:scale-90 border border-transparent dark:border-zinc-700/60"
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-zinc-950/70 hover:bg-zinc-950 text-white p-2.5 rounded-md transition-colors border border-white/10"
               onMouseEnter={() => setCursor('link')}
               onMouseLeave={resetCursor}
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4" />
             </button>
 
             <button
               type="button"
               onClick={nextSlide}
               title="Next Photo"
-              className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 bg-white/80 dark:bg-zinc-800/80 hover:bg-white dark:hover:bg-zinc-700 text-zinc-900 dark:text-white p-2.5 sm:p-3 rounded-full shadow-xl backdrop-blur-md transition-all hover:scale-110 active:scale-90 border border-transparent dark:border-zinc-700/60"
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-zinc-950/70 hover:bg-zinc-950 text-white p-2.5 rounded-md transition-colors border border-white/10"
               onMouseEnter={() => setCursor('link')}
               onMouseLeave={resetCursor}
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4" />
             </button>
           </div>
 
-          {/* Bottom Thumbnails Strip & Dot Indicators */}
+          {/* Bottom Thumbnails Strip */}
           <div className="flex items-center justify-between gap-4 pt-1">
-            {/* Clickable Mini Thumbnails */}
-            <div className="flex items-center space-x-2.5 overflow-x-auto py-1 scrollbar-none">
+            <div className="flex items-center space-x-2 overflow-x-auto py-1 scrollbar-none">
               {activePhotos.map((photo, idx) => (
                 <button
                   key={`${activeTab}-${photo.id}`}
                   type="button"
                   onClick={() => setCurrentIndex(idx)}
-                  className={`relative w-14 h-11 sm:w-16 sm:h-12 rounded-xl overflow-hidden shrink-0 transition-all duration-300 border-2 ${
+                  className={`relative w-14 h-10 rounded-md overflow-hidden shrink-0 transition-all border ${
                     currentIndex === idx
-                      ? 'border-purple-600 scale-105 shadow-md shadow-purple-500/20'
-                      : 'border-transparent opacity-60 hover:opacity-100'
+                      ? 'border-zinc-950 dark:border-white opacity-100 ring-1 ring-zinc-900 dark:ring-white'
+                      : 'border-zinc-200 dark:border-zinc-800 opacity-60 hover:opacity-100'
                   }`}
                 >
                   <Image
@@ -401,44 +359,31 @@ export default function KpSlideshow() {
               ))}
             </div>
 
-            {/* Indicator Dots */}
-            <div className="flex items-center space-x-1.5 shrink-0">
-              {activePhotos.map((_, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setCurrentIndex(idx)}
-                  aria-label={`Go to slide ${idx + 1}`}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    currentIndex === idx
-                      ? 'w-6 bg-gradient-to-r from-purple-600 to-pink-500'
-                      : 'w-2 bg-zinc-200 dark:bg-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-600'
-                  }`}
-                />
-              ))}
+            <div className="text-xs font-mono text-zinc-600 dark:text-zinc-400 shrink-0">
+              {currentIndex + 1} of {activePhotos.length}
             </div>
           </div>
         </div>
 
         {/* Unified Activities Overview (5 Cols on LG) */}
-        <div className="lg:col-span-5 space-y-5 bg-gradient-to-br from-purple-50/70 via-white to-pink-50/70 dark:from-zinc-900 dark:via-zinc-900/90 dark:to-zinc-900 rounded-[2rem] border border-purple-100 dark:border-zinc-800 p-6 sm:p-8 shadow-sm">
+        <div className="lg:col-span-5 space-y-6 bg-white/70 dark:bg-zinc-900/60 rounded-xl border border-zinc-200/80 dark:border-zinc-800 p-6 sm:p-7">
           <div className="space-y-2">
-            <span className="text-[11px] font-bold text-purple-700 dark:text-purple-300 uppercase tracking-wider bg-purple-100/70 dark:bg-purple-950/70 px-3 py-1 rounded-full inline-block">
+            <div className="text-[11px] font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider">
               {activeTab === 'kp' ? 'Internship Responsibilities' : 'MBKM Responsibilities'}
-            </span>
-            <h4 className="text-xl sm:text-2xl font-extrabold text-zinc-900 dark:text-white leading-snug">
+            </div>
+            <h4 className="text-xl font-semibold text-zinc-950 dark:text-zinc-50 leading-snug">
               {activeTab === 'kp'
-                ? 'Real-World Experience in Corporate IT'
+                ? 'Corporate IT & Systems Support'
                 : 'Software Engineering & IT Operations'}
             </h4>
-            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed pt-1">
+            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed pt-1">
               {activeTab === 'kp' ? (
                 <>
-                  During the industrial internship at <strong>PT Perkebunan Nusantara IV (PTPN IV) Regional III</strong>, Cindy actively contributed across engineering, IT operations, and corporate event management:
+                  During the industrial placement at <strong>PT Perkebunan Nusantara IV Regional III</strong>, Cindy actively contributed across engineering, IT operations, and corporate event management:
                 </>
               ) : (
                 <>
-                  During the certified MBKM internship at <strong>PT Perkebunan Nusantara IV (PTPN IV) Regional III</strong>, Cindy carried out comprehensive responsibilities as a <strong>Programmer</strong> and <strong>IT Support</strong> specialist, while assisting executive events:
+                  During the certified MBKM internship at <strong>PT Perkebunan Nusantara IV Regional III</strong>, Cindy carried out responsibilities as a <strong>Programmer</strong> and <strong>IT Support</strong> specialist:
                 </>
               )}
             </p>
@@ -451,18 +396,16 @@ export default function KpSlideshow() {
               return (
                 <div
                   key={aIdx}
-                  className="bg-white/90 dark:bg-zinc-800/90 rounded-2xl p-4 border border-purple-100/80 dark:border-zinc-800 shadow-2xs hover:shadow-md transition-all duration-200 flex items-start space-x-3.5 group"
+                  className="rounded-lg p-3.5 border border-zinc-200/70 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-800/40 flex items-start space-x-3 group"
                 >
-                  <div
-                    className={`h-10 w-10 rounded-xl flex items-center justify-center shrink-0 border ${act.bgColor} group-hover:scale-105 transition-transform`}
-                  >
-                    <Icon className="w-5 h-5" />
+                  <div className="h-8 w-8 rounded-md bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 flex items-center justify-center shrink-0 text-zinc-700 dark:text-zinc-300">
+                    <Icon className="w-4 h-4" />
                   </div>
                   <div className="space-y-1">
-                    <h5 className="font-extrabold text-xs sm:text-sm text-zinc-900 dark:text-white">
+                    <h5 className="font-semibold text-xs sm:text-sm text-zinc-950 dark:text-zinc-50">
                       {act.title}
                     </h5>
-                    <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-normal">
+                    <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
                       {act.description}
                     </p>
                   </div>
@@ -484,21 +427,22 @@ export default function KpSlideshow() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header Controls */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-zinc-800 bg-zinc-900/60">
-              <div className="text-white text-xs sm:text-sm font-bold flex items-center space-x-2">
-                <span className="bg-purple-600 px-2.5 py-0.5 rounded-full text-xs">PTPN IV Regional III</span>
+            <div className="flex items-center justify-between px-6 py-4 border-b border-zinc-800 bg-zinc-900/60 font-mono text-xs">
+              <div className="text-zinc-200 flex items-center space-x-2">
+                <span className="text-zinc-100 font-semibold">PTPN IV Regional III</span>
+                <span className="text-zinc-600">/</span>
                 <span className="text-zinc-400">
                   {activeTab === 'kp' ? 'Industrial Internship' : 'Certified Internship (MBKM)'}
                 </span>
-                <span className="text-zinc-600">•</span>
-                <span className="text-emerald-400">Photo {currentIndex + 1} / {activePhotos.length}</span>
+                <span className="text-zinc-600">/</span>
+                <span className="text-zinc-400">{currentIndex + 1} of {activePhotos.length}</span>
               </div>
               <button
                 type="button"
                 onClick={() => setIsLightboxOpen(false)}
-                className="p-1.5 rounded-full hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors"
+                className="p-1 rounded-md hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
             </div>
 

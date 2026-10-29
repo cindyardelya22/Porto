@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Plus_Jakarta_Sans, Geist_Mono } from 'next/font/google';
+import { Plus_Jakarta_Sans, Newsreader, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { CursorProvider } from '@/context/CursorContext';
 import { ThemeProvider } from '@/context/ThemeContext';
@@ -7,14 +7,22 @@ import CustomCursor from '@/components/CustomCursor';
 import SmoothScroll from '@/components/SmoothScroll';
 
 const jakarta = Plus_Jakarta_Sans({
-  variable: '--font-jakarta',
+  variable: '--font-sans',
   subsets: ['latin'],
   display: 'swap',
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700'],
+});
+
+const newsreader = Newsreader({
+  variable: '--font-serif',
+  subsets: ['latin'],
+  display: 'swap',
+  style: ['normal', 'italic'],
+  weight: ['400', '500', '600'],
 });
 
 const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+  variable: '--font-mono',
   subsets: ['latin'],
   display: 'swap',
 });
@@ -81,7 +89,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${jakarta.variable} ${geistMono.variable}`}
+      className={`${jakarta.variable} ${newsreader.variable} ${geistMono.variable}`}
     >
       <head>
         <script

@@ -3,147 +3,123 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useCursor } from '@/context/CursorContext';
-import { ArrowRight, Award, ShieldCheck, Smartphone, Globe2, Sparkles } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function Hero() {
   const { setCursor, resetCursor } = useCursor();
 
   return (
-    <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-20 md:pt-44 md:pb-24 overflow-hidden">
-      {/* Subtle, refined background grid texture instead of overused glowing AI blur orbs */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none -z-10" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-indigo-50/50 via-transparent to-transparent dark:from-indigo-950/20 dark:via-transparent pointer-events-none -z-10" />
-
+    <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-24 md:pt-44 md:pb-28 overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
-        {/* Availability Badge */}
+        {/* Subtle, Understated Location & Degree Meta */}
         <motion.div
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex justify-center mb-6"
+          className="flex items-center space-x-2 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 mb-6 font-normal"
         >
-          <div className="inline-flex items-center space-x-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-full px-4 py-1.5 shadow-2xs text-xs font-medium text-zinc-700 dark:text-zinc-300">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-            </span>
-            <span className="font-semibold text-zinc-900 dark:text-white">Cindy Ardelya</span>
-            <span className="text-zinc-300 dark:text-zinc-700">•</span>
-            <span>Informatics Engineering Graduate • Politeknik Caltex Riau</span>
-          </div>
+          <span>Pekanbaru, Indonesia</span>
+          <span className="text-zinc-300 dark:text-zinc-700">—</span>
+          <span>Informatics Engineering • Politeknik Caltex Riau</span>
         </motion.div>
 
-        {/* Clear, Memorable Headline */}
-        <div className="text-center max-w-4xl mx-auto space-y-6">
+        {/* Expressive Editorial Headline with Newsreader Serif Accent */}
+        <div className="space-y-6 sm:space-y-8">
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-zinc-900 dark:text-white leading-[1.14]"
+            className="text-3xl sm:text-5xl lg:text-[3.65rem] font-medium tracking-tight text-zinc-950 dark:text-zinc-50 leading-[1.12]"
           >
-            Building dependable web platforms, native Android apps, and thoughtful digital interfaces.
+            Building dependable web platforms, native Android tools, and{' '}
+            <span className="font-serif italic font-normal text-zinc-700 dark:text-zinc-300">
+              thoughtful digital systems.
+            </span>
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-300 font-normal max-w-2xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 font-normal max-w-2xl leading-relaxed"
           >
-            I&apos;m an Informatics Engineering graduate from Politeknik Caltex Riau with hands-on corporate engineering experience at PTPN IV Regional III. I build clean fullstack web applications, native Kotlin Android tools, and user-centered interfaces that solve practical problems.
+            I&apos;m Cindy Ardelya. With practical corporate software engineering experience at PTPN IV Regional III, I focus on fullstack web development, native Kotlin applications, and applied security — turning operational needs into clean, dependable software.
           </motion.p>
 
-          {/* Action CTAs */}
+          {/* Action Links */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-2"
+            className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2"
           >
             <a
               href="#featured"
-              className="inline-flex items-center space-x-2 bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-zinc-900 font-bold text-xs sm:text-sm px-6 py-3.5 rounded-full shadow-sm hover:shadow-md transition-all group"
+              className="inline-flex items-center space-x-1.5 bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-white text-white dark:text-zinc-950 text-xs sm:text-sm font-semibold px-5 py-3 rounded-full shadow-2xs transition-all"
               onMouseEnter={() => setCursor('explore', 'PROJECTS')}
               onMouseLeave={resetCursor}
             >
-              <span>Explore Featured Work</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <span>Explore Selected Work</span>
+              <ArrowUpRight className="w-3.5 h-3.5 opacity-80" strokeWidth={1.75} />
             </a>
 
             <a
               href="#certificates"
-              className="inline-flex items-center space-x-2 bg-white dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-900 dark:text-zinc-100 font-bold text-xs sm:text-sm px-5 py-3.5 rounded-full border border-zinc-200 dark:border-zinc-800 shadow-2xs hover:shadow-sm transition-all"
+              className="inline-flex items-center space-x-1 text-xs sm:text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white px-4 py-3 rounded-full border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 bg-white/60 dark:bg-zinc-900/60 transition-colors"
               onMouseEnter={() => setCursor('link')}
               onMouseLeave={resetCursor}
             >
-              <Award className="w-4 h-4 text-amber-500" />
-              <span>View Certifications</span>
+              <span>Verified Credentials (8)</span>
             </a>
 
             <a
-              href="#contact"
-              className="inline-flex items-center space-x-2 bg-transparent hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-semibold text-xs sm:text-sm px-4 py-3.5 rounded-full transition-all"
+              href="mailto:cindyardelya@gmail.com"
+              className="inline-flex items-center text-xs sm:text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white px-3 py-3 transition-colors"
               onMouseEnter={() => setCursor('link')}
               onMouseLeave={resetCursor}
             >
-              <span>Get in Touch</span>
+              <span>cindyardelya@gmail.com</span>
             </a>
           </motion.div>
         </div>
 
-        {/* Practical Grounding: 4 Focus Pillars */}
+        {/* Core Disciplines & Background Strip (Natural & Scannable) */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-12 sm:pt-16 max-w-5xl mx-auto"
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16 sm:mt-20 pt-8 sm:pt-10 border-t border-zinc-200/80 dark:border-zinc-800/80 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"
         >
-          <div className="bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 rounded-2xl p-4 shadow-2xs hover:shadow-md transition-all">
-            <div className="flex items-center space-x-3">
-              <div className="h-10 w-10 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white flex items-center justify-center shrink-0">
-                <Globe2 className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-              </div>
-              <div className="min-w-0">
-                <div className="text-xs font-extrabold text-zinc-900 dark:text-white">Web & GIS Platforms</div>
-                <div className="text-[11px] text-zinc-500 dark:text-zinc-400 truncate">Laravel, Livewire, MySQL, Leaflet</div>
-              </div>
-            </div>
+          <div className="space-y-1.5">
+            <span className="text-[11px] font-mono font-medium text-zinc-400 dark:text-zinc-500">01 / WEB & GIS</span>
+            <h2 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Fullstack Web Systems</h2>
+            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Laravel, Livewire, MySQL, and Leaflet GIS spatial mapping for operational data.
+            </p>
           </div>
 
-          <div className="bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 rounded-2xl p-4 shadow-2xs hover:shadow-md transition-all">
-            <div className="flex items-center space-x-3">
-              <div className="h-10 w-10 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white flex items-center justify-center shrink-0">
-                <Smartphone className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
-              </div>
-              <div className="min-w-0">
-                <div className="text-xs font-extrabold text-zinc-900 dark:text-white">Native Android</div>
-                <div className="text-[11px] text-zinc-500 dark:text-zinc-400 truncate">Kotlin, Jetpack, MVVM, Clean Architecture</div>
-              </div>
-            </div>
+          <div className="space-y-1.5">
+            <span className="text-[11px] font-mono font-medium text-zinc-400 dark:text-zinc-500">02 / MOBILE</span>
+            <h2 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Native Android</h2>
+            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Kotlin, Jetpack, MVVM architecture, clean repository patterns, and offline-first Room databases.
+            </p>
           </div>
 
-          <div className="bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 rounded-2xl p-4 shadow-2xs hover:shadow-md transition-all">
-            <div className="flex items-center space-x-3">
-              <div className="h-10 w-10 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-5 h-5 text-teal-600 dark:text-teal-400" />
-              </div>
-              <div className="min-w-0">
-                <div className="text-xs font-extrabold text-zinc-900 dark:text-white">Certified Security</div>
-                <div className="text-[11px] text-zinc-500 dark:text-zinc-400 truncate">EC-Council (EHE, NDE) & Cisco</div>
-              </div>
-            </div>
+          <div className="space-y-1.5">
+            <span className="text-[11px] font-mono font-medium text-zinc-400 dark:text-zinc-500">03 / ENTERPRISE</span>
+            <h2 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">PTPN IV Regional III</h2>
+            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              Engineered By-Pro contract signing, AgriSmart GIS portal, and enterprise IT telemetry.
+            </p>
           </div>
 
-          <div className="bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 rounded-2xl p-4 shadow-2xs hover:shadow-md transition-all">
-            <div className="flex items-center space-x-3">
-              <div className="h-10 w-10 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white flex items-center justify-center shrink-0">
-                <Sparkles className="w-5 h-5 text-amber-500" />
-              </div>
-              <div className="min-w-0">
-                <div className="text-xs font-extrabold text-zinc-900 dark:text-white">Enterprise Systems</div>
-                <div className="text-[11px] text-zinc-500 dark:text-zinc-400 truncate">PTPN IV MBKM & Industrial IT</div>
-              </div>
-            </div>
+          <div className="space-y-1.5">
+            <span className="text-[11px] font-mono font-medium text-zinc-400 dark:text-zinc-500">04 / ACCREDITATION</span>
+            <h2 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Security & Networking</h2>
+            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+              EC-Council EHE & NDE, Cisco NetAcad, MikroTik MTCNA, and BNSP National Programmer.
+            </p>
           </div>
         </motion.div>
       </div>

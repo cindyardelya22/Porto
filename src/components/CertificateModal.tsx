@@ -75,19 +75,18 @@ export default function CertificateModal({ certificate, onClose }: CertificateMo
 
         {/* Modal Window */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 15 }}
+          initial={{ opacity: 0, scale: 0.96, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 15 }}
-          transition={{ duration: 0.25, ease: 'easeOut' }}
-          className="relative w-full max-w-5xl max-h-[92vh] flex flex-col bg-white dark:bg-zinc-900 rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 z-10 overflow-hidden text-zinc-900 dark:text-zinc-100"
+          exit={{ opacity: 0, scale: 0.96, y: 12 }}
+          transition={{ duration: 0.22, ease: 'easeOut' }}
+          className="relative w-full max-w-5xl max-h-[92vh] flex flex-col bg-white dark:bg-zinc-900 rounded-2xl shadow-xl border border-zinc-200 dark:border-zinc-800 z-10 overflow-hidden text-zinc-900 dark:text-zinc-100"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header Bar */}
           <div className="flex items-center justify-between border-b border-zinc-200/80 dark:border-zinc-800 px-4 sm:px-6 py-3.5 bg-zinc-50/95 dark:bg-zinc-900/95 backdrop-blur-md shrink-0">
             <div className="flex items-center space-x-2.5 min-w-0 pr-2">
-              <span className="inline-flex items-center space-x-1 text-[11px] font-bold px-2.5 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200/60 dark:border-indigo-800/50 shrink-0">
-                <ShieldCheck className="w-3.5 h-3.5" />
-                <span>{certificate.category}</span>
+              <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700 shrink-0">
+                {certificate.category}
               </span>
               <span className="text-xs text-zinc-500 dark:text-zinc-400 font-mono hidden sm:inline-block truncate">
                 {certificate.fileName || certificate.credentialId || 'Verified Credential'}
@@ -97,13 +96,13 @@ export default function CertificateModal({ certificate, onClose }: CertificateMo
             <div className="flex items-center space-x-2">
               {/* View Mode Toggle (Preview vs Embedded PDF) */}
               {certificate.documentUrl?.endsWith('.pdf') && certificate.previewImage && !hasError && (
-                <div className="flex items-center bg-zinc-200/80 dark:bg-zinc-800 p-0.5 rounded-full text-[11px] font-semibold border border-zinc-300/50 dark:border-zinc-700">
+                <div className="flex items-center bg-zinc-200/80 dark:bg-zinc-800 p-0.5 rounded-md text-[11px] font-mono border border-zinc-300/50 dark:border-zinc-700">
                   <button
                     type="button"
                     onClick={() => setViewMode('image')}
-                    className={`px-2.5 py-0.5 rounded-full transition-colors ${
+                    className={`px-2.5 py-0.5 rounded-sm transition-colors ${
                       viewMode === 'image'
-                        ? 'bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-2xs font-bold'
+                        ? 'bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white font-semibold shadow-2xs'
                         : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
                     }`}
                   >
@@ -112,9 +111,9 @@ export default function CertificateModal({ certificate, onClose }: CertificateMo
                   <button
                     type="button"
                     onClick={() => setViewMode('pdf')}
-                    className={`px-2.5 py-0.5 rounded-full transition-colors ${
+                    className={`px-2.5 py-0.5 rounded-sm transition-colors ${
                       viewMode === 'pdf'
-                        ? 'bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-2xs font-bold'
+                        ? 'bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white font-semibold shadow-2xs'
                         : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
                     }`}
                   >
@@ -125,18 +124,18 @@ export default function CertificateModal({ certificate, onClose }: CertificateMo
 
               {/* Zoom Controls (when viewing image) */}
               {viewMode === 'image' && !hasError && (
-                <div className="hidden sm:flex items-center space-x-1 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-full p-1 shadow-2xs">
+                <div className="hidden sm:flex items-center space-x-1 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-md p-0.5 shadow-2xs">
                   <button
                     type="button"
                     onClick={handleZoomOut}
                     disabled={zoomLevel <= 0.75}
                     title="Zoom Out"
                     aria-label="Zoom Out"
-                    className="p-1 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-600 dark:text-zinc-300 disabled:opacity-40 transition-colors"
+                    className="p-1 rounded-sm hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-600 dark:text-zinc-300 disabled:opacity-40 transition-colors"
                   >
-                    <ZoomOut className="w-4 h-4" />
+                    <ZoomOut className="w-3.5 h-3.5" />
                   </button>
-                  <span className="text-[11px] font-mono px-1.5 min-w-[40px] text-center font-semibold text-zinc-700 dark:text-zinc-300">
+                  <span className="text-[11px] font-mono px-1.5 min-w-[36px] text-center font-medium text-zinc-700 dark:text-zinc-300">
                     {Math.round(zoomLevel * 100)}%
                   </span>
                   <button
@@ -145,9 +144,9 @@ export default function CertificateModal({ certificate, onClose }: CertificateMo
                     disabled={zoomLevel >= 2.5}
                     title="Zoom In"
                     aria-label="Zoom In"
-                    className="p-1 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-600 dark:text-zinc-300 disabled:opacity-40 transition-colors"
+                    className="p-1 rounded-sm hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-600 dark:text-zinc-300 disabled:opacity-40 transition-colors"
                   >
-                    <ZoomIn className="w-4 h-4" />
+                    <ZoomIn className="w-3.5 h-3.5" />
                   </button>
                   {zoomLevel !== 1 && (
                     <button
@@ -155,9 +154,9 @@ export default function CertificateModal({ certificate, onClose }: CertificateMo
                       onClick={handleResetZoom}
                       title="Reset Zoom"
                       aria-label="Reset Zoom"
-                      className="p-1 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-600 dark:text-zinc-300 transition-colors"
+                      className="p-1 rounded-sm hover:bg-zinc-100 dark:hover:bg-zinc-700 text-zinc-600 dark:text-zinc-300 transition-colors"
                     >
-                      <RotateCcw className="w-3.5 h-3.5" />
+                      <RotateCcw className="w-3 h-3" />
                     </button>
                   )}
                 </div>
@@ -168,7 +167,7 @@ export default function CertificateModal({ certificate, onClose }: CertificateMo
                 type="button"
                 onClick={onClose}
                 aria-label="Close certificate preview"
-                className="h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-zinc-200/80 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300 flex items-center justify-center transition-colors"
+                className="h-8 w-8 rounded-md bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300 flex items-center justify-center transition-colors border border-zinc-200 dark:border-zinc-700"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -298,7 +297,7 @@ export default function CertificateModal({ certificate, onClose }: CertificateMo
                     href={certificate.verificationUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-full text-xs font-semibold bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-zinc-700 border border-zinc-200 dark:border-zinc-700 transition-colors"
+                    className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-lg text-xs font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-750 dark:text-zinc-200 hover:bg-zinc-200 dark:hover:bg-zinc-700 border border-zinc-200 dark:border-zinc-700 transition-colors"
                   >
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                     <span>Verify Credential</span>
@@ -312,19 +311,19 @@ export default function CertificateModal({ certificate, onClose }: CertificateMo
                       href={certificate.documentUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-full text-xs font-bold bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-zinc-900 shadow-xs hover:shadow-md transition-all"
+                      className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-white text-white dark:text-zinc-900 transition-colors"
                     >
                       <ExternalLink className="w-3.5 h-3.5" />
-                      <span>Open in New Tab</span>
+                      <span>Open Document</span>
                     </a>
 
                     <a
                       href={certificate.documentUrl}
                       download={certificate.fileName || 'certificate'}
-                      className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-full text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white shadow-xs hover:shadow-md transition-all"
+                      className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white transition-colors"
                     >
                       <Download className="w-3.5 h-3.5" />
-                      <span>Download File</span>
+                      <span>Download</span>
                     </a>
                   </>
                 )}
@@ -332,14 +331,14 @@ export default function CertificateModal({ certificate, onClose }: CertificateMo
             </div>
 
             {/* Skills Tag Pills */}
-            <div className="flex flex-wrap items-center gap-1.5 pt-1 border-t border-zinc-100 dark:border-zinc-800/80">
-              <span className="text-[11px] font-semibold text-zinc-400 dark:text-zinc-500 mr-1">
-                Verified Competencies:
+            <div className="flex flex-wrap items-center gap-1.5 pt-1 border-t border-zinc-100 dark:border-zinc-800/80 font-mono text-[11px]">
+              <span className="text-zinc-600 dark:text-zinc-400 mr-1 uppercase text-[10px]">
+                Competencies:
               </span>
               {certificate.skills.map((skill, sIdx) => (
                 <span
                   key={sIdx}
-                  className="text-[10px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 px-2.5 py-0.5 rounded-full border border-zinc-200/60 dark:border-zinc-700/60"
+                  className="bg-zinc-100 dark:bg-zinc-800/80 text-zinc-700 dark:text-zinc-300 px-2 py-0.5 rounded-md border border-zinc-200/60 dark:border-zinc-700/60"
                 >
                   {skill}
                 </span>

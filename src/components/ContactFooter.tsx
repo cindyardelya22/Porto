@@ -1,17 +1,12 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import React, { useState } from 'react';
 import { useCursor } from '@/context/CursorContext';
-import confetti from 'canvas-confetti';
 import {
   Copy,
   Check,
   ArrowUpRight,
-  Mail,
   ChevronUp,
-  Sparkles,
-  Phone,
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/Icons';
 
@@ -20,51 +15,14 @@ export default function ContactFooter() {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const email = 'cindyardelya@gmail.com';
 
-  // Magnetic Button Spring Logic
-  const buttonRef = useRef<HTMLAnchorElement>(null);
-  const btnX = useMotionValue(0);
-  const btnY = useMotionValue(0);
-
-  const springConfig = { damping: 15, stiffness: 150, mass: 0.1 };
-  const magneticX = useSpring(btnX, springConfig);
-  const magneticY = useSpring(btnY, springConfig);
-
-  const handleMagneticMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (!buttonRef.current) return;
-    const rect = buttonRef.current.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-
-    const distanceX = (e.clientX - centerX) * 0.35;
-    const distanceY = (e.clientY - centerY) * 0.35;
-
-    btnX.set(distanceX);
-    btnY.set(distanceY);
-  };
-
-  const handleMagneticLeave = () => {
-    btnX.set(0);
-    btnY.set(0);
-    resetCursor();
-  };
-
   const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText(email);
       setCopiedEmail(true);
-
-      confetti({
-        particleCount: 40,
-        spread: 60,
-        origin: { y: 0.8 },
-        colors: ['#6366f1', '#818cf8', '#38bdf8', '#34d399', '#fb7185'],
-        disableForReducedMotion: true,
-      });
-
-      setTimeout(() => setCopiedEmail(false), 2500);
+      setTimeout(() => setCopiedEmail(false), 2200);
     } catch {
       setCopiedEmail(true);
-      setTimeout(() => setCopiedEmail(false), 2500);
+      setTimeout(() => setCopiedEmail(false), 2200);
     }
   };
 
@@ -73,95 +31,86 @@ export default function ContactFooter() {
   };
 
   return (
-    <footer id="contact" className="py-16 sm:py-20 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
-        {/* Soft, Refined Editorial Banner Card */}
-        <div className="relative rounded-[2rem] sm:rounded-[2.5rem] bg-gradient-to-br from-zinc-900 via-zinc-900 to-zinc-950 dark:from-zinc-900 dark:via-zinc-900 dark:to-black text-white p-7 sm:p-12 lg:p-14 border border-zinc-800 shadow-2xl overflow-hidden">
-          {/* Subtle ambient lighting */}
-          <div className="absolute -top-12 -right-12 w-64 h-64 rounded-full bg-indigo-500/10 blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-12 -left-12 w-64 h-64 rounded-full bg-zinc-500/10 blur-3xl pointer-events-none" />
-
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    <footer id="contact" className="py-20 sm:py-28 relative scroll-mt-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-16">
+        {/* Editorial Invitation Banner */}
+        <div className="rounded-2xl bg-zinc-950 text-white p-8 sm:p-12 lg:p-14 border border-zinc-800 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
-              <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-zinc-200 text-xs font-bold uppercase tracking-wider border border-white/10">
-                <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-                <span>Open for New Opportunities</span>
+              <div className="text-xs font-mono uppercase tracking-widest text-zinc-400">
+                07 / Direct Contact
               </div>
 
-              <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12]">
-                Interested in working together? <br />
-                <span className="text-zinc-300">Let&apos;s start a conversation.</span>
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.12]">
+                Interested in building together? <br />
+                <span className="font-serif italic font-normal text-zinc-400">
+                  Let&apos;s start a conversation.
+                </span>
               </h2>
 
-              <p className="text-xs sm:text-base text-zinc-400 font-normal max-w-xl leading-relaxed">
-                Whether you&apos;re looking to fill a fullstack or mobile engineering role, collaborate on a project, or just say hello, I&apos;d love to hear from you.
+              <p className="text-sm sm:text-base text-zinc-400 font-normal max-w-xl leading-relaxed">
+                Whether you&apos;re looking to fill a software engineering position, collaborate on a project, or discuss native Android and fullstack architectures, I would love to connect.
               </p>
             </div>
 
-            <div className="lg:col-span-4 flex flex-col items-start lg:items-end space-y-4">
-              {/* Magnetic CTA Button pointing to LinkedIn */}
-              <motion.a
-                ref={buttonRef}
+            <div className="lg:col-span-4 flex flex-col items-start lg:items-end space-y-3">
+              <a
                 href="https://www.linkedin.com/in/cindy-ardelya/"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ x: magneticX, y: magneticY }}
-                onMouseMove={handleMagneticMove}
-                onMouseLeave={handleMagneticLeave}
                 onMouseEnter={() => setCursor('link', 'CONNECT')}
-                className="inline-flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 lg:h-36 lg:w-36 rounded-full bg-white text-zinc-950 font-extrabold text-xs uppercase tracking-wider shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all group shrink-0"
+                onMouseLeave={resetCursor}
+                className="inline-flex items-center space-x-2 px-6 py-3 rounded-lg bg-white text-zinc-950 font-semibold text-xs tracking-wider uppercase hover:bg-zinc-100 transition-colors"
               >
-                <div className="flex flex-col items-center space-y-1">
-                  <span>Say Hello</span>
-                  <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </div>
-              </motion.a>
+                <span>Connect on LinkedIn</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
+              <span className="text-xs text-zinc-500 font-mono">
+                Typical reply within 24h
+              </span>
             </div>
           </div>
         </div>
 
-        {/* Copy Email + Direct Reach Bar */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 bg-white dark:bg-zinc-900 p-6 sm:p-8 rounded-3xl border border-zinc-200/80 dark:border-zinc-800 shadow-xs">
-          <div className="space-y-3 text-center lg:text-left w-full lg:w-auto">
-            <span className="text-xs font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider block">
-              Direct Contact & Information
+        {/* Direct Reach Bar */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 bg-white/70 dark:bg-zinc-900/60 p-6 sm:p-7 rounded-xl border border-zinc-200/80 dark:border-zinc-800">
+          <div className="space-y-1">
+            <span className="text-[11px] font-mono text-zinc-600 dark:text-zinc-400 uppercase tracking-wider block">
+              Direct Inquiries
             </span>
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
-              {/* Email Button */}
-              <div className="flex items-center gap-2">
-                <span className="text-sm sm:text-lg lg:text-xl font-extrabold text-zinc-900 dark:text-white">
-                  {email}
-                </span>
-                <button
-                  type="button"
-                  onClick={handleCopyEmail}
-                  onMouseEnter={() => setCursor('copy', 'COPY')}
-                  onMouseLeave={resetCursor}
-                  className="inline-flex items-center space-x-1 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all active:scale-95 border border-zinc-200 dark:border-zinc-700"
-                >
-                  {copiedEmail ? (
-                    <>
-                      <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-                      <span className="text-emerald-700 dark:text-emerald-300">Copied!</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-3.5 h-3.5" />
-                      <span>Copy Email</span>
-                    </>
-                  )}
-                </button>
-              </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="text-base sm:text-lg font-semibold text-zinc-950 dark:text-zinc-50 font-mono">
+                {email}
+              </span>
+              <button
+                type="button"
+                onClick={handleCopyEmail}
+                onMouseEnter={() => setCursor('copy', 'COPY')}
+                onMouseLeave={resetCursor}
+                className="inline-flex items-center space-x-1.5 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-800 dark:text-zinc-200 px-3 py-1 rounded-md text-xs font-medium transition-colors border border-zinc-200 dark:border-zinc-700"
+              >
+                {copiedEmail ? (
+                  <>
+                    <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                    <span className="text-emerald-700 dark:text-emerald-300">Copied</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-3.5 h-3.5" />
+                    <span>Copy</span>
+                  </>
+                )}
+              </button>
             </div>
           </div>
 
           {/* Social Links */}
-          <div className="flex flex-wrap gap-2 justify-center">
+          <div className="flex flex-wrap gap-2">
             <a
               href="https://github.com/cindyardelya22"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-zinc-50 dark:bg-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-white text-zinc-700 dark:text-zinc-200 px-4 py-2 rounded-full text-xs font-bold transition-colors border border-zinc-200/70 dark:border-zinc-700"
+              className="inline-flex items-center space-x-2 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-md text-xs font-medium transition-colors border border-zinc-200/60 dark:border-zinc-700/60"
             >
               <GithubIcon className="w-3.5 h-3.5" />
               <span>GitHub</span>
@@ -170,35 +119,28 @@ export default function ContactFooter() {
               href="https://www.linkedin.com/in/cindy-ardelya/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-zinc-50 dark:bg-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-white text-zinc-700 dark:text-zinc-200 px-4 py-2 rounded-full text-xs font-bold transition-colors border border-zinc-200/70 dark:border-zinc-700"
+              className="inline-flex items-center space-x-2 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-800 dark:text-zinc-200 px-3.5 py-1.5 rounded-md text-xs font-medium transition-colors border border-zinc-200/60 dark:border-zinc-700/60"
             >
               <LinkedinIcon className="w-3.5 h-3.5" />
               <span>LinkedIn</span>
             </a>
-            <a
-              href={`mailto:${email}`}
-              className="flex items-center space-x-2 bg-zinc-50 dark:bg-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-white text-zinc-700 dark:text-zinc-200 px-4 py-2 rounded-full text-xs font-bold transition-colors border border-zinc-200/70 dark:border-zinc-700"
-            >
-              <Mail className="w-3.5 h-3.5" />
-              <span>Email</span>
-            </a>
           </div>
         </div>
 
-        {/* Footer Bottom Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-medium text-zinc-500 dark:text-zinc-400 pt-2">
-          <div className="flex items-center space-x-2">
+        {/* Footer Colophon */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-600 dark:text-zinc-400 border-t border-zinc-200/80 dark:border-zinc-800 pt-8">
+          <div className="flex items-center space-x-2 text-center sm:text-left">
             <span>© 2026 Cindy Ardelya</span>
-            <span>•</span>
-            <span>Politeknik Caltex Riau</span>
+            <span>·</span>
+            <span>Informatics Engineering Graduate, Politeknik Caltex Riau</span>
           </div>
 
           <button
             type="button"
             onClick={scrollToTop}
-            className="flex items-center space-x-1.5 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white font-bold transition-colors"
+            className="flex items-center space-x-1.5 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white transition-colors"
           >
-            <span>Back to top</span>
+            <span>Top of page</span>
             <ChevronUp className="w-4 h-4" />
           </button>
         </div>

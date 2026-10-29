@@ -65,30 +65,30 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
 
         <motion.div
           data-lenis-prevent
-          initial={{ opacity: 0, y: 30, scale: 0.96 }}
+          initial={{ opacity: 0, y: 20, scale: 0.96 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 20, scale: 0.96 }}
-          transition={{ duration: 0.3 }}
-          className="relative w-full max-w-5xl max-h-[90vh] flex flex-col bg-white dark:bg-zinc-900 rounded-3xl shadow-2xl border border-zinc-200/80 dark:border-zinc-800 z-10 overflow-hidden text-zinc-900 dark:text-zinc-100"
+          exit={{ opacity: 0, y: 15, scale: 0.96 }}
+          transition={{ duration: 0.25, ease: 'easeOut' }}
+          className="relative w-full max-w-5xl max-h-[90vh] flex flex-col bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-zinc-200/80 dark:border-zinc-800 z-10 overflow-hidden text-zinc-900 dark:text-zinc-100"
           onWheel={(e) => e.stopPropagation()}
         >
           {/* Header Bar */}
-          <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800 px-5 sm:px-8 py-4 bg-white/95 dark:bg-zinc-900/95 sticky top-0 z-20 backdrop-blur-md shrink-0">
+          <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800 px-5 sm:px-8 py-3.5 bg-white/95 dark:bg-zinc-900/95 sticky top-0 z-20 backdrop-blur-md shrink-0">
             <div className="flex items-center space-x-3">
-              <span className="text-xs font-bold px-3 py-1 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200/50 dark:border-indigo-800/40 rounded-full">
+              <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700 rounded-md">
                 {project.category}
               </span>
-              <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400 hidden sm:inline-block">
-                {project.client} • {project.year}
+              <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400 hidden sm:inline-block">
+                {project.client} · {project.year}
               </span>
             </div>
 
             <button
               onClick={onClose}
               aria-label="Close modal"
-              className="h-9 w-9 rounded-full bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300 flex items-center justify-center transition-colors"
+              className="h-8 w-8 rounded-md bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300 flex items-center justify-center transition-colors border border-zinc-200 dark:border-zinc-700"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4" />
             </button>
           </div>
 
