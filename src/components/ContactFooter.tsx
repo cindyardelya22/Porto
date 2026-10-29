@@ -10,6 +10,7 @@ import {
   ArrowUpRight,
   Mail,
   ChevronUp,
+  Sparkles,
   Phone,
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/Icons';
@@ -76,24 +77,24 @@ export default function ContactFooter() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
         {/* Soft, Refined Editorial Banner Card */}
         <div className="relative rounded-[2rem] sm:rounded-[2.5rem] bg-gradient-to-br from-zinc-900 via-zinc-900 to-zinc-950 dark:from-zinc-900 dark:via-zinc-900 dark:to-black text-white p-7 sm:p-12 lg:p-14 border border-zinc-800 shadow-2xl overflow-hidden">
-          {/* Subtle architectural ambient lighting */}
-          <div className="absolute -top-12 -right-12 w-64 h-64 rounded-full bg-amber-500/10 blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-12 -left-12 w-64 h-64 rounded-full bg-teal-500/10 blur-3xl pointer-events-none" />
+          {/* Subtle ambient lighting */}
+          <div className="absolute -top-12 -right-12 w-64 h-64 rounded-full bg-indigo-500/10 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-12 -left-12 w-64 h-64 rounded-full bg-zinc-500/10 blur-3xl pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
-              <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-amber-500/10 backdrop-blur-md text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-400/20">
-                <Check className="w-3.5 h-3.5 text-teal-400" />
-                <span>Open for Opportunities & Projects</span>
+              <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-zinc-200 text-xs font-bold uppercase tracking-wider border border-white/10">
+                <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                <span>Open for New Opportunities</span>
               </div>
 
               <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12]">
-                Ready to collaborate? <br />
-                <span className="text-amber-300">Let&apos;s build something meaningful.</span>
+                Interested in working together? <br />
+                <span className="text-zinc-300">Let&apos;s start a conversation.</span>
               </h2>
 
               <p className="text-xs sm:text-base text-zinc-400 font-normal max-w-xl leading-relaxed">
-                Whether discussing mobile engineering in Kotlin, fullstack systems in Laravel, or exciting career opportunities, I&apos;m always excited to connect!
+                Whether you&apos;re looking to fill a fullstack or mobile engineering role, collaborate on a project, or just say hello, I&apos;d love to hear from you.
               </p>
             </div>
 
@@ -108,7 +109,7 @@ export default function ContactFooter() {
                 onMouseMove={handleMagneticMove}
                 onMouseLeave={handleMagneticLeave}
                 onMouseEnter={() => setCursor('link', 'CONNECT')}
-                className="inline-flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 lg:h-36 lg:w-36 rounded-full bg-amber-500 hover:bg-amber-400 text-zinc-950 font-extrabold text-xs uppercase tracking-wider shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all group shrink-0"
+                className="inline-flex items-center justify-center h-24 w-24 sm:h-32 sm:w-32 lg:h-36 lg:w-36 rounded-full bg-white text-zinc-950 font-extrabold text-xs uppercase tracking-wider shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all group shrink-0"
               >
                 <div className="flex flex-col items-center space-y-1">
                   <span>Say Hello</span>

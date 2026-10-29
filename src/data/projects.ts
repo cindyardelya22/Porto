@@ -99,8 +99,8 @@ export const featuredProjects: CaseStudy[] = [
         detail: 'Achieved top grade in Mobile Application Engineering course at Politeknik Caltex Riau.',
       },
       {
-        metric: 'Apple Academy Alignment',
-        detail: 'Demonstrates deep empathy-driven design thinking, swift UI iteration, and solid native mobile engineering.',
+        metric: 'Empathy-Driven UX',
+        detail: 'Designed an approachable, non-stigmatizing interface with warm visuals, daily mood journaling, and guided relaxation exercises.',
       },
     ],
   },
@@ -582,12 +582,12 @@ export const featuredProjects: CaseStudy[] = [
         detail: 'Achieved outstanding sensitivity (>97%) ensuring infected cells are detected with minimal false negatives.',
       },
       {
-        metric: 'Slide Presentasi Canva Lengkap',
-        detail: 'Menyusun paparan komprehensif mengenai metode klasifikasi CNN, arsitektur layer, dan hasil evaluasi performa.',
+        metric: 'Comprehensive Research Presentation',
+        detail: 'Prepared a detailed academic presentation explaining CNN layer architecture, dataset preprocessing, and confusion matrix metrics.',
       },
       {
-        metric: 'Versatile Technical Competence',
-        detail: 'Proves high proficiency across mobile development, fullstack web, and applied deep learning.',
+        metric: 'High Diagnostic Sensitivity',
+        detail: 'Prioritized high sensitivity to catch active parasite infections with minimal false-negative classifications.',
       },
     ],
   },

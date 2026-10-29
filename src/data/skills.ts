@@ -83,7 +83,7 @@ export const experienceTimeline: ExperienceItem[] = [
     highlights: [
       'Designed and built "MindCare" native Android app with conversational chatbot screening, emotional mood tracker, and therapeutic exercises.',
       'Trained custom deep Convolutional Neural Network (CNN) achieving 96.8% accuracy in classifying infected malaria microscopic cell images.',
-      'Ready for professional mobile engineering (Kotlin) and fullstack software development roles.',
+      'Synthesized model evaluation metrics with ROC-AUC analysis and documented research findings in clear presentation slides.',
     ],
     skills: ['Kotlin', 'Android', 'Python', 'TensorFlow / Keras', 'CNN', 'Deep Learning', 'Figma'],
   },

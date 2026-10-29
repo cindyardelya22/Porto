@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArchiveItem, CaseStudy } from '@/types';
 import { useCursor } from '@/context/CursorContext';
-import { Search, ArrowUpRight, Heart, FolderArchive, FileText } from 'lucide-react';
+import { Search, ArrowUpRight, FolderGit2, FileText } from 'lucide-react';
 import { FigmaIcon, CanvaIcon } from '@/components/Icons';
 
 interface WorksArchiveProps {
@@ -14,20 +14,18 @@ interface WorksArchiveProps {
   onSelectProject: (project: CaseStudy) => void;
 }
 
-const CATEGORIES = ['All', 'Mobile', 'Web Platform', 'GIS', 'Deep Learning'];
-
 export default function WorksArchive({ archive, projects, onSelectProject }: WorksArchiveProps) {
   const { setCursor, resetCursor } = useCursor();
-  const [activeCategory, setActiveCategory] = useState<string>('All');
+  const [activeCategory, setActiveCategory] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
-  const [likedItems, setLikedItems] = useState<{ [key: string]: boolean }>({});
+
+  const categories = ['ALL', 'MOBILE', 'WEB PLATFORM', 'GIS', 'DEEP LEARNING'];
 
   const filteredArchive = archive.filter((item) => {
     const matchesCategory =
-      activeCategory === 'All' ||
       activeCategory === 'ALL' ||
-      item.category.toLowerCase().includes(activeCategory.toLowerCase()) ||
-      item.platform.toLowerCase().includes(activeCategory.toLowerCase());
+      item.category.toUpperCase().includes(activeCategory) ||
+      item.platform.toUpperCase().includes(activeCategory);
 
     const matchesSearch =
       item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -61,24 +59,22 @@ export default function WorksArchive({ archive, projects, onSelectProject }: Wor
     }
   };
 
-  const toggleLike = (e: React.MouseEvent, title: string) => {
-    e.stopPropagation();
-    setLikedItems((prev) => ({ ...prev, [title]: !prev[title] }));
-  };
-
   return (
-    <section id="archive" className="py-16 sm:py-20 relative">
+    <section id="archive" className="py-16 sm:py-20 relative scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-10 sm:space-y-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-zinc-200/80 dark:border-zinc-800 pb-8">
-          <div>
-            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-teal-50 dark:bg-teal-950/50 text-teal-800 dark:text-teal-300 text-xs font-bold uppercase tracking-wider mb-2 border border-teal-200/70 dark:border-teal-800/50">
-              <FolderArchive className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400" />
-              <span>Project Directory & Lab</span>
+          <div className="space-y-2">
+            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-bold uppercase tracking-wider border border-zinc-200/60 dark:border-zinc-700">
+              <FolderGit2 className="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400" />
+              <span>Project Directory & Deliverables</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
-              Selected Works & Shots.
+              All Works & Deliverables.
             </h2>
+            <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
+              Browse across Figma prototypes, official documentation guides, and slide decks.
+            </p>
           </div>
 
           {/* Filter Tabs & Search */}
@@ -97,41 +93,39 @@ export default function WorksArchive({ archive, projects, onSelectProject }: Wor
 
             {/* Filter Pills */}
             <div className="flex flex-wrap gap-1.5 text-xs font-semibold">
-              {CATEGORIES.map((cat) => (
+              {categories.map((cat) => (
                 <button
                   key={cat}
-                  type="button"
-                  suppressHydrationWarning
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-3.5 py-2 rounded-full transition-all text-xs font-bold ${
-                    activeCategory.toLowerCase() === cat.toLowerCase()
-                      ? 'bg-amber-700 dark:bg-amber-600 text-white shadow-xs'
-                      : 'bg-white dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-amber-50/50 dark:hover:bg-zinc-700 border border-zinc-200/80 dark:border-zinc-700/80'
+                  className={`px-3.5 py-2 rounded-full transition-all ${
+                    activeCategory === cat
+                      ? 'bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-bold shadow-xs'
+                      : 'bg-white dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-700 border border-zinc-200/80 dark:border-zinc-700/80'
                   }`}
                 >
-                  <span suppressHydrationWarning>{cat}</span>
+                  {cat === 'ALL' ? 'All' : cat}
                 </button>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Dribbble Style Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Project Archive Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {filteredArchive.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
+              transition={{ duration: 0.45, delay: index * 0.05 }}
               onClick={() => handleCardClick(item)}
               onMouseEnter={() => setCursor('explore', 'INSPECT')}
               onMouseLeave={resetCursor}
-              className="group cursor-pointer bg-white dark:bg-zinc-900 rounded-3xl border border-zinc-200/80 dark:border-zinc-800 overflow-hidden shadow-xs hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-black/60 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+              className="group cursor-pointer bg-white dark:bg-zinc-900 rounded-3xl border border-zinc-200/80 dark:border-zinc-800 overflow-hidden shadow-xs hover:shadow-xl hover:shadow-black/[0.04] dark:hover:shadow-black/50 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
             >
               {/* Thumbnail Container */}
-              <div className="relative aspect-[16/11] bg-zinc-100 dark:bg-zinc-800 overflow-hidden">
+              <div className="relative aspect-[16/11] bg-zinc-100 dark:bg-zinc-800 overflow-hidden border-b border-zinc-100 dark:border-zinc-800">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -141,51 +135,37 @@ export default function WorksArchive({ archive, projects, onSelectProject }: Wor
                 />
 
                 {/* Floating Category Pill */}
-                <div className="absolute top-3.5 left-3.5">
-                  <span className="text-[10px] font-bold bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md text-zinc-800 dark:text-zinc-200 px-3 py-1 rounded-full shadow-xs border border-white/60 dark:border-zinc-700/70">
+                <div className="absolute top-3 left-3">
+                  <span className="text-[10px] font-bold bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md text-zinc-800 dark:text-zinc-200 px-2.5 py-1 rounded-full shadow-2xs border border-white/60 dark:border-zinc-700">
                     {item.platform}
                   </span>
                 </div>
 
-                {/* Like Button */}
-                <button
-                  type="button"
-                  onClick={(e) => toggleLike(e, item.title)}
-                  aria-label="Like shot"
-                  className="absolute top-3.5 right-3.5 h-8 w-8 rounded-full bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md flex items-center justify-center text-zinc-600 dark:text-zinc-300 hover:text-rose-500 dark:hover:text-rose-400 hover:scale-110 active:scale-95 transition-all shadow-xs"
-                >
-                  <Heart
-                    className={`w-4 h-4 ${
-                      likedItems[item.title] ? 'fill-rose-500 text-rose-500' : ''
-                    }`}
-                  />
-                </button>
-
-                {/* Hover Quick Overlay */}
-                <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span className="bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white font-bold text-xs px-4 py-2 rounded-full shadow-lg flex items-center space-x-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform border border-transparent dark:border-zinc-700">
-                    <span>{item.caseStudyId ? 'View Case Study' : item.linkLabel || 'Open Preview'}</span>
+                {/* Hover Quick Action Overlay */}
+                <div className="absolute inset-0 bg-black/45 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                  <span className="bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white font-bold text-xs px-4 py-2 rounded-full shadow-lg flex items-center space-x-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform border border-zinc-200 dark:border-zinc-700">
+                    <span>{item.caseStudyId ? 'View Case Study' : item.linkLabel || 'Open Deliverable'}</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </span>
                 </div>
               </div>
 
               {/* Card Meta Content */}
-              <div className="p-5 space-y-3">
-                <div className="flex items-center justify-between text-xs text-zinc-400 dark:text-zinc-500 font-medium">
-                  <span className="truncate pr-2">{item.client}</span>
-                  <div className="flex items-center space-x-2 shrink-0">
-                    {item.duration && (
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-200/80 dark:border-zinc-700">
-                        ⏱ {item.duration}
-                      </span>
-                    )}
-                    <span>{item.year}</span>
+              <div className="p-5 sm:p-6 space-y-3 flex-1 flex flex-col justify-between">
+                <div className="space-y-1.5">
+                  <div className="flex items-center justify-between text-xs text-zinc-400 dark:text-zinc-500 font-medium">
+                    <span className="truncate pr-2">{item.client}</span>
+                    <div className="flex items-center space-x-1.5 shrink-0 text-[11px]">
+                      {item.duration && (
+                        <span className="font-semibold px-2 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 border border-zinc-200/80 dark:border-zinc-700">
+                          {item.duration}
+                        </span>
+                      )}
+                      <span>{item.year}</span>
+                    </div>
                   </div>
-                </div>
 
-                <div className="space-y-1">
-                  <h3 className="font-extrabold text-base text-zinc-900 dark:text-white group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors line-clamp-1">
+                  <h3 className="font-extrabold text-base text-zinc-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-1">
                     {item.title}
                   </h3>
                   <p className="text-xs text-zinc-500 dark:text-zinc-400 font-medium">
@@ -193,34 +173,37 @@ export default function WorksArchive({ archive, projects, onSelectProject }: Wor
                   </p>
                 </div>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 pt-1">
-                  {item.tags.slice(0, 3).map((t, idx) => (
-                    <span
-                      key={idx}
-                      className="text-[10px] font-semibold bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 px-2.5 py-0.5 rounded-full border border-transparent dark:border-zinc-700/60"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Direct Preview Link Button */}
-                {item.linkLabel && (
-                  <div className="pt-2 border-t border-zinc-100 dark:border-zinc-800 flex items-center justify-between">
-                    <button
-                      type="button"
-                      onClick={(e) => handleDirectPreview(e, item)}
-                      className="inline-flex items-center space-x-1.5 text-xs font-bold text-zinc-700 dark:text-zinc-300 hover:text-amber-700 dark:hover:text-amber-400 hover:underline"
-                    >
-                      {item.linkType === 'figma' && <FigmaIcon className="w-3.5 h-3.5" />}
-                      {item.linkType === 'canva' && <CanvaIcon className="w-3.5 h-3.5" />}
-                      {item.linkType === 'pdf' && <FileText className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />}
-                      <span>{item.linkLabel}</span>
-                      <ArrowUpRight className="w-3 h-3 text-zinc-400" />
-                    </button>
+                {/* Tags & Action Link */}
+                <div className="space-y-3 pt-2 border-t border-zinc-100 dark:border-zinc-800">
+                  <div className="flex flex-wrap gap-1">
+                    {item.tags.slice(0, 3).map((t, idx) => (
+                      <span
+                        key={idx}
+                        className="text-[10px] font-medium bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300 px-2 py-0.5 rounded-full border border-transparent dark:border-zinc-700/60"
+                      >
+                        {t}
+                      </span>
+                    ))}
                   </div>
-                )}
+
+                  {item.linkLabel && (
+                    <div className="flex items-center justify-between">
+                      <button
+                        type="button"
+                        onClick={(e) => handleDirectPreview(e, item)}
+                        className="inline-flex items-center space-x-1.5 text-xs font-bold text-zinc-700 dark:text-zinc-300 hover:text-indigo-600 dark:hover:text-indigo-400"
+                      >
+                        {item.linkType === 'figma' && <FigmaIcon className="w-3.5 h-3.5" />}
+                        {item.linkType === 'canva' && <CanvaIcon className="w-3.5 h-3.5" />}
+                        {item.linkType === 'pdf' && (
+                          <FileText className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                        )}
+                        <span>{item.linkLabel}</span>
+                        <ArrowUpRight className="w-3 h-3 text-zinc-400" />
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}

@@ -10,23 +10,24 @@ import {
   Database,
   Mail,
   GraduationCap,
+  MapPin,
+  ShieldCheck,
   Code2,
-  CheckCircle2,
 } from 'lucide-react';
-import CertificationsSection from '@/components/CertificationsSection';
 
 export default function AboutSection() {
   const { setCursor, resetCursor } = useCursor();
 
   return (
-    <section id="about" className="py-16 sm:py-20 relative">
+    <section id="about" className="py-16 sm:py-20 relative scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-16 sm:space-y-20">
-        {/* Bio & Intro Card */}
-        <div className="bg-white dark:bg-zinc-900/90 rounded-[2rem] sm:rounded-[2.5rem] border border-zinc-200/80 dark:border-zinc-800 p-6 sm:p-10 lg:p-14 shadow-lg shadow-black/[0.03] dark:shadow-black/40 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        {/* Personal Story & Background Card */}
+        <div className="bg-white dark:bg-zinc-900 rounded-[2rem] border border-zinc-200/80 dark:border-zinc-800 p-6 sm:p-10 lg:p-12 shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Profile Column */}
           <div className="lg:col-span-4 flex flex-col items-center text-center space-y-4">
             <div className="relative">
-              <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-full border-2 border-amber-200/80 dark:border-amber-800/60 bg-amber-50/50 dark:bg-zinc-800 p-1.5 shadow-md shadow-black/5">
-                <div className="relative w-full h-full rounded-full bg-white dark:bg-zinc-800 overflow-hidden shadow-inner">
+              <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-full p-1 bg-zinc-100 dark:bg-zinc-800 border-2 border-zinc-200 dark:border-zinc-700 shadow-sm">
+                <div className="relative w-full h-full rounded-full overflow-hidden bg-zinc-200 dark:bg-zinc-800">
                   <Image
                     src="/images/profile.jpg"
                     alt="Cindy Ardelya"
@@ -37,73 +38,70 @@ export default function AboutSection() {
                   />
                 </div>
               </div>
-              <div className="absolute -bottom-2 -right-2 bg-white dark:bg-zinc-800 rounded-full px-3 py-1 text-xs font-bold shadow-md border border-zinc-200 dark:border-zinc-700 flex items-center space-x-1.5 text-zinc-800 dark:text-zinc-200">
-                <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
-                <span>Cindy Ardelya</span>
-              </div>
             </div>
 
             <div className="space-y-1">
               <h3 className="text-xl font-extrabold text-zinc-900 dark:text-white">Cindy Ardelya</h3>
-              <p className="text-xs font-bold text-amber-700 dark:text-amber-400">Informatics Engineering Graduate</p>
-              <div className="text-xs text-zinc-500 dark:text-zinc-400 space-y-0.5">
-                <p>Politeknik Caltex Riau</p>
-                <p>Pekanbaru, Riau, Indonesia</p>
+              <p className="text-xs font-semibold text-indigo-600 dark:text-indigo-400">
+                Informatics Engineering Graduate • Developer
+              </p>
+              <div className="flex items-center justify-center space-x-1 text-xs text-zinc-500 dark:text-zinc-400 pt-0.5">
+                <MapPin className="w-3.5 h-3.5 text-zinc-400" />
+                <span>Pekanbaru, Riau, Indonesia</span>
               </div>
             </div>
 
             {/* Quick Contact Email Pill */}
-            <div className="pt-2 flex flex-col gap-1.5 w-full text-xs font-medium">
+            <div className="pt-1 w-full text-xs font-medium">
               <a
                 href="mailto:cindyardelya@gmail.com"
-                className="flex items-center justify-center space-x-2 bg-zinc-50 dark:bg-zinc-800/90 border border-zinc-200 dark:border-zinc-700 px-4 py-2 rounded-full text-zinc-800 dark:text-zinc-200 hover:bg-amber-50/60 dark:hover:bg-zinc-700 hover:border-amber-300 dark:hover:border-amber-800/60 transition-colors shadow-2xs"
+                className="flex items-center justify-center space-x-2 bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-4 py-2 rounded-full text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors shadow-2xs"
               >
-                <Mail className="w-3.5 h-3.5 text-amber-700 dark:text-amber-400" />
+                <Mail className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
                 <span>cindyardelya@gmail.com</span>
               </a>
             </div>
+
+            {/* Quick Fast Facts */}
+            <div className="w-full pt-3 border-t border-zinc-100 dark:border-zinc-800 text-left space-y-2 text-xs text-zinc-600 dark:text-zinc-400">
+              <div className="flex items-center space-x-2">
+                <GraduationCap className="w-4 h-4 text-zinc-400 shrink-0" />
+                <span>Politeknik Caltex Riau</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" />
+                <span>EC-Council Certified (EHE, NDE)</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Code2 className="w-4 h-4 text-indigo-500 shrink-0" />
+                <span>Kotlin, Laravel, Web GIS, Python</span>
+              </div>
+            </div>
           </div>
 
+          {/* Bio Story Narrative Column */}
           <div className="lg:col-span-8 space-y-4 sm:space-y-5">
-            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-200/70 dark:border-amber-800/50">
-              <GraduationCap className="w-3.5 h-3.5 text-amber-700 dark:text-amber-400" />
-              <span>Informatics Engineering Graduate</span>
+            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-bold uppercase tracking-wider border border-zinc-200/60 dark:border-zinc-700">
+              <span>About Me & Background</span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight leading-tight">
-              Passionate about technology, graphic design, and digital communication to build meaningful solutions.
+              A developer who enjoys turning real operational problems into clear, reliable software.
             </h2>
 
-            <div className="space-y-4 text-sm sm:text-base text-zinc-600 dark:text-zinc-300 font-normal leading-relaxed">
+            <div className="space-y-3.5 text-sm sm:text-base text-zinc-600 dark:text-zinc-300 font-normal leading-relaxed">
               <p>
-                Hello! I&apos;m <strong className="text-zinc-900 dark:text-white font-bold">Cindy Ardelya</strong>, an <strong className="text-amber-700 dark:text-amber-400 font-semibold">Informatics Engineering Graduate</strong> from Politeknik Caltex Riau.
-                I am a Web Developer deeply passionate about technology, graphic design, and digital communication, combining solid software engineering with clean, human-centered visual design.
+                Hi! I&apos;m <strong className="text-zinc-900 dark:text-white font-semibold">Cindy Ardelya</strong>. I recently graduated with a degree in Informatics Engineering from Politeknik Caltex Riau. Throughout my studies and professional internships, I&apos;ve focused on writing dependable code, designing intuitive user flows, and shipping systems that make everyday tasks easier for real teams.
               </p>
               <p>
-                My portfolio demonstrates versatility across diverse technical domains:
+                During my corporate internship and certified MBKM program at <strong className="text-zinc-900 dark:text-white font-semibold">PT Perkebunan Nusantara (PTPN) IV Regional III</strong>, I had the opportunity to build two core enterprise tools: the <strong className="text-zinc-900 dark:text-white font-semibold">By-Pro</strong> native Android contract and digital signing application, and <strong className="text-zinc-900 dark:text-white font-semibold">AgriSmart</strong>, an interactive web GIS portal for soil fertility management with Gemini AI assistance.
               </p>
-              <ul className="space-y-2.5 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
-                <li className="flex items-start space-x-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-600 dark:bg-amber-400 mt-2 shrink-0 inline-block" />
-                  <span><strong className="text-zinc-900 dark:text-white font-semibold">MindCare:</strong> Native Android mental health support app with conversational chatbot screening, mood journaling, and guided therapy.</span>
-                </li>
-                <li className="flex items-start space-x-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-600 dark:bg-teal-400 mt-2 shrink-0 inline-block" />
-                  <span><strong className="text-zinc-900 dark:text-white font-semibold">By-Pro Sales Contract:</strong> Mobile contract management and cryptographic digital signing system built during my MBKM at PTPN IV Regional III.</span>
-                </li>
-                <li className="flex items-start space-x-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-600 dark:bg-amber-400 mt-2 shrink-0 inline-block" />
-                  <span><strong className="text-zinc-900 dark:text-white font-semibold">Alumna Islamic School Pekanbaru (Final Project):</strong> End-to-end Laravel web monitoring platform for Alumna Islamic School Pekanbaru visualizing child anthropometric growth curves and developmental milestones.</span>
-                </li>
-                <li className="flex items-start space-x-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-600 dark:bg-teal-400 mt-2 shrink-0 inline-block" />
-                  <span><strong className="text-zinc-900 dark:text-white font-semibold">AgriSmart GIS Soil Fertility:</strong> Spatial mapping system integrating plantation block nutrient heatmaps with a conversational advisor at PTPN IV.</span>
-                </li>
-                <li className="flex items-start space-x-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-600 dark:bg-amber-400 mt-2 shrink-0 inline-block" />
-                  <span><strong className="text-zinc-900 dark:text-white font-semibold">Malaria Cell CNN:</strong> Deep learning computer vision classifier achieving 96.8% accuracy on microscopic human blood smear images.</span>
-                </li>
-              </ul>
+              <p>
+                I don&apos;t just code in isolation. Working in enterprise environments taught me the importance of clear communication — authoring official technical user manuals (SOP), running IT diagnostics, preparing device staging, and operating boardroom audiovisual telemetry for executive conferences.
+              </p>
+              <p>
+                I&apos;m also certified in <strong className="text-zinc-900 dark:text-white font-semibold">Ethical Hacking Essentials (EHE)</strong> and <strong className="text-zinc-900 dark:text-white font-semibold">Network Defense Essentials (NDE)</strong> by EC-Council, which keeps data protection, validation, and security top of mind in every project I develop.
+              </p>
             </div>
           </div>
         </div>
@@ -111,59 +109,38 @@ export default function AboutSection() {
         {/* Technical Capabilities Matrix */}
         <div className="space-y-8 sm:space-y-10">
           <div className="text-center max-w-xl mx-auto space-y-2">
-            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-teal-50 dark:bg-teal-950/50 text-teal-800 dark:text-teal-300 text-xs font-bold uppercase tracking-wider border border-teal-200/70 dark:border-teal-800/50">
-              <Code2 className="w-3.5 h-3.5 text-teal-700 dark:text-teal-400" />
-              <span>Skills & Competencies</span>
+            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-bold uppercase tracking-wider border border-zinc-200/60 dark:border-zinc-700">
+              <span>Technical Competencies</span>
             </div>
             <h3 className="text-2xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
-              Cindy&apos;s Technical Toolkit.
+              Tools & Technologies.
             </h3>
             <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
-              Proficiencies across mobile application engineering, fullstack web, GIS, and machine learning.
+              The frameworks, languages, and patterns I regularly use in production and research.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {skillCategories.map((cat, idx) => {
-              const iconStyles = [
-                // 1. Mobile: Warm Amber
-                {
-                  iconBox: 'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 border border-amber-200/80 dark:border-amber-900/40',
-                  badge: 'text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/60 border border-amber-200/60 dark:border-amber-900/40',
-                },
-                // 2. Web & GIS: Nordic Teal
-                {
-                  iconBox: 'bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-400 border border-teal-200/80 dark:border-teal-900/40',
-                  badge: 'text-teal-700 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/60 border border-teal-200/60 dark:border-teal-900/40',
-                },
-                // 3. Machine Learning & AI: Warm Stone / Terracotta
-                {
-                  iconBox: 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700',
-                  badge: 'text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700',
-                },
-              ];
-
-              const currentStyle = iconStyles[idx % iconStyles.length];
-
               return (
                 <div
                   key={idx}
-                  className="rounded-3xl border border-zinc-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900/90 p-6 sm:p-7 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-start h-full"
+                  className="rounded-3xl border border-zinc-200/80 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 sm:p-7 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-start h-full"
                   onMouseEnter={() => setCursor('explore')}
                   onMouseLeave={resetCursor}
                 >
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     <div className="flex items-center space-x-3">
-                      <div className={`h-11 w-11 rounded-2xl flex items-center justify-center shrink-0 ${currentStyle.iconBox}`}>
-                        {idx === 0 && <Smartphone className="w-5 h-5" />}
-                        {idx === 1 && <Monitor className="w-5 h-5" />}
-                        {idx === 2 && <Database className="w-5 h-5" />}
+                      <div className="h-10 w-10 rounded-xl flex items-center justify-center shrink-0 bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white">
+                        {idx === 0 && <Smartphone className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />}
+                        {idx === 1 && <Monitor className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />}
+                        {idx === 2 && <Database className="w-5 h-5 text-amber-600 dark:text-amber-400" />}
                       </div>
                       <div>
-                        <h4 className="font-extrabold text-lg text-zinc-900 dark:text-white">
+                        <h4 className="font-extrabold text-base text-zinc-900 dark:text-white">
                           {cat.category}
                         </h4>
-                        <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${currentStyle.badge}`}>
+                        <span className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider">
                           {cat.tag}
                         </span>
                       </div>
@@ -174,7 +151,7 @@ export default function AboutSection() {
                     </p>
                   </div>
 
-                  {/* Skills List without level badge */}
+                  {/* Skills List */}
                   <div className="space-y-2 pt-4 mt-4 border-t border-zinc-100 dark:border-zinc-800">
                     {cat.skills.map((skill, sIdx) => (
                       <div
@@ -193,9 +170,6 @@ export default function AboutSection() {
             })}
           </div>
         </div>
-
-        {/* Certifications & Accreditations Section (directly under Technical Toolkit) */}
-        <CertificationsSection />
       </div>
     </section>
   );

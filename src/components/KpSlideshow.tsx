@@ -9,7 +9,7 @@ import {
   ChevronRight,
   Maximize2,
   X,
-  Building2,
+  Sparkles,
   Code2,
   Wrench,
   MonitorPlay,
@@ -42,18 +42,18 @@ const mbkmPhotos = [
 const kpActivities = [
   {
     icon: Code2,
-    color: 'from-zinc-700 to-zinc-900',
+    color: 'from-violet-500 to-purple-600',
     bgColor:
-      'bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border-zinc-200 dark:border-zinc-700',
+      'bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border-purple-100 dark:border-purple-800/50',
     title: 'System Architecture & Engineering',
     description:
       'Architected and engineered internal enterprise systems (Resource & Accommodation Booking, By-Pro digital signing, and plantation GIS mapping).',
   },
   {
     icon: Wrench,
-    color: 'from-zinc-700 to-zinc-900',
+    color: 'from-blue-500 to-indigo-600',
     bgColor:
-      'bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border-zinc-200 dark:border-zinc-700',
+      'bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border-blue-100 dark:border-blue-800/50',
     title: 'IT Support & Device Provisioning',
     description:
       'Conducted hardware unboxing, Windows OS deployment, disk partitioning via PowerShell, staging environment preparation, and office network troubleshooting.',
@@ -81,18 +81,18 @@ const kpActivities = [
 const mbkmActivities = [
   {
     icon: Code2,
-    color: 'from-zinc-700 to-zinc-900',
+    color: 'from-violet-500 to-purple-600',
     bgColor:
-      'bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border-zinc-200 dark:border-zinc-700',
+      'bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border-purple-100 dark:border-purple-800/50',
     title: 'Software Developer & Engineering',
     description:
       'Engineered internal enterprise software, developed secure database schemas, and implemented cryptographic digital signatures for By-Pro sales contracts.',
   },
   {
     icon: Wrench,
-    color: 'from-zinc-700 to-zinc-900',
+    color: 'from-blue-500 to-indigo-600',
     bgColor:
-      'bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border-zinc-200 dark:border-zinc-700',
+      'bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border-blue-100 dark:border-blue-800/50',
     title: 'Hardware Servicing & IT Infrastructure',
     description:
       'Executed laptop disassembly (motherboard, RAM, SSD, cooling units), hardware diagnostics, OS clean installations, and staff IT troubleshooting.',
@@ -180,8 +180,8 @@ export default function KpSlideshow() {
       {/* Section Header & Tab Switcher */}
       <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-zinc-200/80 dark:border-zinc-800 pb-6 gap-6">
         <div className="space-y-3">
-          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs font-bold uppercase tracking-wider border border-zinc-200/60 dark:border-zinc-700">
-            <Building2 className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400" />
+          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-bold uppercase tracking-wider border border-zinc-200/60 dark:border-zinc-700">
+            <Briefcase className="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400" />
             <span>
               {activeTab === 'kp'
                 ? 'Corporate Experience & Internship'
@@ -197,13 +197,13 @@ export default function KpSlideshow() {
 
           <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 max-w-xl">
             {activeTab === 'kp'
-              ? 'Visual documentation of professional internship experience at PT Perkebunan Nusantara IV Regional III — software engineering, IT infrastructure provisioning, and multimedia operations.'
-              : 'Visual documentation of certified MBKM internship at PTPN IV Regional III — performing dual responsibilities as an application developer, hardware technician, and executive event operator.'}
+              ? 'Visual documentation from industrial internship at PT Perkebunan Nusantara IV Regional III — software engineering, IT infrastructure provisioning, and multimedia operations.'
+              : 'Visual documentation from certified MBKM internship at PTPN IV Regional III — software engineering, hardware troubleshooting, and executive boardroom technical operations.'}
           </p>
         </div>
 
         {/* Tab Switcher Pills */}
-        <div className="flex items-center p-1.5 bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700 rounded-2xl w-fit shadow-2xs shrink-0">
+        <div className="flex items-center p-1.5 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-2xl w-fit shadow-2xs shrink-0">
           <button
             type="button"
             onClick={() => {
@@ -212,16 +212,16 @@ export default function KpSlideshow() {
             }}
             className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 ${
               activeTab === 'kp'
-                ? 'bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-xs scale-102'
+                ? 'bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white shadow-xs'
                 : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
             }`}
           >
-            <Briefcase className="w-3.5 h-3.5 text-zinc-700 dark:text-zinc-300" />
-            <span>Internship</span>
+            <Briefcase className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400" />
+            <span>Internship (KP)</span>
             <span
               className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${
                 activeTab === 'kp'
-                  ? 'bg-zinc-200 dark:bg-zinc-600 text-zinc-800 dark:text-zinc-200'
+                  ? 'bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200'
                   : 'bg-zinc-200/70 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400'
               }`}
             >
@@ -237,16 +237,16 @@ export default function KpSlideshow() {
             }}
             className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-300 ${
               activeTab === 'mbkm'
-                ? 'bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-xs scale-102'
+                ? 'bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white shadow-xs'
                 : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
             }`}
           >
-            <GraduationCap className="w-4 h-4 text-zinc-700 dark:text-zinc-300" />
+            <GraduationCap className="w-4 h-4 text-zinc-600 dark:text-zinc-400" />
             <span>MBKM Program</span>
             <span
               className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${
                 activeTab === 'mbkm'
-                  ? 'bg-zinc-200 dark:bg-zinc-600 text-zinc-800 dark:text-zinc-200'
+                  ? 'bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200'
                   : 'bg-zinc-200/70 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400'
               }`}
             >
@@ -265,7 +265,7 @@ export default function KpSlideshow() {
           onMouseLeave={() => setIsPlaying(true)}
         >
           {/* Main Slide Card */}
-          <div className="relative w-full h-[380px] sm:h-[460px] md:h-[500px] rounded-[2rem] overflow-hidden bg-zinc-950 shadow-2xl border border-zinc-800 flex items-center justify-center group">
+          <div className="relative w-full h-[380px] sm:h-[460px] md:h-[500px] rounded-[2rem] overflow-hidden bg-zinc-950 shadow-2xl shadow-purple-500/10 border border-zinc-800 flex items-center justify-center group">
             {/* Ambient Blurred Colored Glow from Active Slide */}
             <AnimatePresence mode="wait">
               <motion.div
@@ -319,7 +319,7 @@ export default function KpSlideshow() {
                 <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span>PTPN IV Regional III</span>
                 <span className="text-white/40">•</span>
-                <span className="text-zinc-300 font-semibold uppercase">
+                <span className="text-purple-300 font-semibold uppercase">
                   {activeTab === 'kp' ? 'Internship' : 'MBKM Program'}
                 </span>
                 <span className="text-white/40">•</span>
@@ -346,7 +346,7 @@ export default function KpSlideshow() {
                   title="Expand Fullscreen"
                   className="bg-black/60 hover:bg-black/90 backdrop-blur-md border border-white/10 text-white p-2 rounded-full transition-all shadow-lg hover:scale-105 active:scale-95"
                 >
-                  <Maximize2 className="w-4 h-4 text-zinc-300" />
+                  <Maximize2 className="w-4 h-4 text-purple-300" />
                 </button>
               </div>
             </div>
@@ -386,7 +386,7 @@ export default function KpSlideshow() {
                   onClick={() => setCurrentIndex(idx)}
                   className={`relative w-14 h-11 sm:w-16 sm:h-12 rounded-xl overflow-hidden shrink-0 transition-all duration-300 border-2 ${
                     currentIndex === idx
-                      ? 'border-zinc-900 dark:border-zinc-100 scale-105 shadow-md'
+                      ? 'border-purple-600 scale-105 shadow-md shadow-purple-500/20'
                       : 'border-transparent opacity-60 hover:opacity-100'
                   }`}
                 >
@@ -411,7 +411,7 @@ export default function KpSlideshow() {
                   aria-label={`Go to slide ${idx + 1}`}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     currentIndex === idx
-                      ? 'w-6 bg-zinc-900 dark:bg-zinc-100'
+                      ? 'w-6 bg-gradient-to-r from-purple-600 to-pink-500'
                       : 'w-2 bg-zinc-200 dark:bg-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-600'
                   }`}
                 />
@@ -421,9 +421,9 @@ export default function KpSlideshow() {
         </div>
 
         {/* Unified Activities Overview (5 Cols on LG) */}
-        <div className="lg:col-span-5 space-y-5 bg-zinc-50 dark:bg-zinc-900 rounded-[2rem] border border-zinc-200/80 dark:border-zinc-800 p-6 sm:p-8 shadow-xs">
+        <div className="lg:col-span-5 space-y-5 bg-gradient-to-br from-purple-50/70 via-white to-pink-50/70 dark:from-zinc-900 dark:via-zinc-900/90 dark:to-zinc-900 rounded-[2rem] border border-purple-100 dark:border-zinc-800 p-6 sm:p-8 shadow-sm">
           <div className="space-y-2">
-            <span className="text-[11px] font-bold text-zinc-700 dark:text-zinc-300 uppercase tracking-wider bg-zinc-100 dark:bg-zinc-800 px-3 py-1 rounded-full inline-block border border-zinc-200/60 dark:border-zinc-700">
+            <span className="text-[11px] font-bold text-purple-700 dark:text-purple-300 uppercase tracking-wider bg-purple-100/70 dark:bg-purple-950/70 px-3 py-1 rounded-full inline-block">
               {activeTab === 'kp' ? 'Internship Responsibilities' : 'MBKM Responsibilities'}
             </span>
             <h4 className="text-xl sm:text-2xl font-extrabold text-zinc-900 dark:text-white leading-snug">
@@ -451,7 +451,7 @@ export default function KpSlideshow() {
               return (
                 <div
                   key={aIdx}
-                  className="bg-white/90 dark:bg-zinc-800/90 rounded-2xl p-4 border border-zinc-200/80 dark:border-zinc-800 shadow-2xs hover:shadow-md transition-all duration-200 flex items-start space-x-3.5 group"
+                  className="bg-white/90 dark:bg-zinc-800/90 rounded-2xl p-4 border border-purple-100/80 dark:border-zinc-800 shadow-2xs hover:shadow-md transition-all duration-200 flex items-start space-x-3.5 group"
                 >
                   <div
                     className={`h-10 w-10 rounded-xl flex items-center justify-center shrink-0 border ${act.bgColor} group-hover:scale-105 transition-transform`}
@@ -486,7 +486,7 @@ export default function KpSlideshow() {
             {/* Header Controls */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-zinc-800 bg-zinc-900/60">
               <div className="text-white text-xs sm:text-sm font-bold flex items-center space-x-2">
-                <span className="bg-zinc-800 px-2.5 py-0.5 rounded-full text-xs">PTPN IV Regional III</span>
+                <span className="bg-purple-600 px-2.5 py-0.5 rounded-full text-xs">PTPN IV Regional III</span>
                 <span className="text-zinc-400">
                   {activeTab === 'kp' ? 'Industrial Internship' : 'Certified Internship (MBKM)'}
                 </span>

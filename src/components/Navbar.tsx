@@ -99,12 +99,20 @@ export default function Navbar() {
             Projects
           </a>
           <a
+            href="#certificates"
+            className="px-2.5 sm:px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-all text-xs sm:text-sm"
+            onMouseEnter={() => setCursor('explore')}
+            onMouseLeave={resetCursor}
+          >
+            Certificates
+          </a>
+          <a
             href="#archive"
             className="hidden md:inline-block px-3 py-1.5 text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-all text-xs sm:text-sm"
             onMouseEnter={() => setCursor('explore')}
             onMouseLeave={resetCursor}
           >
-            Selected Works
+            Archive
           </a>
           <a
             href="#experience"

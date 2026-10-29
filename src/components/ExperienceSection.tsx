@@ -7,20 +7,20 @@ import { Award, CheckCircle2 } from 'lucide-react';
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-16 sm:py-20 relative">
+    <section id="experience" className="py-16 sm:py-20 relative scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-16 sm:space-y-20">
         {/* Experience Timeline */}
         <div className="space-y-8 sm:space-y-10">
           <div className="text-center max-w-xl mx-auto space-y-2">
             <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 text-xs font-bold uppercase tracking-wider border border-zinc-200/60 dark:border-zinc-700">
               <Award className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400" />
-              <span>Corporate Experience & Internship</span>
+              <span>Work & Academic Experience</span>
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
-              Journey & Accomplishments.
+              Professional Experience & Trajectory.
             </h2>
             <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
-              Professional track record in corporate engineering, mobile development, and fullstack systems.
+              Hands-on corporate engineering at PTPN IV, undergraduate software development, and applied research.
             </p>
           </div>
 

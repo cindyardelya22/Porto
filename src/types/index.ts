@@ -89,3 +89,20 @@ export interface ExperienceItem {
   highlights: string[];
   skills: string[];
 }
+
+export interface Certificate {
+  id: string;
+  title: string;
+  issuer: string;
+  issueDate: string;
+  category: 'Professional Certifications' | 'Technical Certifications' | 'Corporate Credentials';
+  credentialId?: string;
+  verificationUrl?: string;
+  documentUrl?: string;
+  previewImage?: string;
+  fileType?: 'pdf' | 'image';
+  fileName?: string;
+  description: string;
+  skills: string[];
+}
+

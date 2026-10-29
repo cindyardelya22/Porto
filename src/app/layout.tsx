@@ -30,30 +30,31 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://cindyardelya.dev'),
-  title: 'Cindy Ardelya — Informatics Engineering Graduate | Web Developer',
+  title: 'Cindy Ardelya — Software Engineer & Web Developer',
   description:
-    'Official portfolio of Cindy Ardelya. Passionate about Technology, Graphic Design, and Digital Communication. Focusing on modern web applications, native Android solutions, and interactive digital experiences.',
+    'Portfolio of Cindy Ardelya, an Informatics Engineering graduate from Politeknik Caltex Riau. Fullstack web developer (Laravel), native Android engineer (Kotlin), and EC-Council certified security specialist.',
   keywords: [
     'Cindy Ardelya',
     'Personal Portfolio',
     'Informatics Engineering Graduate',
+    'Software Engineer',
     'Web Developer',
     'Politeknik Caltex Riau',
     'Android Kotlin Developer',
-    'Laravel Fullstack',
-    'UI UX Design',
-    'Digital Communication',
+    'Laravel Fullstack Developer',
+    'EC-Council Certified',
+    'PTPN IV Regional III',
   ],
   authors: [{ name: 'Cindy Ardelya' }],
   openGraph: {
-    title: 'Cindy Ardelya — Informatics Engineering Graduate | Web Developer',
+    title: 'Cindy Ardelya — Software Engineer & Web Developer',
     description:
-      'Official portfolio of Cindy Ardelya. Passionate about Technology, Graphic Design, and Digital Communication. Focusing on modern web applications, native Android solutions, and interactive digital experiences.',
+      'Portfolio of Cindy Ardelya, an Informatics Engineering graduate from Politeknik Caltex Riau. Fullstack web developer (Laravel), native Android engineer (Kotlin), and EC-Council certified security specialist.',
     url: 'https://cindyardelya.dev',
     siteName: 'Cindy Ardelya Portfolio',
     images: [
       {
-        url: '/images/mindcare.jpg',
+        url: '/images/profile.jpg',
         width: 1200,
         height: 630,
         alt: 'Cindy Ardelya Portfolio',
@@ -64,10 +65,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cindy Ardelya — Informatics Engineering Graduate | Web Developer',
+    title: 'Cindy Ardelya — Software Engineer & Web Developer',
     description:
-      'Official portfolio of Cindy Ardelya. Passionate about Technology, Graphic Design, and Digital Communication. Focusing on modern web applications, native Android solutions, and interactive digital experiences.',
-    images: ['/images/mindcare.jpg'],
+      'Portfolio of Cindy Ardelya, an Informatics Engineering graduate from Politeknik Caltex Riau. Fullstack web developer (Laravel), native Android engineer (Kotlin), and EC-Council certified security specialist.',
+    images: ['/images/profile.jpg'],
   },
 };
 
