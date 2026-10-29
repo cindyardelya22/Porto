@@ -95,6 +95,34 @@ export default function CertificateModal({ certificate, onClose }: CertificateMo
             </div>
 
             <div className="flex items-center space-x-2">
+              {/* View Mode Toggle (Preview vs Embedded PDF) */}
+              {certificate.documentUrl?.endsWith('.pdf') && certificate.previewImage && !hasError && (
+                <div className="flex items-center bg-zinc-200/80 dark:bg-zinc-800 p-0.5 rounded-full text-[11px] font-semibold border border-zinc-300/50 dark:border-zinc-700">
+                  <button
+                    type="button"
+                    onClick={() => setViewMode('image')}
+                    className={`px-2.5 py-0.5 rounded-full transition-colors ${
+                      viewMode === 'image'
+                        ? 'bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-2xs font-bold'
+                        : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
+                    }`}
+                  >
+                    Image
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setViewMode('pdf')}
+                    className={`px-2.5 py-0.5 rounded-full transition-colors ${
+                      viewMode === 'pdf'
+                        ? 'bg-white dark:bg-zinc-700 text-zinc-900 dark:text-white shadow-2xs font-bold'
+                        : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
+                    }`}
+                  >
+                    PDF
+                  </button>
+                </div>
+              )}
+
               {/* Zoom Controls (when viewing image) */}
               {viewMode === 'image' && !hasError && (
                 <div className="hidden sm:flex items-center space-x-1 bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-full p-1 shadow-2xs">
