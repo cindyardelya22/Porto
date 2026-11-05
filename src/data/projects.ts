@@ -591,4 +591,140 @@ export const featuredProjects: CaseStudy[] = [
       },
     ],
   },
+  {
+    id: 'emoscan',
+    slug: 'emoscan-lstm-emotion-detection',
+    title: 'EmoScan: NLP Emotion & Stress Detection',
+    subtitle: 'Deep Learning Text Classification System Using Long Short-Term Memory (LSTM)',
+    category: 'Deep Learning & AI',
+    year: '2025',
+    client: 'Academic Research (NLP KLP 8) • Politeknik Caltex Riau',
+    role: 'NLP & Deep Learning Engineer • Fullstack Developer',
+    timeline: '3 Months',
+    status: 'Featured',
+    summary:
+      'Natural Language Processing (NLP) system built with TensorFlow, Keras, and Python to analyze social media text, classifying nuanced emotional states (Happy, Anger, Sadness, Love, Fear) and potential stress indications using sequential LSTM neural network modeling with an interactive web interface.',
+    heroImage: '/images/emoscan.jpg',
+    gallery: [
+      '/images/emoscan.jpg',
+      '/images/extracted/emoscan_raw_4.png',
+      '/images/extracted/emoscan_raw_3.png',
+      '/images/extracted/page_12_img_3.png',
+      '/images/extracted/page_13_img_3.png',
+    ],
+    tags: ['NLP', 'LSTM (Long Short-Term Memory)', 'TensorFlow / Keras', 'Python', 'NLTK', 'Text Classification', 'Web Implementation'],
+    primaryLink: {
+      type: 'pdf',
+      label: 'Read Research Paper (PDF)',
+      url: '/docs/proposal-nlp-emoscan.pdf',
+    },
+    secondaryLink: {
+      type: 'github',
+      label: 'Research Methodology & Notebook',
+      url: 'https://github.com/cindyardelya',
+    },
+    stats: [
+      { label: 'Deep Learning Model', value: 'Sequential LSTM', subtext: 'Embedding (128-dim) + 64 LSTM Units' },
+      { label: 'Emotion Classes', value: '5 Categories', subtext: 'Happy, Anger, Sadness, Love & Fear' },
+      { label: 'Text Preprocessing', value: 'NLTK & RegEx', subtext: 'Slang normalization, tokenization & padding' },
+      { label: 'Web Platform', value: 'EmoScan Web', subtext: 'Real-time text analysis with stress indicators' },
+    ],
+    challenge: {
+      description:
+        'Human emotional expression in digital text and social media is subtle, contextual, and often riddled with informal slang, typos, and abbreviations. Traditional rule-based keyword approaches fail to capture semantic context or sequential dependencies across full sentences.',
+      bulletPoints: [
+        'Handling informal Indonesian and English social media slang, emojis, punctuation, and typographical variations.',
+        'Imbalanced multi-class emotion distribution across thousands of raw tweets and online user comments.',
+        'Preventing overfitting while maintaining robust generalization on unseen sentence structures.',
+        'Translating complex tensor prediction probabilities into actionable, empathetic wellness recommendations in a clean UI.',
+      ],
+    },
+    solution: {
+      description:
+        'Engineered an end-to-end NLP pipeline leveraging Long Short-Term Memory (LSTM) neural networks capable of retaining long-term contextual word relationships. The architecture incorporates custom text cleaning, Indonesian stopword filtering, tokenization with fixed-length padding (maxlen=100), embedding layers, recurrent LSTM units with 0.5 dropout regularization, and a modern web interface for interactive inference.',
+      architecturePoints: [
+        'Data Cleaning Pipeline: Stripped URLs, @mentions, hashtags, numbers, and punctuation while normalizing slang words.',
+        'Vector Representation: 5000-vocabulary Keras tokenizer mapped words to 128-dimensional dense embeddings.',
+        'Sequential LSTM Core: 64-unit LSTM layer capturing sequential syntactic relationships and sentence sentiments.',
+        'Interactive Web System: Minimalist responsive web dashboard providing real-time emotion breakdown, stress alert, and coping advice.',
+      ],
+    },
+    techStack: [
+      {
+        category: 'Deep Learning & NLP',
+        items: ['Python', 'TensorFlow', 'Keras', 'LSTM Architecture', 'Word Embeddings', 'NLTK'],
+      },
+      {
+        category: 'Data Science & Evaluation',
+        items: ['Pandas', 'NumPy', 'Scikit-Learn', 'Classification Report', 'Confusion Matrix Heatmap', 'Seaborn & Matplotlib'],
+      },
+      {
+        category: 'Web Deployment & UI',
+        items: ['Flask / Web Service', 'Tailwind CSS', 'Responsive UI', 'Empathetic Visual Guidance'],
+      },
+    ],
+    userFlow: [
+      {
+        step: '01',
+        title: 'Social Text Input',
+        description: 'User enters freeform text or social media excerpt into EmoScan’s live text analysis canvas (with 500-char counter).',
+      },
+      {
+        step: '02',
+        title: 'NLP Preprocessing & Tokenization',
+        description: 'Text is normalized, cleaned of noise, converted to integer token sequence, and padded to uniform 100-token length.',
+      },
+      {
+        step: '03',
+        title: 'LSTM Inference & Multi-Class Scoring',
+        description: 'The trained LSTM model evaluates sequential patterns and outputs softmax probability across 5 emotional states.',
+      },
+      {
+        step: '04',
+        title: 'Emotion & Stress Breakdown Report',
+        description: 'Displays the dominant emotion with visual emoji, evaluates stress indication, and generates personalized coping advice.',
+      },
+    ],
+    results: [
+      {
+        metric: '58% Multi-Class Accuracy',
+        detail: 'Balanced performance across 5 nuanced emotional states, achieving 0.75 precision on Love and 0.77 recall on Anger.',
+      },
+      {
+        metric: 'Academic Research Publication',
+        detail: 'Published paper in Journal of Applied Data Sciences (Vol. 4, No. 4, Juni 2025) entitled "Sistem Deteksi Emosi pada Teks Menggunakan Metode LSTM".',
+      },
+      {
+        metric: 'Full-Stack Proof of Concept',
+        detail: 'Successfully built and tested the EmoScan web application featuring live text inference and mental wellness coping recommendations.',
+      },
+    ],
+    documentationDetails: {
+      title: 'Sistem Deteksi Emosi pada Teks Menggunakan Metode LSTM',
+      documentType: 'Research Paper & Proposal',
+      pdfUrl: '/docs/proposal-nlp-emoscan.pdf',
+      sections: [
+        {
+          heading: '1. Introduction & Background',
+          description:
+            'Social media platforms (Twitter/X, Facebook, Instagram) serve as primary outlets for people to express emotional conditions and psychological stress. This research creates an automatic emotion detection system using NLP and LSTM to support mental health counseling chatbots and psychological monitoring tools.',
+        },
+        {
+          heading: '2. Research Methodology & Dataset',
+          description:
+            'Utilized open Kaggle dataset containing Indonesian and English tweets labeled across five core emotion categories (Happy, Anger, Sadness, Love, Fear). Dataset was split 80% training and 20% testing using stratified sampling.',
+        },
+        {
+          heading: '3. Model Architecture & Training',
+          description:
+            'Built with Keras Sequential model: Embedding layer (input_dim=5000, output_dim=128, input_length=100), LSTM layer (64 units), Dropout (0.5), Dense (32 units, ReLU activation), and Output Dense (5 units, Softmax). Trained for 6 epochs with Adam optimizer and sparse categorical crossentropy.',
+        },
+        {
+          heading: '4. Evaluation & Results',
+          description:
+            'Evaluated with Precision, Recall, F1-Score, and Confusion Matrix. Demonstrates solid classification capability across 881 test samples with high recognition of anger (0.77 recall) and love (0.75 precision).',
+        },
+      ],
+    },
+  },
 ];
