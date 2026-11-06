@@ -174,12 +174,12 @@ export default function AboutSection() {
                   <span className="text-zinc-500 dark:text-zinc-400">EC-Council EHE & NDE, Cisco NetAcad, RouterOS MikroTik</span>
                 </div>
                 <div>
-                  <span className="font-semibold text-zinc-900 dark:text-zinc-100 block">Data & Computer Vision</span>
-                  <span className="text-zinc-500 dark:text-zinc-400">Python, TensorFlow, CNN Image Classification, Google Gemini API</span>
+                  <span className="font-semibold text-zinc-900 dark:text-zinc-100 block">Data, NLP & Deep Learning</span>
+                  <span className="text-zinc-500 dark:text-zinc-400">Python, TensorFlow, Bi-LSTM Emotion NLP, CNN Image Classification, Gemini API</span>
                 </div>
                 <div>
                   <span className="font-semibold text-zinc-900 dark:text-zinc-100 block">Research & Accreditation</span>
-                  <span className="text-zinc-500 dark:text-zinc-400">Malaria Cell CNN (96.8% Acc), BNSP National Programmer</span>
+                  <span className="text-zinc-500 dark:text-zinc-400">EmoScan NLP (LSTM), Malaria Cell CNN (96.8% Acc), BNSP National Programmer</span>
                 </div>
               </div>
             </div>

@@ -140,6 +140,7 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                     {project.secondaryLink.type === 'github' && <GithubIcon className="w-3.5 h-3.5" />}
                     {project.secondaryLink.type === 'canva' && <CanvaIcon className="w-3.5 h-3.5" />}
                     {project.secondaryLink.type === 'figma' && <FigmaIcon className="w-3.5 h-3.5" />}
+                    {project.secondaryLink.type === 'pdf' && <FileText className="w-3.5 h-3.5 text-emerald-500" />}
                     <span>{project.secondaryLink.label}</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
@@ -210,7 +211,11 @@ export default function CaseStudyModal({ project, onClose }: CaseStudyModalProps
                   }`}
                 >
                   <BookOpen className="w-3.5 h-3.5" />
-                  <span>Application Guide (PDF SOP)</span>
+                  <span>
+                    {project.documentationDetails.documentType.toLowerCase().includes('paper')
+                      ? 'Research Paper & Documentation'
+                      : 'Application Guide (PDF SOP)'}
+                  </span>
                 </button>
               )}
 

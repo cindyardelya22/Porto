@@ -29,14 +29,15 @@ export const skillCategories = [
   },
   {
     category: 'Machine Learning & AI',
-    tag: 'DEEP LEARNING',
-    description: 'Applied artificial intelligence, computer vision, and neural network classification for medical imaging.',
+    tag: 'DEEP LEARNING & NLP',
+    description: 'Applied artificial intelligence, natural language processing (LSTM), and computer vision neural network classification.',
     skills: [
       { name: 'Python 3', level: 'Advanced', highlight: 'Scientific computing, automation' },
-      { name: 'TensorFlow & Keras', level: 'Intermediate', highlight: 'Convolutional Neural Networks (CNN)' },
+      { name: 'Natural Language Processing (NLP)', level: 'Advanced', highlight: 'LSTM, Sastrawi, text cleaning, sentiment analysis' },
+      { name: 'TensorFlow & Keras', level: 'Intermediate', highlight: 'LSTM & CNN neural architectures' },
       { name: 'Computer Vision', level: 'Intermediate', highlight: 'Image preprocessing, OpenCV' },
-      { name: 'Model Evaluation', level: 'Advanced', highlight: 'Confusion matrices, ROC-AUC, precision' },
-      { name: 'Data Preprocessing', level: 'Advanced', highlight: 'Normalization, data augmentation' },
+      { name: 'Model Evaluation', level: 'Advanced', highlight: 'Confusion matrices, ROC-AUC, classification reports' },
+      { name: 'Data Preprocessing', level: 'Advanced', highlight: 'Tokenization, padding, balancing, normalization' },
     ],
   },
 ];
@@ -79,13 +80,14 @@ export const experienceTimeline: ExperienceItem[] = [
     location: 'Pekanbaru, Indonesia',
     type: 'Academic & Applied Research',
     description:
-      'Led the design and technical development of innovative student projects including the MindCare mental health mobile app and CNN-based malaria cell classification research.',
+      'Led the design and technical development of innovative student projects including the MindCare mental health mobile app, EmoScan NLP emotion detection research, and CNN-based malaria cell classification.',
     highlights: [
       'Designed and built "MindCare" native Android app with conversational chatbot screening, emotional mood tracker, and therapeutic exercises.',
+      'Engineered "EmoScan" deep learning system using Bidirectional LSTM to classify 5 text emotion states and evaluate psychological stress.',
       'Trained custom deep Convolutional Neural Network (CNN) achieving 96.8% accuracy in classifying infected malaria microscopic cell images.',
-      'Synthesized model evaluation metrics with ROC-AUC analysis and documented research findings in clear presentation slides.',
+      'Synthesized model evaluation metrics with confusion matrices and classification reports, co-authoring academic research in applied data science.',
     ],
-    skills: ['Kotlin', 'Android', 'Python', 'TensorFlow / Keras', 'CNN', 'Deep Learning', 'Figma'],
+    skills: ['Kotlin', 'Android', 'Python', 'TensorFlow / Keras', 'LSTM & NLP', 'CNN', 'Deep Learning', 'Figma'],
   },
   {
     period: '2024 (2 Months)',
